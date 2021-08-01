@@ -1,0 +1,17 @@
+html,
+body {
+    width: 1440px;
+    height: 3595px;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    -webkit-line-clamp: inherit;
+    -webkit-line-clamp: initial;
+    -webkit-line-clamp: unset;
+    position: relative;
+}
+input,
+button {
+    box-sizing: border-box;
+    border: 0px;
+}
