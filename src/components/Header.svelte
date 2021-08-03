@@ -19,11 +19,8 @@
 
 <style>
     .srcLogo {
-        margin-left: 1001px;
+        margin-left: 80.1px;
         margin-top: 43.56px;
-
-        font-family: "Barlow", sans-serif;
-        font-style: normal;
     }
     navbar {
         font-family: "Barlow", sans-serif;
