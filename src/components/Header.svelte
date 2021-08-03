@@ -6,6 +6,7 @@
     <img src={srcLogo} class="srcLogo" alt="Cofferoasters Logo" />
     <navbar>
         <ul>
+            <li>zeynebbenibulamazkiii</li>
             <li><a class="home" href="#home">HOME</a></li>
             <li><a class="about-us" href="#about-us">ABOUT US</a></li>
             <li>
