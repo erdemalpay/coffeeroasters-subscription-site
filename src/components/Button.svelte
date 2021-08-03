@@ -1,3 +1,5 @@
+<script></script>
+
 <main>
     <button class="btn">Create your plan</button>
 </main>
