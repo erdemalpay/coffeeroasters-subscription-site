@@ -403,7 +403,7 @@
         width: 1045px;
         height: 565px;
         margin-left: 164px;
-        margin-top: 206px;
+        margin-top: 203px;
     }
     .how-it-works-header {
         font-family: "Fraunces", serif;
@@ -515,5 +515,6 @@
     }
     .how-it-works-btn {
         margin-left: -86px;
+        margin-top: -6px;
     }
 </style>

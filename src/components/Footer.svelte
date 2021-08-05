@@ -35,14 +35,12 @@
         width: 1280px;
         height: 120px;
         margin-left: 78px;
-        margin-top: 200px;
+        margin-top: 318px;
         background: #2c343e;
     }
     .footer-left {
         width: 622px;
         height: 26px;
-        left: 165px;
-        top: 3434px;
     }
     .srcLogo {
         margin-left: 85px;
