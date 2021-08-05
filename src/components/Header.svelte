@@ -7,7 +7,9 @@
     <navbar>
         <ul>
             <li><a class="home" href="#home">HOME</a></li>
-            <li><a class="about-us" href="#about-us">ABOUT US</a></li>
+            <li>
+                <a class="about-us" href="#about-us">ABOUT US</a>
+            </li>
             <li>
                 <a class="create-your-plan" href="#create-your-plan"
                     >CREATE YOUR PLAN</a

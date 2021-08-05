@@ -251,7 +251,7 @@
         display: grid;
         grid-template-columns: 255px 255px 255px 255px;
         grid-gap: 30px 30px;
-        
+
         font-style: normal;
         text-align: center;
         color: #333d4b;
@@ -365,14 +365,14 @@
     }
     .box-content-title {
         font-family: "Fraunces", serif;
-        font-weight: 900; 
+        font-weight: 900;
         font-size: 24px;
         line-height: 32px;
         margin-left: -5px;
     }
     .box-content-title-3 {
         font-family: "Fraunces", serif;
-        font-weight: 900; 
+        font-weight: 900;
         font-size: 24px;
         line-height: 32px;
         margin-left: -5px;
