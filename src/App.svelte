@@ -38,7 +38,6 @@
     <!-- section-our-collection -->
     <div class="section-our-collection">
         <h1 class="our-collection-title">our collection</h1>
-
         <div class="coffee-photos">
             <img
                 src={srcGranEspresso}
@@ -85,6 +84,7 @@
     <!-- section-why-choose-us -->
     <div class="section-why-choose-us">
         <div class="why-choose-us-background" />
+
         <div class="content-top">
             <h4 class="content-top-title">Why choose us?</h4>
             <p class="content-top-text">
@@ -94,6 +94,7 @@
                 on every level.
             </p>
         </div>
+
         <div class="why-choose-us-boxes">
             <div class="box-1">
                 <img
@@ -122,8 +123,8 @@
             <div class="box-3">
                 <img src={srcTruck} class="truck" alt="Truck" />
                 <div class="box-content">
-                    <h3 class="box-content-title">Free shipping</h3>
-                    <p class="box-content-text">
+                    <h3 class="box-content-title-3">Free shipping</h3>
+                    <p class="box-content-text-3">
                         We cover the cost and coffee is delivered fast. Peak
                         freshness: guaranteed.
                     </p>
@@ -135,6 +136,7 @@
     <!-- section-how-it-works -->
     <div class="section-how-it-works">
         <h3 class="how-it-works-header">How it works</h3>
+
         <div class="how-it-works-content">
             <div class="how-it-works-timeline">
                 <ul>
@@ -176,6 +178,7 @@
                 </div>
             </div>
         </div>
+
         <div class="how-it-works-btn">
             <Button />
         </div>
@@ -238,35 +241,34 @@
         text-align: center;
         color: #83888f;
 
-        /* background: linear-gradient(180deg, #83888f 0.01%, #fefcf7 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 1111px 196px; */
+        background-color: linear-gradient(180deg, #83888f 0.01% #fefcf7 100%);
+        /* -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; */
+        background-size: 100%;
+        background-size: 1111px 196px;
     }
     .coffees-content {
         display: grid;
         grid-template-columns: 255px 255px 255px 255px;
         grid-gap: 30px 30px;
+        
+        font-style: normal;
+        text-align: center;
+        color: #333d4b;
     }
     .coffee-title {
         font-family: "Fraunces", serif;
-        font-style: normal;
         font-weight: 900;
         font-size: 24px;
         line-height: 32px;
-        text-align: center;
-        color: #333d4b;
-        margin-top: 82px;
+        margin-top: 67px;
         margin-left: -3px;
     }
     .coffee-text {
         font-family: "Barlow", sans-serif;
-        font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        text-align: center;
-        color: #333d4b;
         margin-left: -3px;
     }
     .coffee-photos {
@@ -303,10 +305,8 @@
     .why-choose-us-background {
         background: #2c343e;
         border-radius: 10px;
-
         width: 1280px;
         height: 577px;
-        top: 1574px;
         z-index: -1;
     }
     .content-top {
@@ -358,27 +358,40 @@
     .box-content {
         width: 255px;
         height: 134px;
-        margin-top: 32px;
+        margin-top: 33px;
+        font-style: normal;
+        text-align: center;
+        color: #fefcf7;
     }
     .box-content-title {
         font-family: "Fraunces", serif;
-        font-style: normal;
-        font-weight: 900;
+        font-weight: 900; 
         font-size: 24px;
         line-height: 32px;
-        text-align: center;
-        color: #fefcf7;
         margin-left: -5px;
+    }
+    .box-content-title-3 {
+        font-family: "Fraunces", serif;
+        font-weight: 900; 
+        font-size: 24px;
+        line-height: 32px;
+        margin-left: -5px;
+        margin-top: 36px;
     }
     .box-content-text {
         font-family: "Barlow", sans-serif;
-        font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        text-align: center;
-        color: #fefcf7;
         margin-left: -5px;
+    }
+    .box-content-text-3 {
+        font-family: "Barlow", sans-serif;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        margin-left: -5px;
+        margin-top: 15px;
     }
     .coffee-bean {
         width: 72px;
@@ -394,7 +407,7 @@
     .truck {
         width: 72px;
         height: 50px;
-        margin-top: 95px;
+        margin-top: 82px;
         margin-left: -10px;
     }
 
@@ -412,7 +425,6 @@
         font-size: 24px;
         line-height: 32px;
         color: #83888f;
-        /* margin-left:-3px; */
     }
     .how-it-works-content {
         width: 1045px;
@@ -426,10 +438,8 @@
         display: flex;
         flex-direction: column;
         margin-left: 0px;
-
         height: 27px;
         width: 27px;
-
         border: 2px solid #0e8784;
         border-radius: 50%;
         background: #fefcf7;
@@ -452,10 +462,8 @@
     .how-it-works-line {
         height: 2px;
         width: 760px;
-
         margin-left: 15.5px;
         margin-top: -110px;
-
         border: 0px solid #fdd6ba;
         background: #fdd6ba;
         z-index: -1;
@@ -468,21 +476,12 @@
     }
     .how-it-works-part-1 {
         height: 355px;
-        width: 285px;
-        left: 0px;
-        top: 210px;
     }
     .how-it-works-part-2 {
         height: 355px;
-        width: 285px;
-        left: 380px;
-        top: 210px;
     }
     .how-it-works-part-3 {
         height: 355px;
-        width: 285px;
-        left: 760px;
-        top: 210px;
     }
     .part-1-number {
         font-family: "Fraunces", serif;
@@ -512,9 +511,6 @@
     }
     .how-it-works-btn {
         margin-left: -50px;
-    }
-    .how-it-works-btn {
-        margin-left: -86px;
         margin-top: -6px;
     }
 </style>
