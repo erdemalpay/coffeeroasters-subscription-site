@@ -1,12 +1,11 @@
 <script>
-    let srcLogo = "./images/logo.svg";
+    let srcLogo = "./images/images-header/logo-header.svg";
 </script>
 
 <main>
     <img src={srcLogo} class="srcLogo" alt="Cofferoasters Logo" />
     <navbar>
         <ul>
-            <li>zeynebbenibulamazkiii</li>
             <li><a class="home" href="#home">HOME</a></li>
             <li><a class="about-us" href="#about-us">ABOUT US</a></li>
             <li>
@@ -35,7 +34,7 @@
         display: flex;
         float: right;
         margin-top: 50px;
-        margin-right: 80px;
+        margin-right: 81px;
     }
     li {
         display: flex;
@@ -44,9 +43,9 @@
     }
     a {
         color: #83888f;
+        cursor: pointer;
     }
     a:hover {
         color: #333d4b;
-        cursor: pointer;
     }
 </style>

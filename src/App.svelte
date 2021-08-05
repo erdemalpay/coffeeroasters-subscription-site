@@ -1,6 +1,7 @@
 <script>
     import Header from "./components/Header.svelte";
     import Button from "./components/Button.svelte";
+    import Footer from "./components/Footer.svelte";
 
     let srcHeroCoffeepress = "./images/images-home/image-hero-coffeepress.jpg";
     let srcGranEspresso = "./images/images-home/image-gran-espresso.png";
@@ -25,9 +26,10 @@
         <div class="coffeepresso-content">
             <h2 class="coffeepresso-title">Great coffee made simple.</h2>
             <p class="coffeepresso-text">
-                Start your mornings with the world’s best coffees. Try our
-                expertly curated artisan coffees from our best roasters
-                delivered directly to your door, at your schedule.
+                Start your mornings with the world’s best coffees. Try our <br
+                />
+                expertly curated artisan coffees from our best roasters <br /> delivered
+                directly to your door, at your schedule.
             </p>
         </div>
         <Button />
@@ -53,28 +55,28 @@
                 <h3 class="coffee-title">Gran Espresso</h3>
                 <p class="coffee-text">
                     Light and flavorful blend with cocoa and black pepper for an
-                    intense experience.
+                    intense experience
                 </p>
             </div>
             <div class="coffee-2">
                 <h3 class="coffee-title">Planalto</h3>
                 <p class="coffee-text">
                     Brazilian dark roast with rich and velvety body, and hints
-                    of fruits and nuts.
+                    of fruits and nuts
                 </p>
             </div>
             <div class="coffee-3">
                 <h3 class="coffee-title">Piccollo</h3>
                 <p class="coffee-text">
                     Mild and smooth blend featuring notes of toasted almond and
-                    dried cherry.
+                    dried cherry
                 </p>
             </div>
             <div class="coffee-4">
                 <h3 class="coffee-title">Danche</h3>
                 <p class="coffee-text">
                     Ethiopian hand-harvested blend densely packed with vibrant
-                    fruit notes.
+                    fruit notes
                 </p>
             </div>
         </div>
@@ -129,6 +131,56 @@
             </div>
         </div>
     </div>
+
+    <!-- section-how-it-works -->
+    <div class="section-how-it-works">
+        <h3 class="how-it-works-header">How it works</h3>
+        <div class="how-it-works-content">
+            <div class="how-it-works-timeline">
+                <ul>
+                    <li class="how-it-works-oval-1" />
+                    <li class="how-it-works-oval-2" />
+                    <li class="how-it-works-oval-3" />
+                </ul>
+                <div class="how-it-works-line" />
+            </div>
+            <div class="how-it-works-parts">
+                <div class="how-it-works-part-1">
+                    <h1 class="part-1-number">01</h1>
+                    <h3 class="part-1-header">Pick your <br />coffee</h3>
+                    <p class="part-1-text">
+                        Select from our evolving range of artisan coffees. Our
+                        beans are ethically sourced and we pay fair prices for
+                        them. There are new coffees in all profiles every month
+                        for you to try out.
+                    </p>
+                </div>
+                <div class="how-it-works-part-2">
+                    <h1 class="part-1-number">02</h1>
+                    <h3 class="part-1-header">Choose the frequency</h3>
+                    <p class="part-1-text">
+                        Customize your order frequency, quantity, even your
+                        roast style and grind type. Pause, skip or cancel your
+                        subscription with no commitment through our online
+                        portal.
+                    </p>
+                </div>
+                <div class="how-it-works-part-3">
+                    <h1 class="part-1-number">03</h1>
+                    <h3 class="part-1-header">Receive and enjoy!</h3>
+                    <p class="part-1-text">
+                        We ship your package within 48 hours, freshly roasted.
+                        Sit back and enjoy award-winning world-class coffees
+                        curated to provide a distinct tasting experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="how-it-works-btn">
+            <Button />
+        </div>
+    </div>
+    <Footer />
 </main>
 
 <style>
@@ -195,8 +247,6 @@
         display: grid;
         grid-template-columns: 255px 255px 255px 255px;
         grid-gap: 30px 30px;
-        left: 165px;
-        margin-top: -15px;
     }
     .coffee-title {
         font-family: "Fraunces", serif;
@@ -207,6 +257,7 @@
         text-align: center;
         color: #333d4b;
         margin-top: 82px;
+        margin-left: -3px;
     }
     .coffee-text {
         font-family: "Barlow", sans-serif;
@@ -216,6 +267,7 @@
         line-height: 26px;
         text-align: center;
         color: #333d4b;
+        margin-left: -3px;
     }
     .coffee-photos {
         margin-top: -17px;
@@ -316,6 +368,7 @@
         line-height: 32px;
         text-align: center;
         color: #fefcf7;
+        margin-left: -5px;
     }
     .box-content-text {
         font-family: "Barlow", sans-serif;
@@ -325,6 +378,7 @@
         line-height: 26px;
         text-align: center;
         color: #fefcf7;
+        margin-left: -5px;
     }
     .coffee-bean {
         width: 72px;
@@ -335,10 +389,131 @@
         width: 72px;
         height: 72px;
         margin-top: 72px;
+        margin-left: -10px;
     }
     .truck {
         width: 72px;
         height: 50px;
         margin-top: 95px;
+        margin-left: -10px;
+    }
+
+    /* section-how-it-works */
+    .section-how-it-works {
+        width: 1045px;
+        height: 565px;
+        margin-left: 164px;
+        margin-top: 206px;
+    }
+    .how-it-works-header {
+        font-family: "Fraunces", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 32px;
+        color: #83888f;
+        /* margin-left:-3px; */
+    }
+    .how-it-works-content {
+        width: 1045px;
+        height: 453px;
+    }
+    ul {
+        display: flex;
+        float: left;
+    }
+    li {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+
+        height: 27px;
+        width: 27px;
+
+        border: 2px solid #0e8784;
+        border-radius: 50%;
+        background: #fefcf7;
+    }
+    .how-it-works-timeline {
+        margin-top: 203px;
+    }
+    .how-it-works-oval-1 {
+        margin-left: -40px;
+        margin-top: -30px;
+    }
+    .how-it-works-oval-2 {
+        margin-left: 349px;
+        margin-top: -30px;
+    }
+    .how-it-works-oval-3 {
+        margin-left: 349px;
+        margin-top: -30px;
+    }
+    .how-it-works-line {
+        height: 2px;
+        width: 760px;
+
+        margin-left: 15.5px;
+        margin-top: -110px;
+
+        border: 0px solid #fdd6ba;
+        background: #fdd6ba;
+        z-index: -1;
+    }
+    .how-it-works-parts {
+        display: grid;
+        grid-template-columns: 285px 285px 285px;
+        grid-gap: 95px 95px;
+        margin-top: 81px;
+    }
+    .how-it-works-part-1 {
+        height: 355px;
+        width: 285px;
+        left: 0px;
+        top: 210px;
+    }
+    .how-it-works-part-2 {
+        height: 355px;
+        width: 285px;
+        left: 380px;
+        top: 210px;
+    }
+    .how-it-works-part-3 {
+        height: 355px;
+        width: 285px;
+        left: 760px;
+        top: 210px;
+    }
+    .part-1-number {
+        font-family: "Fraunces", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 72px;
+        line-height: 72px;
+        color: #fdd6ba;
+    }
+    .part-1-header {
+        font-family: "Fraunces", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 36px;
+        color: #333d4b;
+        margin-top: 39px;
+    }
+    .part-1-text {
+        font-family: "Barlow", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        color: #333d4b;
+        margin-top: 42px;
+    }
+    .how-it-works-btn {
+        margin-left: -50px;
+    }
+    .how-it-works-btn {
+        margin-left: -86px;
     }
 </style>
