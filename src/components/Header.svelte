@@ -1,4 +1,6 @@
 <script>
+    /* import AboutUsPage from "../pages/AboutUsPage.svelte"; */
+
     let srcLogo = "./images/images-header/logo-header.svg";
 </script>
 
@@ -8,7 +10,8 @@
         <ul>
             <li><a class="home" href="#home">HOME</a></li>
             <li>
-                <a class="about-us" href="#about-us">ABOUT US</a>
+                <a class="about-us" target="_blank" href="#about-us">ABOUT US</a
+                >
             </li>
             <li>
                 <a class="create-your-plan" href="#create-your-plan"
