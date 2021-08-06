@@ -5,6 +5,9 @@
     let srcHeroWhiteCup = "./images/images-about-us/image-hero-whitecup.jpg";
 
     let srcCommitment = "./images/images-about-us/image-commitment.jpg";
+
+    let srcBgQuality = "./images/images-about-us/bg-quality.png";
+    let srcQuality = "./images/images-about-us/image-quality.jpg";
 </script>
 
 <main>
@@ -56,6 +59,28 @@
                 each lot to highlight tasting profiles distinctive to
                 <br />
                 their native growing region.
+            </p>
+        </div>
+    </div>
+
+    <!-- section-quality -->
+    <div class="section-quality">
+        <img src={srcBgQuality} class="srcBgQuality-photo" alt="Bg Quality" />
+        <div class="quality-content">
+            <h2 class="quality-title">Uncompromising quality</h2>
+            <p class="quality-text">
+                Although we work with growers who pay close attention to all
+                stages of <br /> harvest and processing, we employ, on our end,
+                a rigorous quality control <br /> program to avoid over-roasting
+                or baking the coffee dry. Every bag of coffee is <br /> tagged
+                with a roast date and batch number. Our goal is to roast
+                consistent, <br />
+                user-friendly coffee, so that brewing is easy and enjoyable.
+                <img
+                    src={srcQuality}
+                    class="srcQuality-photo"
+                    alt="Uncompromising Quality"
+                />
             </p>
         </div>
     </div>
@@ -136,5 +161,51 @@
         line-height: 26px;
         color: #333d4b;
         margin-top: -0px;
+    }
+
+    /* section-quality */
+    .section-quality {
+        width: 1280px;
+        height: 562px;
+        margin-left: -303px;
+        margin-top: 356px;
+    }
+    .srcBgQuality-photo {
+        width: 1280px;
+        height: 474px;
+        margin-left: 380px;
+        margin-top: -100px;
+        border-radius: 10px;
+    }
+    .srcQuality-photo {
+        width: 445px;
+        height: 474px;
+        margin-left: 663px;
+        margin-top: -387px;
+        border-radius: 8px;
+    }
+    .quality-content {
+        width: 540px;
+        height: 210px;
+        margin-left: 465px;
+        margin-top: -423px;
+    }
+    .quality-title {
+        font-family: "Fraunces", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 40px;
+        line-height: 48px;
+        color: #fefcf7;
+    }
+    .quality-text {
+        margin-top: -28px;
+        font-family: "Barlow", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        color: #fefcf7;
+        margin-top: 0px;
     }
 </style>
