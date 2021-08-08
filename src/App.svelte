@@ -187,6 +187,11 @@
 </main>
 
 <style>
+    main {
+        width: 1440px;
+        height: 3595px;
+    }
+
     /* section-coffeepresso */
     .section-coffeepresso {
         width: 1280px;
