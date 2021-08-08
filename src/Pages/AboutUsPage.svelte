@@ -15,7 +15,7 @@
 </script>
 
 <main>
-    <Header />
+    <Header href="../components/Header.svelte" />
 
     <!-- section-about-us -->
     <div class="section-about-us">

@@ -37,6 +37,7 @@
 
     <!-- section-our-collection -->
     <div class="section-our-collection">
+        <div class="our-collection-title-gradient" />
         <h1 class="our-collection-title">our collection</h1>
         <div class="coffee-photos">
             <img
@@ -237,6 +238,20 @@
         margin-left: 165px;
         margin-top: 222px;
     }
+    .our-collection-title-gradient {
+        position: absolute;
+        background-size: 1111px 196px;
+        background: linear-gradient(
+            180deg,
+            rgba(254, 252, 247, 0.0001) 0%,
+            #fefcf7 100%
+        );
+        /* -webkit-text-fill-color: transparent; */
+        /* -webkit-background-clip: text; */
+        /* height: 196px;
+        width: 1111px; */
+        z-index: 2;
+    }
     .our-collection-title {
         font-family: "Fraunces", serif;
         font-style: normal;
@@ -246,11 +261,15 @@
         text-align: center;
         color: #83888f;
 
-        background-color: linear-gradient(180deg, #83888f 0.01% #fefcf7 100%);
-        /* -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; */
-        background-size: 100%;
-        background-size: 1111px 196px;
+        /* background: -webkit-linear-gradient(
+            180deg,
+            #83888f 0.01%,
+            #fefcf7 100%
+        ); */
+        /* background: -webkit-linear-gradient(180deg, #83888f 0.01% #fefcf7 100%); */
+
+        /* background-size: 100%; */
+        /* background-size: 1111px 196px; */
     }
     .coffees-content {
         display: grid;
