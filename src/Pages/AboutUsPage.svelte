@@ -8,6 +8,10 @@
 
     let srcBgQuality = "./images/images-about-us/bg-quality.png";
     let srcQuality = "./images/images-about-us/image-quality.jpg";
+
+    let srcUk = "./images/images-about-us/illustration-uk.svg";
+    let srcCanada = "./images/images-about-us/illustration-canada.svg";
+    let srcAustralia = "./images/images-about-us/illustration-australia.svg";
 </script>
 
 <main>
@@ -84,7 +88,51 @@
             </p>
         </div>
     </div>
-    <Footer />
+
+    <!-- section-headquarters -->
+    <div class="section-headquarters">
+        <h3 class="headquarters-header">Our headquarters</h3>
+
+        <div class="headquarters-content">
+            <div class="headquarters-parts">
+                <div>
+                    <img src={srcUk} class="srcUk-photo" alt="Uk Map" />
+                    <h3 class="part-1-header">United Kingdom</h3>
+                    <p class="part-1-text">
+                        68 Asfordby Rd <br /> Alcaston <br /> SY6 1YA <br /> +44
+                        1241 918425
+                    </p>
+                </div>
+                <div>
+                    <img
+                        src={srcCanada}
+                        class="srcCanada-photo"
+                        alt="Canada Map"
+                    />
+                    <h3 class="part-1-header">Canada</h3>
+                    <p class="part-1-text">
+                        1528 Eglinton Avenue <br /> Toronto <br /> Ontario M4P
+                        1A6 <br /> +1 416 485 2997
+                    </p>
+                </div>
+                <div>
+                    <img
+                        src={srcAustralia}
+                        class="srcAustralia-photo"
+                        alt="Australia Map"
+                    />
+                    <h3 class="part-3-header">Australia</h3>
+                    <p class="part-3-text">
+                        36 Swanston Street <br /> Kewell <br /> Victoria <br /> +61
+                        4 9928 3629
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="headquarters-footer">
+        <Footer />
+    </div>
 </main>
 
 <style>
@@ -131,7 +179,7 @@
         width: 1110px;
         height: 520px;
         margin-left: 163px;
-        margin-top: 168px;
+        margin-top: 171px;
     }
     .srcCommitment-photo {
         width: 445px;
@@ -207,5 +255,89 @@
         line-height: 26px;
         color: #fefcf7;
         margin-top: 0px;
+    }
+
+    /* section-headquarters */
+    .section-headquarters {
+        width: 1045px;
+        height: 366px;
+        margin-left: 165px;
+        margin-top: -43px;
+    }
+    .headquarters-header {
+        font-family: "Fraunces", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 32px;
+        color: #83888f;
+    }
+    .headquarters-content {
+        width: 1045px;
+        height: 262px;
+        margin-left: 0px;
+    }
+    .headquarters-parts {
+        display: grid;
+        grid-template-columns: 285px 285px 285px;
+        grid-gap: 95px 95px;
+        margin-top: 81px;
+    }
+    .srcUk-photo {
+        height: 49.07px;
+        width: 40.8px;
+        margin-top: -6px;
+        margin-left: 2px;
+    }
+    .srcCanada-photo {
+        height: 49.9px;
+        width: 51.5px;
+        margin-top: -6px;
+        margin-left: 2px;
+    }
+    .srcAustralia-photo {
+        height: 43.9px;
+        width: 48.9px;
+        margin-top: -6px;
+        margin-left: 2px;
+    }
+    .part-1-header {
+        font-family: "Fraunces", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 36px;
+        color: #333d4b;
+        margin-top: 39px;
+    }
+    .part-1-text {
+        font-family: "Barlow", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        color: #333d4b;
+        margin-top: -9px;
+    }
+    .part-3-header {
+        font-family: "Fraunces", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 36px;
+        color: #333d4b;
+        margin-top: 45px;
+    }
+    .part-3-text {
+        font-family: "Barlow", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        color: #333d4b;
+        margin-top: -9px;
+    }
+    .headquarters-footer {
+        margin-top: -151px;
     }
 </style>
