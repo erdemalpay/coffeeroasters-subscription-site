@@ -4,6 +4,8 @@
     let srcHeroBlackCup = "./images/images-subscribe/image-hero-blackcup.jpg";
 
     let srcBgSteps = "./images/images-subscribe/bg-steps.png";
+
+    let srcIconArrow = "./images/images-subscribe/icon-arrow.svg";
 </script>
 
 <main>
@@ -105,18 +107,162 @@
         </div>
     </div>
 
-    <div class="choose">
-        <button class="accordion">Section 1</button>
-        <div class="panel">
-            <p>Lorem ipsum...</p>
+    <!-- section-accordion-menu -->
+    <div class="section-accordion-menu">
+        <div class="section-accordion-menu-1">
+            <div class="section-accordion-title">
+                <h2 class="section-accordion-menu-header">
+                    How do you drink your coffee?
+                </h2>
+            </div>
+                <button class="btn-arrow"
+                    ><img
+                        src={srcIconArrow}
+                        class="srcIconArrow-photo"
+                        alt="Icon Arrow"
+                    /></button
+                >
+
+            <!-- <div class="accordion-panels">
+                <div class="accordion-panel_1">
+                    <div class="accordion-part_1">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                    <div class="accordion-part_2">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                    <div class="accordion-part_3">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                </div>
+            </div> -->
         </div>
-        <button class="accordion">Section 2</button>
-        <div class="panel">
-            <p>Lorem ipsum...</p>
+
+        <div class="section-accordion-menu-2">
+            <div class="section-accordion-title">
+                <h2 class="section-accordion-menu-header">
+                    What type of coffee?
+                </h2>
+            </div>
+                <button class="btn-arrow"
+                    ><img
+                        src={srcIconArrow}
+                        class="srcIconArrow-photo"
+                        alt="Icon Arrow"
+                    /></button
+                >
+            <!-- <div class="accordion-panels">
+                <div class="accordion-panel_1">
+                    <div class="accordion-part_1">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                    <div class="accordion-part_2">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                    <div class="accordion-part_3">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                </div>
+            </div> -->
         </div>
-        <button class="accordion">Section 3</button>
-        <div class="panel">
-            <p>Lorem ipsum...</p>
+
+        <div class="section-accordion-menu-3">
+            <div class="section-accordion-title">
+                <h2 class="section-accordion-menu-header">
+                    How much would you like?
+                </h2>
+            </div>
+                <button class="btn-arrow"
+                    ><img
+                        src={srcIconArrow}
+                        class="srcIconArrow-photo"
+                        alt="Icon Arrow"
+                    /></button
+                >
+            <!-- <div class="accordion-panels">
+                <div class="accordion-panel_1">
+                    <div class="accordion-part_1">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                    <div class="accordion-part_2">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                    <div class="accordion-part_3">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="section-accordion-menu-4">
+            <div class="section-accordion-title">
+                <h2 class="section-accordion-menu-header">
+                    Want us to grind them?
+                </h2>
+            </div>
+                <button class="btn-arrow"
+                    ><img
+                        src={srcIconArrow}
+                        class="srcIconArrow-photo"
+                        alt="Icon Arrow"
+                    /></button
+                >
+            <!-- <div class="accordion-panels">
+                <div class="accordion-panel_1">
+                    <div class="accordion-part_1">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                    <div class="accordion-part_2">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                    <div class="accordion-part_3">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="section-accordion-menu-5">
+            <div class="section-accordion-title">
+                <h2 class="section-accordion-menu-header">
+                    How often should we deliver?
+                </h2>
+            </div>
+                <button class="btn-arrow"
+                    ><img
+                        src={srcIconArrow}
+                        class="srcIconArrow-photo"
+                        alt="Icon Arrow"
+                    /></button
+                >
+            <!-- <div class="accordion-panels">
+                <div class="accordion-panel_1">
+                    <div class="accordion-part_1">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                    <div class="accordion-part_2">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                    <div class="accordion-part_3">
+                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
+                        <p class="accordion-panel-text">Lorem ipsum</p>
+                    </div>
+                </div>
+            </div> -->
         </div>
     </div>
 </main>
@@ -316,9 +462,50 @@
         opacity: 0.25;
     }
 
-    /* section choose */
-    .choose {
-        margin-left: 80px;
-        margin-top: 100px;
+    /* section-accordion-menu */
+    .section-accordion-menu {
+        width: 730px;
+        height: 2122px;
+        margin-left: 542px;
+        margin-top: -348px;
+
+        display: grid;
+        grid-gap: 88px 88px;
+        grid-template-rows: 48px 48px 48px 48px 48px;
     }
+    .section-accordion-menu-1,
+    .section-accordion-menu-2,
+    .section-accordion-menu-3,
+    .section-accordion-menu-4,
+    .section-accordion-menu-5 {
+        width: 730px;
+        height: 48px;
+    }
+    .section-accordion-title {
+        width: 730px;
+        height: 48px;
+        display: flex;
+        flex-direction: row;
+    }
+    .section-accordion-menu-header {
+        font-family: "Fraunces", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 40px;
+        line-height: 48px;
+        color: #83888f;
+    }
+    .btn-arrow {
+        margin-left: 800px;
+        margin-top: 0px;
+    }
+    /* .accordion-panels {
+    .accordion-part_1,
+    .accordion-part_1,
+    .accordion-part_1 {
+    }
+    .accordion-panel-header {
+    }
+    .accordion-panel-text {
+    } */
 </style>
