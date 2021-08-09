@@ -73,6 +73,38 @@
         </div>
     </div>
 
+    <!-- section-titles -->
+    <div class="section-titles">
+        <div class="section-titles-content">
+            <h2 class="section-titles-number">01</h2>
+            <h3 class="section-titles-header">Preferences</h3>
+            <div class="section-titles-line" />
+        </div>
+
+        <div class="section-titles-content">
+            <h2 class="section-titles-number">02</h2>
+            <h3 class="section-titles-header">Bean Type</h3>
+            <div class="section-titles-line" />
+        </div>
+
+        <div class="section-titles-content">
+            <h2 class="section-titles-number">03</h2>
+            <h3 class="section-titles-header">Quantity</h3>
+            <div class="section-titles-line" />
+        </div>
+
+        <div class="section-titles-content">
+            <h2 class="section-titles-number">04</h2>
+            <h3 class="section-titles-header">Grind Option</h3>
+            <div class="section-titles-line" />
+        </div>
+
+        <div class="section-titles-content">
+            <h2 class="section-titles-number">05</h2>
+            <h3 class="section-titles-header">Grind Option</h3>
+        </div>
+    </div>
+
     <div class="choose">
         <button class="accordion">Section 1</button>
         <div class="panel">
@@ -140,6 +172,7 @@
         height: 653px;
         margin-left: 0px;
         margin-top: -35px;
+        border-radius: 10px;
         z-index: -1;
     }
     .how-it-works-content {
@@ -178,10 +211,10 @@
         margin-top: -30px;
     }
     .how-it-works-line {
-        height: 0.5px;
+        height: 1px;
         width: 760px;
         margin-left: 15.5px;
-        border: 1px solid #fdd6ba;
+        /* border: 1px solid #fdd6ba; */
         background: #fdd6ba;
         z-index: 1;
     }
@@ -225,6 +258,62 @@
         line-height: 26px;
         color: #fefcf7;
         margin-top: 42px;
+    }
+
+    /* section-titles */
+    .section-titles {
+        width: 255px;
+        height: 356px;
+        margin-left: 162px;
+        margin-top: 179px;
+        display: flex;
+        flex-direction: column;
+    }
+    .section-titles-content {
+        display: flex;
+        flex-direction: row;
+        height: 32px;
+
+        margin: 24.5px 0px;
+    }
+    .section-titles-number {
+        font-family: "Fraunces", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 32px;
+        color: #83888f;
+        height: 32px;
+        width: 30px;
+        cursor: pointer;
+    }
+    .section-titles-number:hover {
+        color: #0e8784;
+    }
+    .section-titles-header {
+        font-family: "Fraunces", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 32px;
+        color: #83888f;
+        margin-left: 28.5px;
+        margin-top: 19px;
+        height: 32px;
+        width: 164px;
+        cursor: pointer;
+    }
+    .section-titles-header:hover {
+        color: #333d4b;
+    }
+    .section-titles-line {
+        width: 255px;
+        height: 1px;
+        margin: 74px -228px;
+
+        background: #83888f;
+        mix-blend-mode: normal;
+        opacity: 0.25;
     }
 
     /* section choose */
