@@ -6,6 +6,8 @@
     let srcBgSteps = "./images/images-subscribe/bg-steps.png";
 
     let srcIconArrow = "./images/images-subscribe/icon-arrow.svg";
+
+    let srcBgOrderSummary = "./images/images-subscribe/bg-order-summary.png";
 </script>
 
 <main>
@@ -115,13 +117,13 @@
                     How do you drink your coffee?
                 </h2>
             </div>
-                <button class="btn-arrow"
-                    ><img
-                        src={srcIconArrow}
-                        class="srcIconArrow-photo"
-                        alt="Icon Arrow"
-                    /></button
-                >
+            <button class="btn-arrow"
+                ><img
+                    src={srcIconArrow}
+                    class="srcIconArrow-photo"
+                    alt="Icon Arrow"
+                /></button
+            >
 
             <!-- <div class="accordion-panels">
                 <div class="accordion-panel_1">
@@ -147,13 +149,13 @@
                     What type of coffee?
                 </h2>
             </div>
-                <button class="btn-arrow"
-                    ><img
-                        src={srcIconArrow}
-                        class="srcIconArrow-photo"
-                        alt="Icon Arrow"
-                    /></button
-                >
+            <button class="btn-arrow"
+                ><img
+                    src={srcIconArrow}
+                    class="srcIconArrow-photo"
+                    alt="Icon Arrow"
+                /></button
+            >
             <!-- <div class="accordion-panels">
                 <div class="accordion-panel_1">
                     <div class="accordion-part_1">
@@ -178,13 +180,13 @@
                     How much would you like?
                 </h2>
             </div>
-                <button class="btn-arrow"
-                    ><img
-                        src={srcIconArrow}
-                        class="srcIconArrow-photo"
-                        alt="Icon Arrow"
-                    /></button
-                >
+            <button class="btn-arrow"
+                ><img
+                    src={srcIconArrow}
+                    class="srcIconArrow-photo"
+                    alt="Icon Arrow"
+                /></button
+            >
             <!-- <div class="accordion-panels">
                 <div class="accordion-panel_1">
                     <div class="accordion-part_1">
@@ -209,13 +211,13 @@
                     Want us to grind them?
                 </h2>
             </div>
-                <button class="btn-arrow"
-                    ><img
-                        src={srcIconArrow}
-                        class="srcIconArrow-photo"
-                        alt="Icon Arrow"
-                    /></button
-                >
+            <button class="btn-arrow"
+                ><img
+                    src={srcIconArrow}
+                    class="srcIconArrow-photo"
+                    alt="Icon Arrow"
+                /></button
+            >
             <!-- <div class="accordion-panels">
                 <div class="accordion-panel_1">
                     <div class="accordion-part_1">
@@ -240,13 +242,13 @@
                     How often should we deliver?
                 </h2>
             </div>
-                <button class="btn-arrow"
-                    ><img
-                        src={srcIconArrow}
-                        class="srcIconArrow-photo"
-                        alt="Icon Arrow"
-                    /></button
-                >
+            <button class="btn-arrow"
+                ><img
+                    src={srcIconArrow}
+                    class="srcIconArrow-photo"
+                    alt="Icon Arrow"
+                /></button
+            >
             <!-- <div class="accordion-panels">
                 <div class="accordion-panel_1">
                     <div class="accordion-part_1">
@@ -265,6 +267,23 @@
             </div> -->
         </div>
     </div>
+
+    <!-- section-order-summary -->
+    <div class="section-order-summary">
+        <img
+            src={srcBgOrderSummary}
+            class="srcBgOrderSummary-photo"
+            alt="Bg Order Summary"
+        />
+        <div class="section-order-summary-content">
+            <h3 class="section-order-summary-header">ORDER SUMMARY</h3>
+            <p class="section-order-summary-text">
+                “I drink my coffee using Capsules, with a _____ <br /> type of bean.
+                _____ , sent to me _____.”
+            </p>
+        </div>
+    </div>
+
 </main>
 
 <style>
@@ -508,4 +527,40 @@
     }
     .accordion-panel-text {
     } */
+
+    /* section-order-summary */
+    .section-order-summary {
+        width: 730px;
+        height: 208px;
+        margin-left: 544px;
+        margin-top: -1408px;
+    }
+    .srcBgOrderSummary-photo {
+        border-radius: 10px;
+    }
+    .section-order-summary-content {
+        width: 602px;
+        height: 114px;
+        margin-left: 50px;
+        margin-top: -181px;
+    }
+    .section-order-summary-header {
+        font-family: "Barlow", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        color: #ffffff;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+    }
+    .section-order-summary-text {
+        font-family: "Fraunces", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 40px;
+        color: #ffffff;
+        margin-top: -7px;
+    }
 </style>
