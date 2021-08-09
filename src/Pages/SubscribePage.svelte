@@ -1,6 +1,7 @@
 <script>
     import Header from "../components/Header.svelte";
-    import Button from "./components/Button.svelte";
+    import Button from "../components/Button.svelte";
+    import Footer from "../components/Footer.svelte";
 
     let srcHeroBlackCup = "./images/images-subscribe/image-hero-blackcup.jpg";
 
@@ -290,6 +291,10 @@
         <Button />
     </div>
 
+    <!-- section-footer -->
+    <div class="section-footer">
+        <Footer />
+    </div>
 </main>
 
 <style>
@@ -576,4 +581,8 @@
         margin-top: -16px;
     }
 
+    /* section-footer */
+    .section-footer {
+        margin-top: -149px;
+    }
 </style>
