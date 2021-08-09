@@ -1,5 +1,6 @@
 <script>
     import Header from "../components/Header.svelte";
+    import Button from "./components/Button.svelte";
 
     let srcHeroBlackCup = "./images/images-subscribe/image-hero-blackcup.jpg";
 
@@ -284,6 +285,11 @@
         </div>
     </div>
 
+    <!-- section-order-summary-btn -->
+    <div class="order-summary-btn">
+        <Button />
+    </div>
+
 </main>
 
 <style>
@@ -563,4 +569,11 @@
         color: #ffffff;
         margin-top: -7px;
     }
+
+    /* section-order-summary-btn */
+    .order-summary-btn {
+        margin-left: 971px;
+        margin-top: -16px;
+    }
+
 </style>
