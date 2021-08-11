@@ -1,4 +1,4 @@
-import App from './Subscribe.svelte';
+import App from './components/Subscribe.svelte';
 
 const app = new App({
 	target: document.body,
