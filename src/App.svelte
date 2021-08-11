@@ -261,13 +261,7 @@
         text-align: center;
         color: #83888f;
 
-        /* background: -webkit-linear-gradient(
-            180deg,
-            #83888f 0.01%,
-            #fefcf7 100%
-        ); */
         /* background: -webkit-linear-gradient(180deg, #83888f 0.01% #fefcf7 100%); */
-
         /* background-size: 100%; */
         /* background-size: 1111px 196px; */
     }

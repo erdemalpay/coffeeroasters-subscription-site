@@ -15,7 +15,7 @@
 </script>
 
 <main>
-    <Header href="../components/Header.svelte" />
+    <Header />
 
     <!-- section-about-us -->
     <div class="section-about-us">
@@ -130,6 +130,8 @@
             </div>
         </div>
     </div>
+
+    <!-- section-footer -->
     <div class="headquarters-footer">
         <Footer />
     </div>
@@ -337,6 +339,8 @@
         color: #333d4b;
         margin-top: -9px;
     }
+
+    /* section-footer */
     .headquarters-footer {
         margin-top: -151px;
     }

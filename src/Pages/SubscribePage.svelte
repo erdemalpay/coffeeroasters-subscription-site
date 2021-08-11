@@ -354,7 +354,7 @@
     .how-it-works-content {
         width: 1045px;
         height: 453px;
-        margin-top: -744px;
+        margin-top: -540px;
         margin-left: 85px;
     }
     ul {
@@ -372,7 +372,8 @@
         z-index: 1;
     }
     .how-it-works-timeline {
-        margin-top: 202px;
+        position: absolute;
+        margin-top: -84px;
     }
     .how-it-works-oval-1 {
         margin-left: -40px;
@@ -387,12 +388,10 @@
         margin-top: -30px;
     }
     .how-it-works-line {
-        height: 1px;
+        height: 2px;
         width: 760px;
         margin-left: 15.5px;
-        /* border: 1px solid #fdd6ba; */
         background: #fdd6ba;
-        z-index: 1;
     }
     .how-it-works-parts {
         display: grid;
