@@ -25,16 +25,16 @@
                 {/if}
             </div>
         </div>
-        <div class="panel preferences" class:open-panel={isOpenPreferences} >
-            <div class="preferences-sub" class:selected={valuePreferences=="Capsule"} on:click={()=> {valuePreferences = "Capsule"}}>
+        <div class="panel choices" class:open-panel={isOpenPreferences} >
+            <div class="choice-box" class:selected={valuePreferences=="Capsule"} on:click={()=> {valuePreferences = "Capsule"}}>
                 <h2 class="sub-heading">Capsule</h2>
                 <p class="sub-text">Compatible with Nespresso systems and similar brewers</p>
             </div>
-            <div class="preferences-sub" class:selected={valuePreferences=="Filter"} on:click={()=> valuePreferences = "Filter"}>
+            <div class="choice-box" class:selected={valuePreferences=="Filter"} on:click={()=> valuePreferences = "Filter"}>
                 <h2 class="sub-heading">Filter</h2>
                 <p class="sub-text">For pour over or drip methods like Aeropress, Chemex, and V60</p>
             </div>
-            <div class="preferences-sub" class:selected={valuePreferences=="Espresso"} on:click={()=> valuePreferences = "Espresso"}>
+            <div class="choice-box" class:selected={valuePreferences=="Espresso"} on:click={()=> valuePreferences = "Espresso"}>
                 <h2 class="sub-heading">Espresso</h2>
                 <p class="sub-text">Dense and finely ground beans for an intense, flavorful experience</p>
             </div>
@@ -51,16 +51,16 @@
                 {/if}
             </div>
         </div>
-        <div class="panel preferences" class:open-panel={isOpenBeanType}>
-            <div class="preferences-sub" class:selected={valueBeanType=="Single Origin"} on:click={()=> {valueBeanType = "Single Origin"}}>
+        <div class="panel choices" class:open-panel={isOpenBeanType}>
+            <div class="choice-box" class:selected={valueBeanType=="Single Origin"} on:click={()=> {valueBeanType = "Single Origin"}}>
                 <h2 class="sub-heading">Single Origin</h2>
                 <p class="sub-text">Distinct, high quality coffee from a specific family-owned farm</p>
             </div>
-            <div class="preferences-sub" class:selected={valueBeanType=="Decaf"} on:click={()=> valueBeanType = "Decaf"}>
+            <div class="choice-box" class:selected={valueBeanType=="Decaf"} on:click={()=> valueBeanType = "Decaf"}>
                 <h2 class="sub-heading">Decaf</h2>
                 <p class="sub-text">Just like regular coffee, except the caffeine has been removed</p>
             </div>
-            <div class="preferences-sub" class:selected={valueBeanType=="Blended"} on:click={()=> valueBeanType = "Blended"}>
+            <div class="choice-box" class:selected={valueBeanType=="Blended"} on:click={()=> valueBeanType = "Blended"}>
                 <h2 class="sub-heading">Blended</h2>
                 <p class="sub-text">Combination of two or three dark roasted beans of organic coffees</p>
             </div>
@@ -77,16 +77,16 @@
                 {/if}
             </div>
         </div>
-        <div class="panel preferences" class:open-panel={isOpenQuantity}>
-            <div class="preferences-sub" class:selected={valueQuantity=="250g"} on:click={()=> valueQuantity = "250g"}>
+        <div class="panel choices" class:open-panel={isOpenQuantity}>
+            <div class="choice-box" class:selected={valueQuantity=="250g"} on:click={()=> valueQuantity = "250g"}>
                 <h2 class="sub-heading">250g</h2>
                 <p class="sub-text">Perfect for the solo drinker. Yields about 12 delicious cups.</p>
             </div>
-            <div class="preferences-sub" class:selected={valueQuantity=="500g"} on:click={()=> valueQuantity = "500g"}>
+            <div class="choice-box" class:selected={valueQuantity=="500g"} on:click={()=> valueQuantity = "500g"}>
                 <h2 class="sub-heading">500g</h2>
                 <p class="sub-text">Perfect option for a couple. Yields about 40 delectable cups.</p>
             </div>
-            <div class="preferences-sub" class:selected={valueQuantity=="1000g"} on:click={()=> valueQuantity = "1000g"}>
+            <div class="choice-box" class:selected={valueQuantity=="1000g"} on:click={()=> valueQuantity = "1000g"}>
                 <h2 class="sub-heading">1000g</h2>
                 <p class="sub-text">Perfect for offices and events. Yields about 90 delightful cups.</p>
             </div>
@@ -103,16 +103,16 @@
                 {/if}
             </div>
         </div>
-        <div class="panel preferences" class:open-panel={isOpenGrindOption}>
-            <div class="preferences-sub" class:selected={valueGrindOption=="Wholebean"} on:click={()=> valueGrindOption = "Wholebean"}>
+        <div class="panel choices" class:open-panel={isOpenGrindOption}>
+            <div class="choice-box" class:selected={valueGrindOption=="Wholebean"} on:click={()=> valueGrindOption = "Wholebean"}>
                 <h2 class="sub-heading">Wholebean</h2>
                 <p class="sub-text">Best choice if you cherish the full sensory experience</p>
             </div>
-            <div class="preferences-sub" class:selected={valueGrindOption=="Filter"} on:click={()=> valueGrindOption = "Filter"}>
+            <div class="choice-box" class:selected={valueGrindOption=="Filter"} on:click={()=> valueGrindOption = "Filter"}>
                 <h2 class="sub-heading">Filter</h2>
                 <p class="sub-text">For drip or pour-over coffee methods such as V60 or Aeropress.</p>
             </div>
-            <div class="preferences-sub" class:selected={valueGrindOption=="Cafetiére"} on:click={()=> valueGrindOption = "Cafetiére"}>
+            <div class="choice-box" class:selected={valueGrindOption=="Cafetiére"} on:click={()=> valueGrindOption = "Cafetiére"}>
                 <h2 class="sub-heading">Cafetiére</h2>
                 <p class="sub-text">Course ground beans specially suited for french press coffee</p>
             </div>
@@ -129,16 +129,16 @@
                 {/if}
             </div>
         </div>
-        <div class="panel preferences" class:open-panel={isOpenDeliveries}>
-            <div class="preferences-sub" class:selected={valueDeliveries=="Every week"} on:click={()=> valueDeliveries = "Every week"}>
+        <div class="panel choices" class:open-panel={isOpenDeliveries}>
+            <div class="choice-box" class:selected={valueDeliveries=="Every week"} on:click={()=> valueDeliveries = "Every week"}>
                 <h2 class="sub-heading">Every week</h2>
                 <p class="sub-text">$7.20 per shipment. Includes free first-class shipping.</p>
             </div>
-            <div class="preferences-sub" class:selected={valueDeliveries=="Every 2 weeks"} on:click={()=> valueDeliveries = "Every 2 weeks"}>
+            <div class="choice-box" class:selected={valueDeliveries=="Every 2 weeks"} on:click={()=> valueDeliveries = "Every 2 weeks"}>
                 <h2 class="sub-heading">Every 2 weeks</h2>
                 <p class="sub-text">$9.60 per shipment. Includes free priority shipping.</p>
             </div>
-            <div class="preferences-sub" class:selected={valueDeliveries=="Every month"} on:click={()=> valueDeliveries = "Every month"}>
+            <div class="choice-box" class:selected={valueDeliveries=="Every month"} on:click={()=> valueDeliveries = "Every month"}>
                 <h2 class="sub-heading">Every month</h2>
                 <p class="sub-text">$12.00 per shipment. Includes free priority shipping.</p>
             </div>
@@ -173,13 +173,13 @@
     .open-panel {
         height: 306px;
     }
-    .preferences {
+    .choices {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 88px;
     }
-    .preferences-sub{
+    .choice-box{
         width: 228px;
         height: 250px;
         background-color: #F4F1EB;
@@ -190,7 +190,7 @@
     .selected {
         background-color: #0E8784;
     }
-    .preferences-sub:hover{
+    .choice-box:hover{
         background-color: #FDD6BA;
         cursor: pointer;
     }
