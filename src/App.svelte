@@ -240,17 +240,15 @@
     }
     .our-collection-title-gradient {
         position: absolute;
-        background-size: 1111px 196px;
         background: linear-gradient(
             180deg,
             rgba(254, 252, 247, 0.0001) 0%,
             #fefcf7 100%
         );
-        /* -webkit-text-fill-color: transparent; */
-        /* -webkit-background-clip: text; */
-        /* height: 196px;
-        width: 1111px; */
-        z-index: 2;
+        height: 196px;
+        width: 1111px;
+        margin-top: -90px;
+        z-index: 0;
     }
     .our-collection-title {
         font-family: "Fraunces", serif;
@@ -260,10 +258,6 @@
         line-height: 72px;
         text-align: center;
         color: #83888f;
-
-        /* background: -webkit-linear-gradient(180deg, #83888f 0.01% #fefcf7 100%); */
-        /* background-size: 100%; */
-        /* background-size: 1111px 196px; */
     }
     .coffees-content {
         display: grid;
@@ -273,24 +267,30 @@
         font-style: normal;
         text-align: center;
         color: #333d4b;
+        margin-top: 220px;
     }
     .coffee-title {
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 24px;
         line-height: 32px;
-        margin-top: 67px;
-        margin-left: -3px;
+        margin-top: 14px;
+        margin-left: -2px;
     }
     .coffee-text {
         font-family: "Barlow", sans-serif;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
+        margin-top: -1px;
         margin-left: -3px;
     }
     .coffee-photos {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
         margin-top: -17px;
+        z-index: 1;
     }
     .gran-espresso-photo {
         width: 255px;
