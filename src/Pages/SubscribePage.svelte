@@ -10,6 +10,52 @@
     let srcIconArrow = "./images/images-subscribe/icon-arrow.svg";
 
     let srcBgOrderSummary = "./images/images-subscribe/bg-order-summary.png";
+
+    let valuePreferences = "";
+    let valueBeanType = "";
+    let valueQuantity = "";
+    let valueGrindOption = "";
+    let valueDeliveries = "";
+    let valueDefault = "_____";
+
+    const valueOrder = (value) => {
+        if (!value) {
+            return valueDefault;
+        } else {
+            return value;
+        }
+    };
+
+    const valueGrindOptionOrder = (valueGrindOption, valuePreferences) => {
+        if (valuePreferences == "Capsule") {
+            return "";
+        }
+        if (!valueGrindOption) {
+            return valueDefault;
+        } else {
+            return valueGrindOption;
+        }
+    };
+
+    const wordChangeOrder = (valuePreferences) => {
+        if (valuePreferences == "Capsule") {
+            return "using";
+        } else {
+            return "as";
+        }
+    };
+
+    const removeGrindPartOrder = (valuePreferences) => {
+        if (
+            valuePreferences == "Filter" ||
+            valuePreferences == "Espresso" ||
+            valuePreferences == ""
+        ) {
+            return "ground ala";
+        } else if (valuePreferences == "Capsule") {
+            return "";
+        }
+    };
 </script>
 
 <main>
@@ -279,10 +325,29 @@
         />
         <div class="section-order-summary-content">
             <h3 class="section-order-summary-header">ORDER SUMMARY</h3>
-            <p class="section-order-summary-text">
-                “I drink my coffee using Capsules, with a _____ <br /> type of bean.
-                _____ , sent to me _____.”
-            </p>
+            <div class="section-order-summary-text">
+                “I drink my coffee {wordChangeOrder(valuePreferences)}
+                <div class="order-summary-green-text">
+                    {valueOrder(valuePreferences)}
+                </div>
+                , with a
+                <div class="order-summary-green-text">
+                    {valueOrder(valueBeanType)}
+                </div>
+                type of bean.
+                <div class="order-summary-green-text">
+                    {valueOrder(valueQuantity)}
+                </div>
+                {removeGrindPartOrder(valuePreferences)}
+                <div class="order-summary-green-text">
+                    {valueGrindOptionOrder(valueGrindOption, valuePreferences)}
+                </div>
+                , sent to me
+                <div class="order-summary-green-text">
+                    {valueOrder(valueDeliveries)}
+                </div>
+                .”
+            </div>
         </div>
     </div>
 
@@ -550,8 +615,8 @@
     }
     .section-order-summary-content {
         width: 602px;
-        height: 114px;
-        margin-left: 50px;
+        height: 154px;
+        margin-left: 64px;
         margin-top: -181px;
     }
     .section-order-summary-header {
@@ -572,6 +637,10 @@
         line-height: 40px;
         color: #ffffff;
         margin-top: -7px;
+    }
+    .order-summary-green-text {
+        display: inline;
+        color: #0e8784;
     }
 
     /* section-order-summary-btn */
