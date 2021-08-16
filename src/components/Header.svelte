@@ -1,7 +1,4 @@
 <script>
-    /* import AboutUsPage from "../pages/AboutUsPage.svelte"; */
-    let href;
-
     let srcLogo = "./images/images-header/logo-header.svg";
 </script>
 
@@ -9,16 +6,12 @@
     <img src={srcLogo} class="srcLogo" alt="Cofferoasters Logo" />
     <navbar>
         <ul>
-            <li><a class="home" href="#home">HOME</a></li>
+            <li><a class="home" href="#/">HOME</a></li>
             <li>
-                <a
-                    href="./pages/AboutUsPage.svelte"
-                    target="_blank"
-                    class="about-us">ABOUT US</a
-                >
+                <a class="about-us" href="#/about">ABOUT US</a>
             </li>
             <li>
-                <a class="create-your-plan" href="#create-your-plan"
+                <a class="create-your-plan" href="#/subscribe"
                     >CREATE YOUR PLAN</a
                 >
             </li>
