@@ -291,26 +291,20 @@
         flex-direction: row;
         margin-top: -17px;
         z-index: 1;
+        height: 180px;
+        width: 255px;
     }
     .gran-espresso-photo {
-        width: 255px;
-        height: 180px;
-        margin-left: 4px;
+        margin-left: 20px;
     }
     .planalto-photo {
-        width: 256px;
-        height: 180px;
-        margin-left: 27px;
+        margin-left: 58px;
     }
     .piccollo-photo {
-        width: 256px;
-        height: 180px;
-        margin-left: 24px;
+        margin-left: 55px;
     }
     .danche-photo {
-        height: 180px;
-        width: 234.8px;
-        margin-left: 35px;
+        margin-left: 55px;
     }
 
     /* section-why-choose-us */
@@ -528,7 +522,7 @@
         margin-top: 42px;
     }
     .how-it-works-btn {
-        margin-left: -50px;
+        margin-left: -85px;
         margin-top: -6px;
     }
 </style>
