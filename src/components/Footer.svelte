@@ -12,10 +12,12 @@
             <img src={srcLogo} class="srcLogo" alt="Cofferoasters Logo" />
             <navbar>
                 <ul>
-                    <li><a class="home" href="#home">HOME</a></li>
-                    <li><a class="about-us" href="#about-us">ABOUT US</a></li>
+                    <li><a class="home" href="#/">HOME</a></li>
                     <li>
-                        <a class="create-your-plan" href="#create-your-plan"
+                        <a class="about-us" href="#/about">ABOUT US</a>
+                    </li>
+                    <li>
+                        <a class="create-your-plan" href="#/subscribe"
                             >CREATE YOUR PLAN</a
                         >
                     </li>
@@ -23,9 +25,23 @@
             </navbar>
         </div>
         <div class="footer-icons">
-            <img src={srcFacebook} class="srcFacebook" alt="Facebook Logo" />
-            <img src={srcTwitter} class="srcTwitter" alt="Twitter Logo" />
-            <img src={srcInstagram} class="srcInstagram" alt="Instagram Logo" />
+            <a target="_blank" href="https://www.facebook.com/">
+                <img
+                    src={srcFacebook}
+                    class="srcFacebook"
+                    alt="Facebook Logo"
+                />
+            </a>
+            <a target="_blank" href="https://twitter.com/">
+                <img src={srcTwitter} class="srcTwitter" alt="Twitter Logo" />
+            </a>
+            <a target="_blank" href="https://www.instagram.com/">
+                <img
+                    src={srcInstagram}
+                    class="srcInstagram"
+                    alt="Instagram Logo"
+                />
+            </a>
         </div>
     </div>
 </main>
@@ -75,7 +91,7 @@
     .footer-icons {
         width: 120px;
         height: 24px;
-        margin-left: 1076px;
+        margin-left: 1074px;
         margin-top: 21px;
         display: grid;
         grid-template-columns: 24px 24px 24px;
