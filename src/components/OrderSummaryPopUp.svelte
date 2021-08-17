@@ -6,6 +6,9 @@
     let valueDeliveries = "";
     let valueDefault = "_____";
 
+    export let showOrderSummaryPopUp;
+    export let closeOrderSummaryPopUp;
+
     const valueOrder = (value) => {
         if (!value) {
             return valueDefault;
@@ -46,64 +49,84 @@
     };
 </script>
 
-<main>
-    <div class="order-summary-header">
-        <h2 class="order-summary-title">Order Summary</h2>
-    </div>
-
-    <div class="section-order-summary-content">
-        <div class="section-order-summary-text">
-            “I drink my coffee {wordChangeOrder(valuePreferences)}
-            <div class="order-summary-green-text">
-                {valueOrder(valuePreferences)}
-            </div>
-            , with a
-            <div class="order-summary-green-text">
-                {valueOrder(valueBeanType)}
-            </div>
-            type of bean.
-            <div class="order-summary-green-text">
-                {valueOrder(valueQuantity)}
-            </div>
-            {removeGrindPartOrder(valuePreferences)}
-            <div class="order-summary-green-text">
-                {valueGrindOptionOrder(valueGrindOption, valuePreferences)}
-            </div>
-            , sent to me
-            <div class="order-summary-green-text">
-                {valueOrder(valueDeliveries)}
-            </div>
-            .”
+{#if showOrderSummaryPopUp}
+    <div
+        class="order-summary-background"
+        class:closeOrderSummaryPopUp
+        on:click|self
+    />
+    <main>
+        <div class="order-summary-header">
+            <h2 class="order-summary-title">Order Summary</h2>
         </div>
-    </div>
 
-    <p class="order-summary-remind">
-        Is this correct? You can proceed to checkout or go back to<br />
-        plan selection if something is off. Subscription discount<br />
-        codes can also be redeemed at the checkout.
-    </p>
+        <div class="section-order-summary-content">
+            <div class="section-order-summary-text">
+                “I drink my coffee {wordChangeOrder(valuePreferences)}
+                <div class="order-summary-green-text">
+                    {valueOrder(valuePreferences)}
+                </div>
+                , with a
+                <div class="order-summary-green-text">
+                    {valueOrder(valueBeanType)}
+                </div>
+                type of bean.
+                <div class="order-summary-green-text">
+                    {valueOrder(valueQuantity)}
+                </div>
+                {removeGrindPartOrder(valuePreferences)}
+                <div class="order-summary-green-text">
+                    {valueGrindOptionOrder(valueGrindOption, valuePreferences)}
+                </div>
+                , sent to me
+                <div class="order-summary-green-text">
+                    {valueOrder(valueDeliveries)}
+                </div>
+                .”
+            </div>
+        </div>
 
-    <div class="order-summary-payment">
-        <div class="order-summary-total">$14.00/ mo</div>
-        <button class="order-summary-btn">Checkout</button>
-    </div>
-</main>
+        <p class="order-summary-remind">
+            Is this correct? You can proceed to checkout or go back to<br />
+            plan selection if something is off. Subscription discount<br />
+            codes can also be redeemed at the checkout.
+        </p>
+
+        <div class="order-summary-payment">
+            <div class="order-summary-total">$14.00/ mo</div>
+            <button class="order-summary-btn">Checkout</button>
+        </div>
+    </main>
+{/if}
 
 <style>
+    .order-summary-background {
+        position: absolute;
+        background-color: #000000;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+        z-index: 2;
+        height: 4136px;
+        width: 1440px;
+        margin: 0px;
+    }
     main {
         width: 540px;
         height: 597px;
         margin-left: 450px;
         margin-top: 214px;
-        background: gray;
-        /* background: #fefcf7; */
+        background: #fefcf7;
         border-radius: 8px;
+
+        position: fixed;
+        z-index: 3;
     }
     .order-summary-header {
         background: #333d4b;
         border-radius: 8px 8px 0px 0px;
         width: 540px;
         height: 136px;
+        margin-top: -33px;
     }
     .order-summary-title {
         font-family: "Fraunces", serif;
@@ -127,7 +150,7 @@
         font-weight: 900;
         font-size: 24px;
         line-height: 40px;
-        color: #ffffff;
+        color: #83888f;
         margin-top: -7px;
     }
     .order-summary-green-text {

@@ -3,6 +3,9 @@
     import Button from "../components/Button.svelte";
     import Footer from "../components/Footer.svelte";
 
+    import OrderSummaryPopUp from "../components/OrderSummaryPopUp.svelte";
+    let showOrderSummaryPopUp = false;
+
     let srcHeroBlackCup = "./images/images-subscribe/image-hero-blackcup.jpg";
 
     let srcBgSteps = "./images/images-subscribe/bg-steps.png";
@@ -56,9 +59,15 @@
             return "";
         }
     };
+
+    const togglePopUp = () => {
+        showOrderSummaryPopUp = !showOrderSummaryPopUp;
+    };
 </script>
 
 <main>
+    <OrderSummaryPopUp {showOrderSummaryPopUp} on:click={togglePopUp} />
+    
     <Header />
 
     <!-- section-create-plan -->
@@ -352,8 +361,8 @@
     </div>
 
     <!-- section-order-summary-btn -->
-    <div class="order-summary-btn">
-        <Button />
+    <div class="order-summary-btn" on:click={togglePopUp}>
+        <Button>Create your plan</Button>
     </div>
 
     <!-- section-footer -->
