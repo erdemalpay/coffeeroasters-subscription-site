@@ -67,7 +67,6 @@
 
 <main>
     <OrderSummaryPopUp {showOrderSummaryPopUp} on:click={togglePopUp} />
-    
     <Header />
 
     <!-- section-create-plan -->
@@ -362,7 +361,7 @@
 
     <!-- section-order-summary-btn -->
     <div class="order-summary-btn" on:click={togglePopUp}>
-        <Button>Create your plan</Button>
+        <Button buttonName="Create my plan!" />
     </div>
 
     <!-- section-footer -->

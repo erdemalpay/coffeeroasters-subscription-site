@@ -32,7 +32,7 @@
                 directly to your door, at your schedule.
             </p>
         </div>
-        <Button />
+        <Button buttonName="Create your plan" />
     </div>
 
     <!-- section-our-collection -->
@@ -181,7 +181,7 @@
         </div>
 
         <div class="how-it-works-btn">
-            <Button />
+            <Button buttonName="Create your plan" />
         </div>
     </div>
     <Footer />

@@ -1,4 +1,6 @@
 <script>
+    import Button from "../components/Button.svelte";
+
     let valuePreferences = "";
     let valueBeanType = "";
     let valueQuantity = "";
@@ -94,7 +96,9 @@
 
         <div class="order-summary-payment">
             <div class="order-summary-total">$14.00/ mo</div>
-            <button class="order-summary-btn">Checkout</button>
+            <div class="order-summary-btn">
+                <Button buttonName="Checkout" />
+            </div>
         </div>
     </main>
 {/if}
@@ -117,7 +121,6 @@
         margin-top: 214px;
         background: #fefcf7;
         border-radius: 8px;
-
         position: fixed;
         z-index: 3;
     }
@@ -184,23 +187,7 @@
         color: #333d4b;
     }
     .order-summary-btn {
-        background: #0e8784;
-        border-radius: 6px;
-        width: 217px;
-        height: 56px;
-        margin-left: 18px;
-        margin-top: -11px;
-
-        font-family: "Fraunces", serif;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 18px;
-        line-height: 25px;
-        text-align: center;
-        color: #fefcf7;
-        cursor: pointer;
-    }
-    .order-summary-btn:hover {
-        background: #66d2cf;
+        margin-left: -66px;
+        margin-top: -66px;
     }
 </style>
