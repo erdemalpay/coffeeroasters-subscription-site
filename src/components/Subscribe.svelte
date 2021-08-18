@@ -1,4 +1,8 @@
 <script>
+    import Choices from "./Choices.svelte";
+    import Choice from "./Choice.svelte";
+    import Questions from "./Questions.svelte";
+
     let isOpenPreferences = false;
     let isOpenBeanType = false;
     let isOpenQuantity = false;
@@ -12,9 +16,12 @@
     let priceEveryWeek = "";
     let priceEvery2Weeks = "";
     let priceEveryMonth = "";
-    const capsule = "Capsule";
-    const filter = "Filter";
-    const espresso = "Espresso";
+
+    const PREFERENCES = {
+        CAPSULE: "Capsule",
+        FILTER: "Filter",
+        ESPRESSO: "Espresso",
+    };
 
     $: {
         if (valueQuantity == "250g") {
@@ -35,232 +42,46 @@
 
 <main>
     <div class="accordion-menu">
-        <div class="questions">
-            <button class="accordion" on:click={() => (isOpenPreferences = !isOpenPreferences)}> How do you drink your coffee? </button>
-            <div>
-                {#if isOpenPreferences}
-                    <img src="../images/iconArrow-up.svg" alt="arrow up" />
-                {:else}
-                    <img src="../images/iconArrow-down.svg" alt="arrow down" />
-                {/if}
-            </div>
-        </div>
-        <div class="panel choices" class:open-panel={isOpenPreferences}>
-            <div
-                class="choice-box"
-                class:selected={valuePreferences == capsule}
-                on:click={() => {
-                    valuePreferences = capsule;
+        <Questions bind:isOpen={isOpenPreferences} buttonText="How do you drink your coffee?" />
+        <Choices bind:isOpen={isOpenPreferences}>
+            <Choice
+                bind:value={valuePreferences}
+                choiceValue="Capsule"
+                subText="Compatible with Nespresso systems and similar brewers"
+                clickHandler={() => {
                     valueGrindOption = "";
                     isOpenGrindOption = false;
                 }}
-            >
-                <h2 class="sub-heading">Capsule</h2>
-                <p class="sub-text">Compatible with Nespresso systems and similar brewers</p>
-            </div>
-            <div class="choice-box" class:selected={valuePreferences == filter} on:click={() => (valuePreferences = "Filter")}>
-                <h2 class="sub-heading">Filter</h2>
-                <p class="sub-text">For pour over or drip methods like Aeropress, Chemex, and V60</p>
-            </div>
-            <div class="choice-box" class:selected={valuePreferences == espresso} on:click={() => (valuePreferences = "Espresso")}>
-                <h2 class="sub-heading">Espresso</h2>
-                <p class="sub-text">Dense and finely ground beans for an intense, flavorful experience</p>
-            </div>
-        </div>
-        <div class="questions" on:click={() => (isOpenBeanType = !isOpenBeanType)}>
-            <button class="accordion"> What type of coffee? </button>
-            <div>
-                {#if isOpenBeanType}
-                    <img src="../images/iconArrow-up.svg" alt="arrow up" />
-                {:else}
-                    <img src="../images/iconArrow-down.svg" alt="arrow down" />
-                {/if}
-            </div>
-        </div>
-        <div class="panel choices" class:open-panel={isOpenBeanType}>
-            <div class="choice-box" class:selected={valueBeanType == "Single Origin"} on:click={() => (valueBeanType = "Single Origin")}>
-                <h2 class="sub-heading">Single Origin</h2>
-                <p class="sub-text">Distinct, high quality coffee from a specific family-owned farm</p>
-            </div>
-            <div class="choice-box" class:selected={valueBeanType == "Decaf"} on:click={() => (valueBeanType = "Decaf")}>
-                <h2 class="sub-heading">Decaf</h2>
-                <p class="sub-text">Just like regular coffee, except the caffeine has been removed</p>
-            </div>
-            <div class="choice-box" class:selected={valueBeanType == "Blended"} on:click={() => (valueBeanType = "Blended")}>
-                <h2 class="sub-heading">Blended</h2>
-                <p class="sub-text">Combination of two or three dark roasted beans of organic coffees</p>
-            </div>
-        </div>
-        <div class="questions" on:click={() => (isOpenQuantity = !isOpenQuantity)}>
-            <button class="accordion"> How much would you like? </button>
-            <div>
-                {#if isOpenQuantity}
-                    <img src="../images/iconArrow-up.svg" alt="arrow up" />
-                {:else}
-                    <img src="../images/iconArrow-down.svg" alt="arrow down" />
-                {/if}
-            </div>
-        </div>
-        <div class="panel choices" class:open-panel={isOpenQuantity}>
-            <div
-                class="choice-box"
-                class:selected={valueQuantity == "250g"}
-                on:click={() => {
-                    valueQuantity = "250g";
-                }}
-            >
-                <h2 class="sub-heading">250g</h2>
-                <p class="sub-text">Perfect for the solo drinker. Yields about 12 delicious cups.</p>
-            </div>
-            <div class="choice-box" class:selected={valueQuantity == "500g"} on:click={() => (valueQuantity = "500g")}>
-                <h2 class="sub-heading">500g</h2>
-                <p class="sub-text">Perfect option for a couple. Yields about 40 delectable cups.</p>
-            </div>
-            <div class="choice-box" class:selected={valueQuantity == "1000g"} on:click={() => (valueQuantity = "1000g")}>
-                <h2 class="sub-heading">1000g</h2>
-                <p class="sub-text">Perfect for offices and events. Yields about 90 delightful cups.</p>
-            </div>
-        </div>
-        {#if valuePreferences != capsule}
-            <div class="questions" on:click={() => (isOpenGrindOption = !isOpenGrindOption)}>
-                <button class="accordion"> Want us to grind them? </button>
-                <div>
-                    {#if isOpenGrindOption}
-                        <img src="../images/iconArrow-up.svg" alt="arrow up" />
-                    {:else}
-                        <img src="../images/iconArrow-down.svg" alt="arrow down" />
-                    {/if}
-                </div>
-            </div>
-        {/if}
+            />
+            <Choice bind:value={valuePreferences} choiceValue="Filter" subText="For pour over or drip methods like Aeropress, Chemex, and V60" />
+            <Choice bind:value={valuePreferences} choiceValue="Espresso" subText="Dense and finely ground beans for an intense, flavorful experience" />
+        </Choices>
+        <Questions bind:isOpen={isOpenBeanType} buttonText="What type of coffee?" />
+        <Choices bind:isOpen={isOpenBeanType}>
+            <Choice bind:value={valueBeanType} choiceValue="Single Origin" subText="Distinct, high quality coffee from a specific family-owned farm" />
+            <Choice bind:value={valueBeanType} choiceValue="Decaf" subText="Just like regular coffee, except the caffeine has been removed" />
+            <Choice bind:value={valueBeanType} choiceValue="Blended" subText="Combination of two or three dark roasted beans of organic coffees" />
+        </Choices>
 
-        {#if valuePreferences == capsule}
-            <div class="questions">
-                <button class="accordion"> Whant us to grind them? </button>
-                <div>
-                    <img src="../images/iconArrow-down.svg" alt="arrow down" />
-                </div>
-            </div>
-        {/if}
+        <Questions bind:isOpen={isOpenQuantity} buttonText="How much would you like?" />
+        <Choices bind:isOpen={isOpenQuantity}>
+            <Choice bind:value={valueQuantity} choiceValue="250g" subText="Perfect for the solo drinker. Yields about 12 delicious cups." />
+            <Choice bind:value={valueQuantity} choiceValue="500g" subText="Perfect option for a couple. Yields about 40 delectable cups." />
+            <Choice bind:value={valueQuantity} choiceValue="1000g" subText="Perfect for offices and events. Yields about 90 delightful cups." />
+        </Choices>
 
-        <div class="panel choices" class:open-panel={isOpenGrindOption && valuePreferences != capsule}>
-            <div class="choice-box" class:selected={valueGrindOption == "Wholebean"} on:click={() => (valueGrindOption = "Wholebean")}>
-                <h2 class="sub-heading">Wholebean</h2>
-                <p class="sub-text">Best choice if you cherish the full sensory experience</p>
-            </div>
-            <div class="choice-box" class:selected={valueGrindOption == "Filter"} on:click={() => (valueGrindOption = "Filter")}>
-                <h2 class="sub-heading">Filter</h2>
-                <p class="sub-text">For drip or pour-over coffee methods such as V60 or Aeropress.</p>
-            </div>
-            <div class="choice-box" class:selected={valueGrindOption == "Cafetiére"} on:click={() => (valueGrindOption = "Cafetiére")}>
-                <h2 class="sub-heading">Cafetiére</h2>
-                <p class="sub-text">Course ground beans specially suited for french press coffee</p>
-            </div>
-        </div>
-        <div class="questions" on:click={() => (isOpenDeliveries = !isOpenDeliveries)}>
-            <button class="accordion"> How often should we deliver? </button>
-            <div>
-                {#if isOpenDeliveries}
-                    <img src="../images/iconArrow-up.svg" alt="arrow up" />
-                {:else}
-                    <img src="../images/iconArrow-down.svg" alt="arrow down" />
-                {/if}
-            </div>
-        </div>
-        <div class="panel choices" class:open-panel={isOpenDeliveries}>
-            <div class="choice-box" class:selected={valueDeliveries == "Every week"} on:click={() => (valueDeliveries = "Every week")}>
-                <h2 class="sub-heading">Every week</h2>
-                <p class="sub-text">${priceEveryWeek} per shipment. Includes free first-class shipping.</p>
-            </div>
-            <div class="choice-box" class:selected={valueDeliveries == "Every 2 weeks"} on:click={() => (valueDeliveries = "Every 2 weeks")}>
-                <h2 class="sub-heading">Every 2 weeks</h2>
-                <p class="sub-text">${priceEvery2Weeks} per shipment. Includes free priority shipping.</p>
-            </div>
-            <div class="choice-box" class:selected={valueDeliveries == "Every month"} on:click={() => (valueDeliveries = "Every month")}>
-                <h2 class="sub-heading">Every month</h2>
-                <p class="sub-text">${priceEveryMonth} per shipment. Includes free priority shipping.</p>
-            </div>
-        </div>
+        <Questions bind:isOpen={isOpenGrindOption} buttonText="Want us to grind them?" openable={valuePreferences != PREFERENCES.CAPSULE} />
+        <Choices bind:isOpen={isOpenGrindOption}>
+            <Choice bind:value={valueGrindOption} choiceValue="Wholebean" subText="Best choice if you cherish the full sensory experience" />
+            <Choice bind:value={valueGrindOption} choiceValue="Filter" subText="For drip or pour-over coffee methods such as V60 or Aeropress." />
+            <Choice bind:value={valueGrindOption} choiceValue="Cafetiére" subText="Course ground beans specially suited for french press coffee" />
+        </Choices>
+
+        <Questions bind:isOpen={isOpenDeliveries} buttonText="How often should we deliver?" />
+        <Choices bind:isOpen={isOpenDeliveries}>
+            <Choice bind:value={valueDeliveries} choiceValue="Every week" subText="${priceEveryWeek} per shipment. Includes free first-class shipping." />
+            <Choice bind:value={valueDeliveries} choiceValue="Every 2 weeks" subText="${priceEvery2Weeks} per shipment. Includes free priority shipping." />
+            <Choice bind:value={valueDeliveries} choiceValue="Every month" subText="${priceEveryMonth} per shipment. Includes free priority shipping." />
+        </Choices>
     </div>
 </main>
-
-<style>
-    /* Style of the buttons that are used to open and close the accordion panel */
-    .accordion {
-        cursor: pointer;
-        padding: 18px;
-        width: 730px;
-        text-align: left;
-        border: none;
-        outline: none;
-        transition: 0.4s;
-        font-family: Fraunces;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 40px;
-        line-height: 48px;
-        color: #83888f;
-        background-color: white;
-    }
-    .panel {
-        background-color: white;
-        display: block;
-        height: 0px;
-        overflow: hidden;
-        width: 730px;
-    }
-    .open-panel {
-        height: 306px;
-    }
-    .choices {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 88px;
-    }
-    .choice-box {
-        width: 228px;
-        height: 250px;
-        background-color: #f4f1eb;
-        border-radius: 8px;
-        margin-top: 56px;
-        cursor: pointer;
-    }
-    .selected {
-        background-color: #0e8784;
-    }
-    .choice-box:hover {
-        background-color: #fdd6ba;
-        cursor: pointer;
-    }
-    .selected:hover {
-        background-color: #0e8784;
-    }
-    .sub-heading {
-        font-family: Fraunces;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 24px;
-        line-height: 32px;
-        color: #333d4b;
-        margin: 0px 28px;
-        margin-top: 32px;
-    }
-    .sub-text {
-        font-family: Barlow;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 26px;
-        color: #333d4b;
-        margin: 0px 28px;
-        margin-top: 24px;
-    }
-    .questions {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 730px;
-    }
-</style>
