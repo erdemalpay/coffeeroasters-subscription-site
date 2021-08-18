@@ -36,7 +36,7 @@
         display: flex;
         float: right;
         margin-top: 50px;
-        margin-right: 81px;
+        margin-right: 200px;
     }
     li {
         display: flex;
