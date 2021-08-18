@@ -1,8 +1,6 @@
 <script>
-    import Header from "../components/Header.svelte";
     import Button from "../components/Button.svelte";
-    import Footer from "../components/Footer.svelte";
-
+    
     let srcHeroCoffeepress = "./images/images-home/image-hero-coffeepress.jpg";
     let srcGranEspresso = "./images/images-home/image-gran-espresso.png";
     let srcPlanalto = "./images/images-home/image-planalto.png";
@@ -15,7 +13,6 @@
 </script>
 
 <main>
-    <Header />
     <!-- section-coffeepresso -->
     <div class="section-coffeepresso">
         <img
@@ -184,7 +181,6 @@
             <Button buttonName="Create your plan" />
         </div>
     </div>
-    <Footer />
 </main>
 
 <style>

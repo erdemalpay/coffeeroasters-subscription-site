@@ -3,54 +3,15 @@
 
     import OrderSummaryContent from "../components/OrderSummaryContent.svelte";
 
-    let valuePreferences = "";
-    let valueBeanType = "";
-    let valueQuantity = "";
-    let valueGrindOption = "";
-    let valueDeliveries = "";
-    let valueDefault = "_____";
+    export let valuePreferences;
+    export let valueBeanType;
+    export let valueQuantity;
+    export let valueGrindOption;
+    export let valueDeliveries;
 
     export let showOrderSummaryPopUp;
     export let closeOrderSummaryPopUp;
 
-    /* const valueOrder = (value) => {
-        if (!value) {
-            return valueDefault;
-        } else {
-            return value;
-        }
-    };
-
-    const valueGrindOptionOrder = (valueGrindOption, valuePreferences) => {
-        if (valuePreferences == "Capsule") {
-            return "";
-        }
-        if (!valueGrindOption) {
-            return valueDefault;
-        } else {
-            return valueGrindOption;
-        }
-    };
-
-    const wordChangeOrder = (valuePreferences) => {
-        if (valuePreferences == "Capsule") {
-            return "using";
-        } else {
-            return "as";
-        }
-    };
-
-    const removeGrindPartOrder = (valuePreferences) => {
-        if (
-            valuePreferences == "Filter" ||
-            valuePreferences == "Espresso" ||
-            valuePreferences == ""
-        ) {
-            return "ground ala";
-        } else if (valuePreferences == "Capsule") {
-            return "";
-        }
-    }; */
 </script>
 
 {#if showOrderSummaryPopUp}
@@ -64,7 +25,13 @@
             <h2 class="order-summary-title">Order Summary</h2>
         </div>
 
-        <OrderSummaryContent />
+        <OrderSummaryContent
+            bind:valuePreferences
+            bind:valueBeanType
+            bind:valueQuantity
+            bind:valueGrindOption
+            bind:valueDeliveries
+        />
 
         <p class="order-summary-remind">
             Is this correct? You can proceed to checkout or go back to<br />

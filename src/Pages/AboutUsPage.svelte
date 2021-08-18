@@ -1,7 +1,4 @@
 <script>
-    import Header from "../components/Header.svelte";
-    import Footer from "../components/Footer.svelte";
-
     let srcHeroWhiteCup = "./images/images-about-us/image-hero-whitecup.jpg";
 
     let srcCommitment = "./images/images-about-us/image-commitment.jpg";
@@ -15,8 +12,6 @@
 </script>
 
 <main>
-    <Header />
-
     <!-- section-about-us -->
     <div class="section-about-us">
         <img
@@ -129,11 +124,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- section-footer -->
-    <div class="headquarters-footer">
-        <Footer />
     </div>
 </main>
 
@@ -338,10 +328,5 @@
         line-height: 26px;
         color: #333d4b;
         margin-top: -9px;
-    }
-
-    /* section-footer */
-    .headquarters-footer {
-        margin-top: -151px;
     }
 </style>

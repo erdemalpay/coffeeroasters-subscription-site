@@ -1,6 +1,4 @@
 <script>
-    /* import SubscribePage from "../pages/SubscribePage.svelte"; */
-
     export let valuePreferences;
     export let valueBeanType;
     export let valueQuantity;
