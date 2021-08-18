@@ -4,6 +4,8 @@
     import Footer from "../components/Footer.svelte";
 
     import OrderSummaryPopUp from "../components/OrderSummaryPopUp.svelte";
+
+    import OrderSummaryContent from "../components/OrderSummaryContent.svelte";
     let showOrderSummaryPopUp = false;
 
     let srcHeroBlackCup = "./images/images-subscribe/image-hero-blackcup.jpg";
@@ -14,53 +16,44 @@
 
     let srcBgOrderSummary = "./images/images-subscribe/bg-order-summary.png";
 
-    let valuePreferences = "";
-    let valueBeanType = "";
-    let valueQuantity = "";
-    let valueGrindOption = "";
-    let valueDeliveries = "";
-    let valueDefault = "_____";
+    let valuePreferences = "_____";
+    let valueBeanType = "_____";
+    let valueQuantity = "_____";
+    let valueGrindOption = "_____";
+    let valueDeliveries = "_____";
+    /* let valueDefault = "_____"; */
 
-    const valueOrder = (value) => {
-        if (!value) {
-            return valueDefault;
-        } else {
-            return value;
-        }
-    };
+    /* esranın kodu */
+    let isOpenPreferences = false;
+    let isOpenBeanType = false;
+    let isOpenQuantity = false;
+    let isOpenGrindOption = false;
+    let isOpenDeliveries = false;
+    let priceEveryWeek = "";
+    let priceEvery2Weeks = "";
+    let priceEveryMonth = "";
+    const capsule = "Capsule";
+    const filter = "Filter";
+    const espresso = "Espresso";
 
-    const valueGrindOptionOrder = (valueGrindOption, valuePreferences) => {
-        if (valuePreferences == "Capsule") {
-            return "";
+    $: {
+        if (valueQuantity == "250g") {
+            priceEveryWeek = "7.20";
+            priceEvery2Weeks = "9.60";
+            priceEveryMonth = "12.00";
+        } else if (valueQuantity == "500g") {
+            priceEveryWeek = "13.00";
+            priceEvery2Weeks = "17.50";
+            priceEveryMonth = "22.00";
+        } else if (valueQuantity == "1000g") {
+            priceEveryWeek = "22.00";
+            priceEvery2Weeks = "32.00";
+            priceEveryMonth = "42.00";
         }
-        if (!valueGrindOption) {
-            return valueDefault;
-        } else {
-            return valueGrindOption;
-        }
-    };
+    }
+    /* esranın kodu */
 
-    const wordChangeOrder = (valuePreferences) => {
-        if (valuePreferences == "Capsule") {
-            return "using";
-        } else {
-            return "as";
-        }
-    };
-
-    const removeGrindPartOrder = (valuePreferences) => {
-        if (
-            valuePreferences == "Filter" ||
-            valuePreferences == "Espresso" ||
-            valuePreferences == ""
-        ) {
-            return "ground ala";
-        } else if (valuePreferences == "Capsule") {
-            return "";
-        }
-    };
-
-    const togglePopUp = () => {
+    export const togglePopUp = () => {
         showOrderSummaryPopUp = !showOrderSummaryPopUp;
     };
 </script>
@@ -167,161 +160,294 @@
 
     <!-- section-accordion-menu -->
     <div class="section-accordion-menu">
-        <div class="section-accordion-menu-1">
-            <div class="section-accordion-title">
-                <h2 class="section-accordion-menu-header">
+        <!-- esranın kodu -->
+        <div class="accordion-menu">
+            <div class="questions">
+                <button
+                    class="accordion"
+                    on:click={() => (isOpenPreferences = !isOpenPreferences)}
+                >
                     How do you drink your coffee?
-                </h2>
+                </button>
+                <div>
+                    {#if isOpenPreferences}
+                        <img src="../images/iconArrow-up.svg" alt="arrow up" />
+                    {:else}
+                        <img
+                            src="../images/iconArrow-down.svg"
+                            alt="arrow down"
+                        />
+                    {/if}
+                </div>
             </div>
-            <button class="btn-arrow"
-                ><img
-                    src={srcIconArrow}
-                    class="srcIconArrow-photo"
-                    alt="Icon Arrow"
-                /></button
+            <div class="panel choices" class:open-panel={isOpenPreferences}>
+                <div
+                    class="choice-box"
+                    class:selected={valuePreferences == capsule}
+                    on:click={() => {
+                        valuePreferences = capsule;
+                        valueGrindOption = "";
+                        isOpenGrindOption = false;
+                    }}
+                >
+                    <h2 class="sub-heading">Capsule</h2>
+                    <p class="sub-text">
+                        Compatible with Nespresso systems and similar brewers
+                    </p>
+                </div>
+                <div
+                    class="choice-box"
+                    class:selected={valuePreferences == filter}
+                    on:click={() => (valuePreferences = "Filter")}
+                >
+                    <h2 class="sub-heading">Filter</h2>
+                    <p class="sub-text">
+                        For pour over or drip methods like Aeropress, Chemex,
+                        and V60
+                    </p>
+                </div>
+                <div
+                    class="choice-box"
+                    class:selected={valuePreferences == espresso}
+                    on:click={() => (valuePreferences = "Espresso")}
+                >
+                    <h2 class="sub-heading">Espresso</h2>
+                    <p class="sub-text">
+                        Dense and finely ground beans for an intense, flavorful
+                        experience
+                    </p>
+                </div>
+            </div>
+            <div
+                class="questions"
+                on:click={() => (isOpenBeanType = !isOpenBeanType)}
             >
-
-            <!-- <div class="accordion-panels">
-                <div class="accordion-panel_1">
-                    <div class="accordion-part_1">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
-                    <div class="accordion-part_2">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
-                    <div class="accordion-part_3">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
+                <button class="accordion"> What type of coffee? </button>
+                <div>
+                    {#if isOpenBeanType}
+                        <img src="../images/iconArrow-up.svg" alt="arrow up" />
+                    {:else}
+                        <img
+                            src="../images/iconArrow-down.svg"
+                            alt="arrow down"
+                        />
+                    {/if}
+                </div>
+            </div>
+            <div class="panel choices" class:open-panel={isOpenBeanType}>
+                <div
+                    class="choice-box"
+                    class:selected={valueBeanType == "Single Origin"}
+                    on:click={() => (valueBeanType = "Single Origin")}
+                >
+                    <h2 class="sub-heading">Single Origin</h2>
+                    <p class="sub-text">
+                        Distinct, high quality coffee from a specific
+                        family-owned farm
+                    </p>
+                </div>
+                <div
+                    class="choice-box"
+                    class:selected={valueBeanType == "Decaf"}
+                    on:click={() => (valueBeanType = "Decaf")}
+                >
+                    <h2 class="sub-heading">Decaf</h2>
+                    <p class="sub-text">
+                        Just like regular coffee, except the caffeine has been
+                        removed
+                    </p>
+                </div>
+                <div
+                    class="choice-box"
+                    class:selected={valueBeanType == "Blended"}
+                    on:click={() => (valueBeanType = "Blended")}
+                >
+                    <h2 class="sub-heading">Blended</h2>
+                    <p class="sub-text">
+                        Combination of two or three dark roasted beans of
+                        organic coffees
+                    </p>
+                </div>
+            </div>
+            <div
+                class="questions"
+                on:click={() => (isOpenQuantity = !isOpenQuantity)}
+            >
+                <button class="accordion"> How much would you like? </button>
+                <div>
+                    {#if isOpenQuantity}
+                        <img src="../images/iconArrow-up.svg" alt="arrow up" />
+                    {:else}
+                        <img
+                            src="../images/iconArrow-down.svg"
+                            alt="arrow down"
+                        />
+                    {/if}
+                </div>
+            </div>
+            <div class="panel choices" class:open-panel={isOpenQuantity}>
+                <div
+                    class="choice-box"
+                    class:selected={valueQuantity == "250g"}
+                    on:click={() => {
+                        valueQuantity = "250g";
+                    }}
+                >
+                    <h2 class="sub-heading">250g</h2>
+                    <p class="sub-text">
+                        Perfect for the solo drinker. Yields about 12 delicious
+                        cups.
+                    </p>
+                </div>
+                <div
+                    class="choice-box"
+                    class:selected={valueQuantity == "500g"}
+                    on:click={() => (valueQuantity = "500g")}
+                >
+                    <h2 class="sub-heading">500g</h2>
+                    <p class="sub-text">
+                        Perfect option for a couple. Yields about 40 delectable
+                        cups.
+                    </p>
+                </div>
+                <div
+                    class="choice-box"
+                    class:selected={valueQuantity == "1000g"}
+                    on:click={() => (valueQuantity = "1000g")}
+                >
+                    <h2 class="sub-heading">1000g</h2>
+                    <p class="sub-text">
+                        Perfect for offices and events. Yields about 90
+                        delightful cups.
+                    </p>
+                </div>
+            </div>
+            {#if valuePreferences != capsule}
+                <div
+                    class="questions"
+                    on:click={() => (isOpenGrindOption = !isOpenGrindOption)}
+                >
+                    <button class="accordion"> Want us to grind them? </button>
+                    <div>
+                        {#if isOpenGrindOption}
+                            <img
+                                src="../images/iconArrow-up.svg"
+                                alt="arrow up"
+                            />
+                        {:else}
+                            <img
+                                src="../images/iconArrow-down.svg"
+                                alt="arrow down"
+                            />
+                        {/if}
                     </div>
                 </div>
-            </div> -->
-        </div>
+            {/if}
 
-        <div class="section-accordion-menu-2">
-            <div class="section-accordion-title">
-                <h2 class="section-accordion-menu-header">
-                    What type of coffee?
-                </h2>
-            </div>
-            <button class="btn-arrow"
-                ><img
-                    src={srcIconArrow}
-                    class="srcIconArrow-photo"
-                    alt="Icon Arrow"
-                /></button
-            >
-            <!-- <div class="accordion-panels">
-                <div class="accordion-panel_1">
-                    <div class="accordion-part_1">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
-                    <div class="accordion-part_2">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
-                    <div class="accordion-part_3">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
+            {#if valuePreferences == capsule}
+                <div class="questions">
+                    <button class="accordion"> Whant us to grind them? </button>
+                    <div>
+                        <img
+                            src="../images/iconArrow-down.svg"
+                            alt="arrow down"
+                        />
                     </div>
                 </div>
-            </div> -->
-        </div>
+            {/if}
 
-        <div class="section-accordion-menu-3">
-            <div class="section-accordion-title">
-                <h2 class="section-accordion-menu-header">
-                    How much would you like?
-                </h2>
-            </div>
-            <button class="btn-arrow"
-                ><img
-                    src={srcIconArrow}
-                    class="srcIconArrow-photo"
-                    alt="Icon Arrow"
-                /></button
+            <div
+                class="panel choices"
+                class:open-panel={isOpenGrindOption &&
+                    valuePreferences != capsule}
             >
-            <!-- <div class="accordion-panels">
-                <div class="accordion-panel_1">
-                    <div class="accordion-part_1">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
-                    <div class="accordion-part_2">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
-                    <div class="accordion-part_3">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
+                <div
+                    class="choice-box"
+                    class:selected={valueGrindOption == "Wholebean"}
+                    on:click={() => (valueGrindOption = "Wholebean")}
+                >
+                    <h2 class="sub-heading">Wholebean</h2>
+                    <p class="sub-text">
+                        Best choice if you cherish the full sensory experience
+                    </p>
                 </div>
-            </div> -->
-        </div>
-
-        <div class="section-accordion-menu-4">
-            <div class="section-accordion-title">
-                <h2 class="section-accordion-menu-header">
-                    Want us to grind them?
-                </h2>
+                <div
+                    class="choice-box"
+                    class:selected={valueGrindOption == "Filter"}
+                    on:click={() => (valueGrindOption = "Filter")}
+                >
+                    <h2 class="sub-heading">Filter</h2>
+                    <p class="sub-text">
+                        For drip or pour-over coffee methods such as V60 or
+                        Aeropress.
+                    </p>
+                </div>
+                <div
+                    class="choice-box"
+                    class:selected={valueGrindOption == "Cafetiére"}
+                    on:click={() => (valueGrindOption = "Cafetiére")}
+                >
+                    <h2 class="sub-heading">Cafetiére</h2>
+                    <p class="sub-text">
+                        Course ground beans specially suited for french press
+                        coffee
+                    </p>
+                </div>
             </div>
-            <button class="btn-arrow"
-                ><img
-                    src={srcIconArrow}
-                    class="srcIconArrow-photo"
-                    alt="Icon Arrow"
-                /></button
+            <div
+                class="questions"
+                on:click={() => (isOpenDeliveries = !isOpenDeliveries)}
             >
-            <!-- <div class="accordion-panels">
-                <div class="accordion-panel_1">
-                    <div class="accordion-part_1">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
-                    <div class="accordion-part_2">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
-                    <div class="accordion-part_3">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-
-        <div class="section-accordion-menu-5">
-            <div class="section-accordion-title">
-                <h2 class="section-accordion-menu-header">
+                <button class="accordion">
                     How often should we deliver?
-                </h2>
-            </div>
-            <button class="btn-arrow"
-                ><img
-                    src={srcIconArrow}
-                    class="srcIconArrow-photo"
-                    alt="Icon Arrow"
-                /></button
-            >
-            <!-- <div class="accordion-panels">
-                <div class="accordion-panel_1">
-                    <div class="accordion-part_1">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
-                    <div class="accordion-part_2">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
-                    <div class="accordion-part_3">
-                        <h3 class="accordion-panel-header">Lorem ipsum</h3>
-                        <p class="accordion-panel-text">Lorem ipsum</p>
-                    </div>
+                </button>
+                <div>
+                    {#if isOpenDeliveries}
+                        <img src="../images/iconArrow-up.svg" alt="arrow up" />
+                    {:else}
+                        <img
+                            src="../images/iconArrow-down.svg"
+                            alt="arrow down"
+                        />
+                    {/if}
                 </div>
-            </div> -->
+            </div>
+            <div class="panel choices" class:open-panel={isOpenDeliveries}>
+                <div
+                    class="choice-box"
+                    class:selected={valueDeliveries == "Every week"}
+                    on:click={() => (valueDeliveries = "Every week")}
+                >
+                    <h2 class="sub-heading">Every week</h2>
+                    <p class="sub-text">
+                        ${priceEveryWeek} per shipment. Includes free first-class
+                        shipping.
+                    </p>
+                </div>
+                <div
+                    class="choice-box"
+                    class:selected={valueDeliveries == "Every 2 weeks"}
+                    on:click={() => (valueDeliveries = "Every 2 weeks")}
+                >
+                    <h2 class="sub-heading">Every 2 weeks</h2>
+                    <p class="sub-text">
+                        ${priceEvery2Weeks} per shipment. Includes free priority
+                        shipping.
+                    </p>
+                </div>
+                <div
+                    class="choice-box"
+                    class:selected={valueDeliveries == "Every month"}
+                    on:click={() => (valueDeliveries = "Every month")}
+                >
+                    <h2 class="sub-heading">Every month</h2>
+                    <p class="sub-text">
+                        ${priceEveryMonth} per shipment. Includes free priority shipping.
+                    </p>
+                </div>
+            </div>
         </div>
+        <!-- esranın kodu -->
     </div>
 
     <!-- section-order-summary -->
@@ -333,29 +459,11 @@
         />
         <div class="section-order-summary-content">
             <h3 class="section-order-summary-header">ORDER SUMMARY</h3>
-            <div class="section-order-summary-text">
-                “I drink my coffee {wordChangeOrder(valuePreferences)}
-                <div class="order-summary-green-text">
-                    {valueOrder(valuePreferences)}
-                </div>
-                , with a
-                <div class="order-summary-green-text">
-                    {valueOrder(valueBeanType)}
-                </div>
-                type of bean.
-                <div class="order-summary-green-text">
-                    {valueOrder(valueQuantity)}
-                </div>
-                {removeGrindPartOrder(valuePreferences)}
-                <div class="order-summary-green-text">
-                    {valueGrindOptionOrder(valueGrindOption, valuePreferences)}
-                </div>
-                , sent to me
-                <div class="order-summary-green-text">
-                    {valueOrder(valueDeliveries)}
-                </div>
-                .”
-            </div>
+            <OrderSummaryContent bind:valuePreferences
+            bind:valueBeanType
+            bind:valueQuantity
+            bind:valuePreferences
+            bind:valuePreferences />
         </div>
     </div>
 
@@ -575,41 +683,87 @@
         grid-gap: 88px 88px;
         grid-template-rows: 48px 48px 48px 48px 48px;
     }
-    .section-accordion-menu-1,
-    .section-accordion-menu-2,
-    .section-accordion-menu-3,
-    .section-accordion-menu-4,
-    .section-accordion-menu-5 {
+
+    /* esranın kodu */
+    .accordion {
+        cursor: pointer;
+        padding: 18px;
         width: 730px;
-        height: 48px;
-    }
-    .section-accordion-title {
-        width: 730px;
-        height: 48px;
-        display: flex;
-        flex-direction: row;
-    }
-    .section-accordion-menu-header {
-        font-family: "Fraunces", serif;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+        font-family: Fraunces;
         font-style: normal;
         font-weight: 900;
         font-size: 40px;
         line-height: 48px;
         color: #83888f;
+        background-color: white;
     }
-    .btn-arrow {
-        margin-left: 800px;
-        margin-top: 0px;
+    .panel {
+        background-color: white;
+        display: block;
+        height: 0px;
+        overflow: hidden;
+        width: 730px;
     }
-    /* .accordion-panels {
-    .accordion-part_1,
-    .accordion-part_1,
-    .accordion-part_1 {
+    .open-panel {
+        height: 306px;
     }
-    .accordion-panel-header {
+    .choices {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 88px;
     }
-    .accordion-panel-text {
-    } */
+    .choice-box {
+        width: 228px;
+        height: 250px;
+        background-color: #f4f1eb;
+        border-radius: 8px;
+        margin-top: 56px;
+        cursor: pointer;
+    }
+    .selected {
+        background-color: #0e8784;
+    }
+    .choice-box:hover {
+        background-color: #fdd6ba;
+        cursor: pointer;
+    }
+    .selected:hover {
+        background-color: #0e8784;
+    }
+    .sub-heading {
+        font-family: Fraunces;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 32px;
+        color: #333d4b;
+        margin: 0px 28px;
+        margin-top: 32px;
+    }
+    .sub-text {
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        color: #333d4b;
+        margin: 0px 28px;
+        margin-top: 24px;
+    }
+    .questions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 730px;
+    }
+
+    /* esranın kodu */
 
     /* section-order-summary */
     .section-order-summary {
@@ -636,19 +790,6 @@
         color: #ffffff;
         mix-blend-mode: normal;
         opacity: 0.5;
-    }
-    .section-order-summary-text {
-        font-family: "Fraunces", serif;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 24px;
-        line-height: 40px;
-        color: #ffffff;
-        margin-top: -7px;
-    }
-    .order-summary-green-text {
-        display: inline;
-        color: #0e8784;
     }
 
     /* section-order-summary-btn */

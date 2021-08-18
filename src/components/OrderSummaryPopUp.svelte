@@ -1,5 +1,7 @@
 <script>
-    import Button from "../components/Button.svelte";
+    import Button from "./Button.svelte";
+
+    import OrderSummaryContent from "../components/OrderSummaryContent.svelte";
 
     let valuePreferences = "";
     let valueBeanType = "";
@@ -11,7 +13,7 @@
     export let showOrderSummaryPopUp;
     export let closeOrderSummaryPopUp;
 
-    const valueOrder = (value) => {
+    /* const valueOrder = (value) => {
         if (!value) {
             return valueDefault;
         } else {
@@ -48,7 +50,7 @@
         } else if (valuePreferences == "Capsule") {
             return "";
         }
-    };
+    }; */
 </script>
 
 {#if showOrderSummaryPopUp}
@@ -62,31 +64,7 @@
             <h2 class="order-summary-title">Order Summary</h2>
         </div>
 
-        <div class="section-order-summary-content">
-            <div class="section-order-summary-text">
-                “I drink my coffee {wordChangeOrder(valuePreferences)}
-                <div class="order-summary-green-text">
-                    {valueOrder(valuePreferences)}
-                </div>
-                , with a
-                <div class="order-summary-green-text">
-                    {valueOrder(valueBeanType)}
-                </div>
-                type of bean.
-                <div class="order-summary-green-text">
-                    {valueOrder(valueQuantity)}
-                </div>
-                {removeGrindPartOrder(valuePreferences)}
-                <div class="order-summary-green-text">
-                    {valueGrindOptionOrder(valueGrindOption, valuePreferences)}
-                </div>
-                , sent to me
-                <div class="order-summary-green-text">
-                    {valueOrder(valueDeliveries)}
-                </div>
-                .”
-            </div>
-        </div>
+        <OrderSummaryContent />
 
         <p class="order-summary-remind">
             Is this correct? You can proceed to checkout or go back to<br />
@@ -141,7 +119,7 @@
         padding-top: 48px;
         padding-left: 57px;
     }
-    .section-order-summary-content {
+    /* .section-order-summary-content {
         height: 160px;
         width: 428px;
         margin-left: 56px;
@@ -159,7 +137,7 @@
     .order-summary-green-text {
         display: inline;
         color: #0e8784;
-    }
+    } */
     .order-summary-remind {
         font-family: "Barlow", sans-serif;
         font-style: normal;
