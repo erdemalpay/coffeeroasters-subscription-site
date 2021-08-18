@@ -1,7 +1,9 @@
-<script></script>
+<script>
+    export let buttonName;
+</script>
 
 <main>
-    <button class="btn">Create your plan</button>
+    <button class="btn">{buttonName}</button>
 </main>
 
 <style>

@@ -1,0 +1,90 @@
+<script>
+    export let valuePreferences;
+    export let valueBeanType;
+    export let valueQuantity;
+    export let valueGrindOption;
+    export let valueDeliveries;
+    export let valueDefault;
+
+    export const valueOrder = (value) => {
+        if (!value) {
+            return valueDefault;
+        } else {
+            return value;
+        }
+    };
+
+    export const valueGrindOptionOrder = (
+        valueGrindOption,
+        valuePreferences
+    ) => {
+        if (valuePreferences == "Capsule") {
+            return "";
+        }
+        if (!valueGrindOption) {
+            return valueDefault;
+        } else {
+            return valueGrindOption;
+        }
+    };
+
+    export const wordChangeOrder = (valuePreferences) => {
+        if (valuePreferences == "Capsule") {
+            return "using";
+        } else {
+            return "as";
+        }
+    };
+
+    export const removeGrindPartOrder = (valuePreferences) => {
+        if (
+            valuePreferences == "Filter" ||
+            valuePreferences == "Espresso" ||
+            valuePreferences == ""
+        ) {
+            return "ground ala";
+        } else if (valuePreferences == "Capsule") {
+            return "";
+        }
+    };
+</script>
+
+<div class="section-order-summary-text">
+    “I drink my coffee {wordChangeOrder(valuePreferences)}
+    <div class="order-summary-green-text">
+        {valueOrder(valuePreferences)}
+    </div>
+    , with a
+    <div class="order-summary-green-text">
+        {valueOrder(valueBeanType)}
+    </div>
+    type of bean.
+    <div class="order-summary-green-text">
+        {valueOrder(valueQuantity)}
+    </div>
+    {removeGrindPartOrder(valuePreferences)}
+    <div class="order-summary-green-text">
+        {valueGrindOptionOrder(valueGrindOption, valuePreferences)}
+    </div>
+    , sent to me
+    <div class="order-summary-green-text">
+        {valueOrder(valueDeliveries)}
+    </div>
+    .”
+</div>
+
+<style>
+    .section-order-summary-text {
+        font-family: "Fraunces", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 40px;
+        color: #ffffff;
+        margin-top: -7px;
+    }
+    .order-summary-green-text {
+        display: inline;
+        color: #0e8784;
+    }
+</style>
