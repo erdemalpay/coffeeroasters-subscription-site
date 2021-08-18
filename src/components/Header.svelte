@@ -20,9 +20,12 @@
 </main>
 
 <style>
+    main {
+        width: 1440px;
+        height: 26px;
+    }
     .srcLogo {
-        margin-left: 80.1px;
-        margin-top: 43.56px;
+        margin: 43.56px 80.1px;
     }
     navbar {
         font-family: "Barlow", sans-serif;
@@ -35,13 +38,12 @@
     ul {
         display: flex;
         float: right;
-        margin-top: 50px;
-        margin-right: 81px;
+        margin: 50px 80px;
     }
     li {
         display: flex;
         flex-direction: column;
-        padding-left: 33px;
+        padding-left: 32px;
     }
     a {
         color: #83888f;
