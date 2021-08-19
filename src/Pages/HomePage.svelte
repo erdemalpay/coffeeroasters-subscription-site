@@ -241,10 +241,12 @@
 
     /* section-our-collection */
     .section-our-collection {
-        width: 1111px;
         height: 525px;
-        margin-left: 165px;
         margin-top: 222px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .our-collection-title-gradient {
         position: absolute;
@@ -275,44 +277,48 @@
         font-style: normal;
         text-align: center;
         color: #333d4b;
-        margin-top: 220px;
+        width: 1110px;
+        margin-top: 213px;
+        z-index: 1;
+    }
+    .coffee-1,
+    .coffee-2,
+    .coffee-3,
+    .coffee-4 {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
     }
     .coffee-title {
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 24px;
         line-height: 32px;
-        margin-top: 14px;
-        margin-left: -2px;
     }
     .coffee-text {
         font-family: "Barlow", sans-serif;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        margin-top: -1px;
-        margin-left: -3px;
+        margin-top: -2px;
     }
     .coffee-photos {
         position: absolute;
-        display: flex;
-        flex-direction: row;
-        margin-top: -17px;
+        margin-top: 55px;
+        margin-left: 10px;
         z-index: 1;
-        height: 180px;
-        width: 255px;
+
+        display: grid;
+        grid-template-columns: 255px 256px 256px 235px;
+        grid-gap: 30px 30px;
     }
-    .gran-espresso-photo {
-        margin-left: 20px;
-    }
-    .planalto-photo {
-        margin-left: 58px;
-    }
+    .gran-espresso-photo,
+    .planalto-photo,
     .piccollo-photo {
-        margin-left: 55px;
+        height: 180px;
     }
     .danche-photo {
-        margin-left: 55px;
+        height: 177px;
     }
 
     /* section-why-choose-us */
