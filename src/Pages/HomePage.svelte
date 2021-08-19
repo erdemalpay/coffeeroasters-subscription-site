@@ -1,6 +1,6 @@
 <script>
     import Button from "../components/Button.svelte";
-    
+
     let srcHeroCoffeepress = "./images/images-home/image-hero-coffeepress.jpg";
     let srcGranEspresso = "./images/images-home/image-gran-espresso.png";
     let srcPlanalto = "./images/images-home/image-planalto.png";
@@ -25,11 +25,13 @@
             <p class="coffeepresso-text">
                 Start your mornings with the world’s best coffees. Try our <br
                 />
-                expertly curated artisan coffees from our best roasters <br /> delivered
-                directly to your door, at your schedule.
+                expertly curated artisan coffees from our best roasters
+                <br /> delivered directly to your door, at your schedule.
             </p>
+            <div class="coffeepresso-btn">
+                <Button buttonName="Create your plan" />
+            </div>
         </div>
-        <Button buttonName="Create your plan" />
     </div>
 
     <!-- section-our-collection -->
@@ -187,14 +189,16 @@
     main {
         width: 1440px;
         height: 3595px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     /* section-coffeepresso */
     .section-coffeepresso {
-        width: 1280px;
         height: 600px;
-        margin-left: 78px;
-        margin-top: 39px;
+        margin-top: -43px;
     }
     .srcHeroCoffeepress-photo {
         background: #a2a2a2;
@@ -203,9 +207,14 @@
     }
     .coffeepresso-content {
         width: 493px;
-        height: 255px;
-        margin-left: 85px;
+        height: 367px;
+        margin-left: 80px;
         margin-top: -546px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: space-between;
     }
     .coffeepresso-title {
         font-family: "Fraunces", serif;
@@ -225,6 +234,9 @@
         color: #fefcf7;
         mix-blend-mode: normal;
         opacity: 0.8;
+    }
+    .coffeepresso-btn {
+        margin-top: 40px;
     }
 
     /* section-our-collection */
