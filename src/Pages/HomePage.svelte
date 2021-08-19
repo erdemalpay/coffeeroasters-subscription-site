@@ -89,8 +89,8 @@
             <h4 class="content-top-title">Why choose us?</h4>
             <p class="content-top-text">
                 A large part of our role is choosing which particular coffees
-                will be featured in our range. This means working closely with
-                the best coffee growers to give you a more impactful experience
+                will be featured<br/> in our range. This means working closely with
+                the best coffee growers to give <br/>you a more impactful experience
                 on every level.
             </p>
         </div>
@@ -124,7 +124,7 @@
                 <img src={srcTruck} class="truck" alt="Truck" />
                 <div class="box-content">
                     <h3 class="box-content-title-3">Free shipping</h3>
-                    <p class="box-content-text-3">
+                    <p class="box-content-text">
                         We cover the cost and coffee is delivered fast. Peak
                         freshness: guaranteed.
                     </p>
@@ -323,10 +323,11 @@
 
     /* section-why-choose-us */
     .section-why-choose-us {
-        width: 1280px;
         height: 728px;
-        margin-left: 80px;
-        margin-top: 113px;
+        margin-top: 117px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .why-choose-us-background {
         background: #2c343e;
@@ -338,7 +339,8 @@
     .content-top {
         width: 540px;
         height: 160px;
-        margin-left: 370px;
+        display: flex;
+        flex-direction: column;
         margin-top: -530px;
     }
     .content-top-title {
@@ -355,19 +357,19 @@
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
-        line-height: 26px;
+        line-height: 27px;
         text-align: center;
         color: #fefcf7;
         mix-blend-mode: normal;
         opacity: 0.8;
-        margin-top: -20px;
+        margin-top: -22px;
     }
     /* boxes */
     .why-choose-us-boxes {
         display: grid;
         grid-template-columns: 350px 350px 350px;
         grid-gap: 30px 30px;
-        margin-left: 85px;
+        margin-top: 139px;
     }
     .box-1,
     .box-2,
@@ -375,7 +377,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 87px;
         background: #0e8784;
         border-radius: 8px;
         width: 350px;
@@ -384,24 +385,19 @@
     .box-content {
         width: 255px;
         height: 134px;
-        margin-top: 33px;
         font-style: normal;
         text-align: center;
         color: #fefcf7;
+        margin-top: 33px;
     }
-    .box-content-title {
-        font-family: "Fraunces", serif;
-        font-weight: 900;
-        font-size: 24px;
-        line-height: 32px;
-        margin-left: -5px;
-    }
+    .box-content-title,
     .box-content-title-3 {
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 24px;
-        line-height: 32px;
-        margin-left: -5px;
+        line-height: 31px;
+    }
+    .box-content-title-3 {
         margin-top: 36px;
     }
     .box-content-text {
@@ -409,32 +405,13 @@
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        margin-left: -5px;
     }
-    .box-content-text-3 {
-        font-family: "Barlow", sans-serif;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 26px;
-        margin-left: -5px;
-        margin-top: 15px;
-    }
-    .coffee-bean {
-        width: 72px;
-        height: 72px;
-        margin-top: 72px;
-    }
+    .coffee-bean,
     .gift {
-        width: 72px;
-        height: 72px;
         margin-top: 72px;
-        margin-left: -10px;
     }
     .truck {
-        width: 72px;
-        height: 50px;
         margin-top: 82px;
-        margin-left: -10px;
     }
 
     /* section-how-it-works */
