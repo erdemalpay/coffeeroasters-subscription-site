@@ -3,29 +3,39 @@
 </script>
 
 <main>
-    <img src={srcLogo} class="srcLogo" alt="Cofferoasters Logo" />
-    <navbar>
-        <ul>
-            <li><a class="home" href="#/">HOME</a></li>
-            <li>
-                <a class="about-us" href="#/about">ABOUT US</a>
-            </li>
-            <li>
-                <a class="create-your-plan" href="#/subscribe"
-                    >CREATE YOUR PLAN</a
-                >
-            </li>
-        </ul>
-    </navbar>
+    <div class="header">
+        <img src={srcLogo} class="srcLogo" alt="Cofferoasters Logo" />
+        <navbar>
+            <ul>
+                <li><a class="home" href="#/">HOME</a></li>
+                <li>
+                    <a class="about-us" href="#/about">ABOUT US</a>
+                </li>
+                <li>
+                    <a class="create-your-plan" href="#/subscribe"
+                        >CREATE YOUR PLAN</a
+                    >
+                </li>
+            </ul>
+        </navbar>
+    </div>
 </main>
 
 <style>
     main {
         width: 1440px;
-        height: 26px;
+        height: 113px;
     }
     .srcLogo {
-        margin: 43.56px 80.1px;
+        width: 236px;
+        height: 26px;
+    }
+    .header {
+        width: 1280px;
+        height: 26px;
+        display: flex;
+        justify-content: space-between;
+        margin: 43px 80px;
     }
     navbar {
         font-family: "Barlow", sans-serif;
@@ -34,15 +44,16 @@
         font-size: 12px;
         line-height: 15px;
         letter-spacing: 0.92px;
+        display: flex;
+        align-items: flex-start;
+        text-align: center;
     }
     ul {
         display: flex;
-        float: right;
-        margin: 50px 80px;
+        justify-content: space-between;
     }
     li {
-        display: flex;
-        flex-direction: column;
+        margin-top: -5px;
         padding-left: 32px;
     }
     a {
