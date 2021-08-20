@@ -148,9 +148,9 @@
             </div>
             <div class="how-it-works-parts">
                 <div class="how-it-works-part-1">
-                    <h1 class="part-1-number">01</h1>
-                    <h3 class="part-1-header">Pick your <br />coffee</h3>
-                    <p class="part-1-text">
+                    <h1 class="part-number">01</h1>
+                    <h3 class="part-header">Pick your <br />coffee</h3>
+                    <p class="part-text">
                         Select from our evolving range of artisan coffees. Our
                         beans are ethically sourced and we pay fair prices for
                         them. There are new coffees in all profiles every month
@@ -158,9 +158,9 @@
                     </p>
                 </div>
                 <div class="how-it-works-part-2">
-                    <h1 class="part-1-number">02</h1>
-                    <h3 class="part-1-header">Choose the frequency</h3>
-                    <p class="part-1-text">
+                    <h1 class="part-number">02</h1>
+                    <h3 class="part-header">Choose the frequency</h3>
+                    <p class="part-text">
                         Customize your order frequency, quantity, even your
                         roast style and grind type. Pause, skip or cancel your
                         subscription with no commitment through our online
@@ -168,9 +168,9 @@
                     </p>
                 </div>
                 <div class="how-it-works-part-3">
-                    <h1 class="part-1-number">03</h1>
-                    <h3 class="part-1-header">Receive and enjoy!</h3>
-                    <p class="part-1-text">
+                    <h1 class="part-number">03</h1>
+                    <h3 class="part-header">Receive and enjoy!</h3>
+                    <p class="part-text">
                         We ship your package within 48 hours, freshly roasted.
                         Sit back and enjoy award-winning world-class coffees
                         curated to provide a distinct tasting experience.
@@ -187,7 +187,6 @@
 
 <style>
     main {
-        width: 1440px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -196,19 +195,15 @@
     /* section-coffeepresso */
     .section-coffeepresso {
         height: 600px;
-        margin-top: -43px;
     }
     .srcHeroCoffeepress-photo {
-        background: #a2a2a2;
         border-radius: 10px;
-        z-index: -1;
     }
     .coffeepresso-content {
         width: 493px;
         height: 367px;
-        margin-left: 80px;
+        margin-left: 85px;
         margin-top: -546px;
-
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -241,7 +236,6 @@
     .section-our-collection {
         height: 525px;
         margin-top: 222px;
-
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -276,8 +270,7 @@
         text-align: center;
         color: #333d4b;
         width: 1110px;
-        margin-top: 213px;
-        z-index: 1;
+        margin-top: 212px;
     }
     .coffee-1,
     .coffee-2,
@@ -303,7 +296,7 @@
     .coffee-photos {
         position: absolute;
         margin-top: 55px;
-        margin-left: 10px;
+        margin-left: 13px;
         z-index: 1;
 
         display: grid;
@@ -313,7 +306,7 @@
     .gran-espresso-photo,
     .planalto-photo,
     .piccollo-photo {
-        height: 180px;
+        height: 178px;
     }
     .danche-photo {
         height: 177px;
@@ -322,7 +315,7 @@
     /* section-why-choose-us */
     .section-why-choose-us {
         height: 728px;
-        margin-top: 117px;
+        margin-top: 116px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -332,13 +325,13 @@
         border-radius: 10px;
         width: 1280px;
         height: 577px;
-        z-index: -1;
     }
     .content-top {
         width: 540px;
         height: 160px;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         margin-top: -530px;
     }
     .content-top-title {
@@ -355,11 +348,10 @@
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
-        line-height: 27px;
+        line-height: 26px;
         text-align: center;
         color: #fefcf7;
         mix-blend-mode: normal;
-        opacity: 0.8;
         margin-top: -22px;
     }
     /* boxes */
@@ -475,10 +467,10 @@
         height: 355px;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: flex-start;
     }
-    .part-1-number {
+    .part-number {
         font-family: "Fraunces", serif;
         font-style: normal;
         font-weight: 900;
@@ -486,7 +478,7 @@
         line-height: 72px;
         color: #fdd6ba;
     }
-    .part-1-header {
+    .part-header {
         font-family: "Fraunces", serif;
         font-style: normal;
         font-weight: 900;
@@ -495,7 +487,7 @@
         color: #333d4b;
         margin-top: 38px;
     }
-    .part-1-text {
+    .part-text {
         font-family: "Barlow", sans-serif;
         font-style: normal;
         font-weight: normal;
@@ -505,6 +497,6 @@
         margin-top: 9px;
     }
     .how-it-works-btn {
-        margin-top: 147px;
+        margin-top: 155px;
     }
 </style>

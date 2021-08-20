@@ -25,6 +25,10 @@
     main {
         width: 1440px;
         height: 113px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
     }
     .srcLogo {
         width: 236px;
@@ -35,7 +39,6 @@
         height: 26px;
         display: flex;
         justify-content: space-between;
-        margin: 43px 80px;
     }
     navbar {
         font-family: "Barlow", sans-serif;
