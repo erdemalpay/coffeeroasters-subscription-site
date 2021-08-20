@@ -89,9 +89,9 @@
             <h4 class="content-top-title">Why choose us?</h4>
             <p class="content-top-text">
                 A large part of our role is choosing which particular coffees
-                will be featured<br/> in our range. This means working closely with
-                the best coffee growers to give <br/>you a more impactful experience
-                on every level.
+                will be featured<br /> in our range. This means working closely
+                with the best coffee growers to give <br />you a more impactful
+                experience on every level.
             </p>
         </div>
 
@@ -416,10 +416,12 @@
 
     /* section-how-it-works */
     .section-how-it-works {
-        width: 1045px;
         height: 565px;
-        margin-left: 164px;
-        margin-top: 203px;
+        margin-top: 177px;
+        margin-left: -65px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .how-it-works-header {
         font-family: "Fraunces", serif;
@@ -430,43 +432,35 @@
         color: #83888f;
     }
     .how-it-works-content {
-        width: 1045px;
         height: 453px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        margin-top: -36px;
+    }
+    .how-it-works-timeline {
+        margin-top: 167px;
+        width: 790px;
     }
     ul {
         display: flex;
-        float: left;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-left: -40px;
     }
     li {
         display: flex;
         flex-direction: column;
-        margin-left: 0px;
         height: 27px;
         width: 27px;
         border: 2px solid #0e8784;
         border-radius: 50%;
         background: #fefcf7;
     }
-    .how-it-works-timeline {
-        margin-top: 203px;
-    }
-    .how-it-works-oval-1 {
-        margin-left: -40px;
-        margin-top: -30px;
-    }
-    .how-it-works-oval-2 {
-        margin-left: 349px;
-        margin-top: -30px;
-    }
-    .how-it-works-oval-3 {
-        margin-left: 349px;
-        margin-top: -30px;
-    }
     .how-it-works-line {
         height: 2px;
-        width: 760px;
-        margin-left: 15.5px;
-        margin-top: -110px;
+        margin-top: -33px;
         border: 0px solid #fdd6ba;
         background: #fdd6ba;
         z-index: -1;
@@ -477,14 +471,14 @@
         grid-gap: 95px 95px;
         margin-top: 81px;
     }
-    .how-it-works-part-1 {
-        height: 355px;
-    }
-    .how-it-works-part-2 {
-        height: 355px;
-    }
+    .how-it-works-part-1,
+    .how-it-works-part-2,
     .how-it-works-part-3 {
         height: 355px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
     }
     .part-1-number {
         font-family: "Fraunces", serif;
@@ -499,9 +493,9 @@
         font-style: normal;
         font-weight: 900;
         font-size: 32px;
-        line-height: 36px;
+        line-height: 37px;
         color: #333d4b;
-        margin-top: 39px;
+        margin-top: 38px;
     }
     .part-1-text {
         font-family: "Barlow", sans-serif;
@@ -510,10 +504,9 @@
         font-size: 16px;
         line-height: 26px;
         color: #333d4b;
-        margin-top: 42px;
+        margin-top: 9px;
     }
     .how-it-works-btn {
-        margin-left: -85px;
-        margin-top: -6px;
+        margin-top: 147px;
     }
 </style>
