@@ -149,8 +149,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        /* align-content: space-around; */
-
         margin-left: 80px;
         margin-top: -350px;
     }
@@ -171,9 +169,11 @@
     /* section-commitment */
     .section-commitment {
         width: 1110px;
-        height: 520px;
-        margin-left: 163px;
-        margin-top: 171px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 168px;
     }
     .srcCommitment-photo {
         width: 445px;
@@ -183,8 +183,11 @@
     .commitment-content {
         width: 540px;
         height: 340px;
-        margin-left: 570px;
-        margin-top: -469px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        margin-top: -18px;
     }
     .commitment-title {
         font-family: "Fraunces", serif;
@@ -195,14 +198,15 @@
         color: #333d4b;
     }
     .commitment-text {
-        margin-top: -28px;
         font-family: "Barlow", sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
         color: #333d4b;
-        margin-top: -0px;
+        mix-blend-mode: normal;
+        opacity: 0.8;
+        margin-top: -1px;
     }
 
     /* section-quality */
