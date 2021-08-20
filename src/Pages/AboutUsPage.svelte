@@ -129,28 +129,30 @@
 
 <style>
     main {
-        width: 1440px;
-        height: 2891px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     /* section-about-us */
     .section-about-us {
-        width: 1280px;
         height: 450px;
-        margin-left: 78px;
-        margin-top: 39px;
     }
     .srcHeroWhiteCup-photo {
-        background: #a2a2a2;
         border-radius: 10px;
     }
     .about-us-content {
         width: 445px;
         height: 176px;
-        margin-left: 85px;
-        margin-top: -350px;
         font-style: normal;
         color: #fefcf7;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* align-content: space-around; */
+
+        margin-left: 80px;
+        margin-top: -350px;
     }
     .about-us-title {
         font-family: "Fraunces", serif;
