@@ -188,8 +188,6 @@
 <style>
     main {
         width: 1440px;
-        height: 3595px;
-
         display: flex;
         flex-direction: column;
         align-items: center;
