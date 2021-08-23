@@ -132,6 +132,7 @@
         </div>
     </div>
 
+    <!-- section-titles__accordion-menu -->
     <div class="section-titles__accordion-menu">
         <!-- section-titles -->
         <div class="section-titles">
@@ -292,31 +293,31 @@
                     />
                 </Choices>
             </div>
-        </div>
-    </div>
 
-    <!-- section-order-summary -->
-    <div class="section-order-summary">
-        <img
-            src={srcBgOrderSummary}
-            class="srcBgOrderSummary-photo"
-            alt="Bg Order Summary"
-        />
-        <div class="section-order-summary-content">
-            <h3 class="section-order-summary-header">ORDER SUMMARY</h3>
-            <OrderSummaryContent
-                bind:valuePreferences
-                bind:valueBeanType
-                bind:valueQuantity
-                bind:valueGrindOption
-                bind:valueDeliveries
-            />
-        </div>
-    </div>
+            <!-- section-order-summary -->
+            <div class="section-order-summary">
+                <img
+                    src={srcBgOrderSummary}
+                    class="srcBgOrderSummary-photo"
+                    alt="Bg Order Summary"
+                />
+                <div class="section-order-summary-content">
+                    <h3 class="section-order-summary-header">ORDER SUMMARY</h3>
+                    <OrderSummaryContent
+                        bind:valuePreferences
+                        bind:valueBeanType
+                        bind:valueQuantity
+                        bind:valueGrindOption
+                        bind:valueDeliveries
+                    />
+                </div>
+            </div>
 
-    <!-- section-order-summary-btn -->
-    <div class="order-summary-btn" on:click={togglePopUp}>
-        <Button buttonName="Create my plan!" />
+            <!-- section-order-summary-btn -->
+            <div class="order-summary-btn" on:click={togglePopUp}>
+                <Button buttonName="Create my plan!" />
+            </div>
+        </div>
     </div>
 </main>
 
@@ -462,6 +463,7 @@
         justify-content: space-between;
         margin-top: 169px;
     }
+    
     /* section-titles */
     .section-titles {
         width: 255px;
@@ -523,9 +525,9 @@
     /* section-order-summary */
     .section-order-summary {
         width: 730px;
-        height: 208px;
-        margin-left: 544px;
-        margin-top: -1408px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .srcBgOrderSummary-photo {
         border-radius: 10px;
@@ -533,7 +535,8 @@
     .section-order-summary-content {
         width: 602px;
         height: 154px;
-        margin-left: 64px;
+        display: flex;
+        flex-direction: column;
         margin-top: -181px;
     }
     .section-order-summary-header {
@@ -549,7 +552,9 @@
 
     /* section-order-summary-btn */
     .order-summary-btn {
-        margin-left: 971px;
-        margin-top: -16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 67px;
     }
 </style>
