@@ -66,21 +66,23 @@
     <div class="section-quality">
         <img src={srcBgQuality} class="srcBgQuality-photo" alt="Bg Quality" />
         <div class="quality-content">
-            <h2 class="quality-title">Uncompromising quality</h2>
-            <p class="quality-text">
-                Although we work with growers who pay close attention to all
-                stages of <br /> harvest and processing, we employ, on our end,
-                a rigorous quality control <br /> program to avoid over-roasting
-                or baking the coffee dry. Every bag of coffee is <br /> tagged
-                with a roast date and batch number. Our goal is to roast
-                consistent, <br />
-                user-friendly coffee, so that brewing is easy and enjoyable.
-                <img
-                    src={srcQuality}
-                    class="srcQuality-photo"
-                    alt="Uncompromising Quality"
-                />
-            </p>
+            <div class="quality-content-left">
+                <h2 class="quality-title">Uncompromising quality</h2>
+                <p class="quality-text">
+                    Although we work with growers who pay close attention to all
+                    stages of <br /> harvest and processing, we employ, on our
+                    end, a rigorous quality control <br /> program to avoid
+                    over-roasting or baking the coffee dry. Every bag of coffee
+                    is <br /> tagged with a roast date and batch number. Our
+                    goal is to roast consistent, <br />
+                    user-friendly coffee, so that brewing is easy and enjoyable.
+                </p>
+            </div>
+            <img
+                src={srcQuality}
+                class="srcQuality-photo"
+                alt="Uncompromising Quality"
+            />
         </div>
     </div>
 
@@ -212,29 +214,32 @@
     /* section-quality */
     .section-quality {
         width: 1280px;
-        height: 562px;
-        margin-left: -303px;
-        margin-top: 356px;
+        margin-top: 256px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
     .srcBgQuality-photo {
         width: 1280px;
         height: 474px;
-        margin-left: 380px;
-        margin-top: -100px;
         border-radius: 10px;
     }
-    .srcQuality-photo {
-        width: 445px;
-        height: 474px;
-        margin-left: 663px;
-        margin-top: -387px;
-        border-radius: 8px;
-    }
     .quality-content {
+        width: 1110px;
+        height: 210px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: -419px;
+    }
+    .quality-content-left {
         width: 540px;
         height: 210px;
-        margin-left: 465px;
-        margin-top: -423px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .quality-title {
         font-family: "Fraunces", serif;
@@ -245,14 +250,18 @@
         color: #fefcf7;
     }
     .quality-text {
-        margin-top: -28px;
         font-family: "Barlow", sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
         color: #fefcf7;
-        margin-top: 0px;
+    }
+    .srcQuality-photo {
+        width: 445px;
+        height: 474px;
+        border-radius: 8px;
+        margin-top: -22px;
     }
 
     /* section-headquarters */
