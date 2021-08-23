@@ -231,7 +231,6 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        align-items: center;
         margin-top: -419px;
     }
     .quality-content-left {
@@ -239,7 +238,7 @@
         height: 210px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
     .quality-title {
         font-family: "Fraunces", serif;
@@ -256,6 +255,7 @@
         font-size: 16px;
         line-height: 26px;
         color: #fefcf7;
+        margin-top: -1px;
     }
     .srcQuality-photo {
         width: 445px;
@@ -267,9 +267,12 @@
     /* section-headquarters */
     .section-headquarters {
         width: 1045px;
-        height: 366px;
-        margin-left: 165px;
-        margin-top: -43px;
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 354px;
+        margin-bottom: -175px;
+        margin-left: -65px;
     }
     .headquarters-header {
         font-family: "Fraunces", serif;
@@ -282,31 +285,27 @@
     .headquarters-content {
         width: 1045px;
         height: 262px;
-        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 47px;
     }
     .headquarters-parts {
         display: grid;
         grid-template-columns: 285px 285px 285px;
         grid-gap: 95px 95px;
-        margin-top: 81px;
     }
     .srcUk-photo {
         height: 49.07px;
         width: 40.8px;
-        margin-top: -6px;
-        margin-left: 2px;
     }
     .srcCanada-photo {
         height: 49.9px;
         width: 51.5px;
-        margin-top: -6px;
-        margin-left: 2px;
     }
     .srcAustralia-photo {
         height: 43.9px;
         width: 48.9px;
-        margin-top: -6px;
-        margin-left: 2px;
     }
     .part-1-header {
         font-family: "Fraunces", serif;
@@ -315,7 +314,8 @@
         font-size: 32px;
         line-height: 36px;
         color: #333d4b;
-        margin-top: 39px;
+        margin-top: 43px;
+        margin-bottom: 23px;
     }
     .part-1-text {
         font-family: "Barlow", sans-serif;
@@ -324,7 +324,6 @@
         font-size: 16px;
         line-height: 26px;
         color: #333d4b;
-        margin-top: -9px;
     }
     .part-3-header {
         font-family: "Fraunces", serif;
@@ -333,7 +332,8 @@
         font-size: 32px;
         line-height: 36px;
         color: #333d4b;
-        margin-top: 45px;
+        margin-top: 48px;
+        margin-bottom: 23px;
     }
     .part-3-text {
         font-family: "Barlow", sans-serif;
@@ -342,6 +342,5 @@
         font-size: 16px;
         line-height: 26px;
         color: #333d4b;
-        margin-top: -9px;
     }
 </style>
