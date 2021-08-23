@@ -311,27 +311,28 @@
 <style>
     main {
         width: 1440px;
-        height: 3218px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     /* section-create-plan */
     .section-create-plan {
         width: 1280px;
-        height: 450px;
-        margin-left: 78px;
-        margin-top: 39px;
     }
     .srcHeroBlackCup-photo {
-        background: #a2a2a2;
         border-radius: 10px;
     }
     .create-plan-content {
         width: 445px;
         height: 182px;
-        margin-left: 85px;
-        margin-top: -379px;
         font-style: normal;
         color: #fefcf7;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 80px;
+        margin-top: -380px;
     }
     .create-plan-title {
         font-family: "Fraunces", serif;
