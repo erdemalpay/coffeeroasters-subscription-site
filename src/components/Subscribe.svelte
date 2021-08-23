@@ -132,154 +132,166 @@
         </div>
     </div>
 
-    <!-- section-titles -->
-    <div class="section-titles">
-        <div class="section-titles-content">
-            <h2 class="section-titles-number">01</h2>
-            <h3 class="section-titles-header">Preferences</h3>
-            <div class="section-titles-line" />
+    <div class="section-titles__accordion-menu">
+        <!-- section-titles -->
+        <div class="section-titles">
+            <div class="section-titles-part">
+                <div class="section-titles-content">
+                    <h2 class="section-titles-number">01</h2>
+                    <h3 class="section-titles-header">Preferences</h3>
+                </div>
+                <div class="section-titles-line" />
+            </div>
+
+            <div class="section-titles-part">
+                <div class="section-titles-content">
+                    <h2 class="section-titles-number">02</h2>
+                    <h3 class="section-titles-header">Bean Type</h3>
+                </div>
+                <div class="section-titles-line" />
+            </div>
+
+            <div class="section-titles-part">
+                <div class="section-titles-content">
+                    <h2 class="section-titles-number">03</h2>
+                    <h3 class="section-titles-header">Quantity</h3>
+                </div>
+                <div class="section-titles-line" />
+            </div>
+
+            <div class="section-titles-part">
+                <div class="section-titles-content">
+                    <h2 class="section-titles-number">04</h2>
+                    <h3 class="section-titles-header">Grind Option</h3>
+                </div>
+                <div class="section-titles-line" />
+            </div>
+
+            <div class="section-titles-part">
+                <div class="section-titles-content">
+                    <h2 class="section-titles-number">05</h2>
+                    <h3 class="section-titles-header">Deliveries</h3>
+                </div>
+            </div>
         </div>
 
-        <div class="section-titles-content">
-            <h2 class="section-titles-number">02</h2>
-            <h3 class="section-titles-header">Bean Type</h3>
-            <div class="section-titles-line" />
-        </div>
+        <!-- section-accordion-menu -->
+        <div class="section-accordion-menu">
+            <div class="accordion-menu">
+                <Questions
+                    bind:isOpen={isOpenPreferences}
+                    buttonText="How do you drink your coffee?"
+                />
+                <Choices bind:isOpen={isOpenPreferences}>
+                    <Choice
+                        bind:value={valuePreferences}
+                        choiceValue="Capsule"
+                        subText="Compatible with Nespresso systems and similar brewers"
+                        clickHandler={() => {
+                            valueGrindOption = "";
+                            isOpenGrindOption = false;
+                        }}
+                    />
+                    <Choice
+                        bind:value={valuePreferences}
+                        choiceValue="Filter"
+                        subText="For pour over or drip methods like Aeropress, Chemex, and V60"
+                    />
+                    <Choice
+                        bind:value={valuePreferences}
+                        choiceValue="Espresso"
+                        subText="Dense and finely ground beans for an intense, flavorful experience"
+                    />
+                </Choices>
+                <Questions
+                    bind:isOpen={isOpenBeanType}
+                    buttonText="What type of coffee?"
+                />
+                <Choices bind:isOpen={isOpenBeanType}>
+                    <Choice
+                        bind:value={valueBeanType}
+                        choiceValue="Single Origin"
+                        subText="Distinct, high quality coffee from a specific family-owned farm"
+                    />
+                    <Choice
+                        bind:value={valueBeanType}
+                        choiceValue="Decaf"
+                        subText="Just like regular coffee, except the caffeine has been removed"
+                    />
+                    <Choice
+                        bind:value={valueBeanType}
+                        choiceValue="Blended"
+                        subText="Combination of two or three dark roasted beans of organic coffees"
+                    />
+                </Choices>
 
-        <div class="section-titles-content">
-            <h2 class="section-titles-number">03</h2>
-            <h3 class="section-titles-header">Quantity</h3>
-            <div class="section-titles-line" />
-        </div>
+                <Questions
+                    bind:isOpen={isOpenQuantity}
+                    buttonText="How much would you like?"
+                />
+                <Choices bind:isOpen={isOpenQuantity}>
+                    <Choice
+                        bind:value={valueQuantity}
+                        choiceValue="250g"
+                        subText="Perfect for the solo drinker. Yields about 12 delicious cups."
+                    />
+                    <Choice
+                        bind:value={valueQuantity}
+                        choiceValue="500g"
+                        subText="Perfect option for a couple. Yields about 40 delectable cups."
+                    />
+                    <Choice
+                        bind:value={valueQuantity}
+                        choiceValue="1000g"
+                        subText="Perfect for offices and events. Yields about 90 delightful cups."
+                    />
+                </Choices>
 
-        <div class="section-titles-content">
-            <h2 class="section-titles-number">04</h2>
-            <h3 class="section-titles-header">Grind Option</h3>
-            <div class="section-titles-line" />
-        </div>
+                <Questions
+                    bind:isOpen={isOpenGrindOption}
+                    buttonText="Want us to grind them?"
+                    openable={valuePreferences != PREFERENCES.CAPSULE}
+                />
+                <Choices bind:isOpen={isOpenGrindOption}>
+                    <Choice
+                        bind:value={valueGrindOption}
+                        choiceValue="Wholebean"
+                        subText="Best choice if you cherish the full sensory experience"
+                    />
+                    <Choice
+                        bind:value={valueGrindOption}
+                        choiceValue="Filter"
+                        subText="For drip or pour-over coffee methods such as V60 or Aeropress."
+                    />
+                    <Choice
+                        bind:value={valueGrindOption}
+                        choiceValue="Cafetiére"
+                        subText="Course ground beans specially suited for french press coffee"
+                    />
+                </Choices>
 
-        <div class="section-titles-content">
-            <h2 class="section-titles-number">05</h2>
-            <h3 class="section-titles-header">Grind Option</h3>
-        </div>
-    </div>
-
-    <!-- section-accordion-menu -->
-    <div class="section-accordion-menu">
-        <div class="accordion-menu">
-            <Questions
-                bind:isOpen={isOpenPreferences}
-                buttonText="How do you drink your coffee?"
-            />
-            <Choices bind:isOpen={isOpenPreferences}>
-                <Choice
-                    bind:value={valuePreferences}
-                    choiceValue="Capsule"
-                    subText="Compatible with Nespresso systems and similar brewers"
-                    clickHandler={() => {
-                        valueGrindOption = "";
-                        isOpenGrindOption = false;
-                    }}
+                <Questions
+                    bind:isOpen={isOpenDeliveries}
+                    buttonText="How often should we deliver?"
                 />
-                <Choice
-                    bind:value={valuePreferences}
-                    choiceValue="Filter"
-                    subText="For pour over or drip methods like Aeropress, Chemex, and V60"
-                />
-                <Choice
-                    bind:value={valuePreferences}
-                    choiceValue="Espresso"
-                    subText="Dense and finely ground beans for an intense, flavorful experience"
-                />
-            </Choices>
-            <Questions
-                bind:isOpen={isOpenBeanType}
-                buttonText="What type of coffee?"
-            />
-            <Choices bind:isOpen={isOpenBeanType}>
-                <Choice
-                    bind:value={valueBeanType}
-                    choiceValue="Single Origin"
-                    subText="Distinct, high quality coffee from a specific family-owned farm"
-                />
-                <Choice
-                    bind:value={valueBeanType}
-                    choiceValue="Decaf"
-                    subText="Just like regular coffee, except the caffeine has been removed"
-                />
-                <Choice
-                    bind:value={valueBeanType}
-                    choiceValue="Blended"
-                    subText="Combination of two or three dark roasted beans of organic coffees"
-                />
-            </Choices>
-
-            <Questions
-                bind:isOpen={isOpenQuantity}
-                buttonText="How much would you like?"
-            />
-            <Choices bind:isOpen={isOpenQuantity}>
-                <Choice
-                    bind:value={valueQuantity}
-                    choiceValue="250g"
-                    subText="Perfect for the solo drinker. Yields about 12 delicious cups."
-                />
-                <Choice
-                    bind:value={valueQuantity}
-                    choiceValue="500g"
-                    subText="Perfect option for a couple. Yields about 40 delectable cups."
-                />
-                <Choice
-                    bind:value={valueQuantity}
-                    choiceValue="1000g"
-                    subText="Perfect for offices and events. Yields about 90 delightful cups."
-                />
-            </Choices>
-
-            <Questions
-                bind:isOpen={isOpenGrindOption}
-                buttonText="Want us to grind them?"
-                openable={valuePreferences != PREFERENCES.CAPSULE}
-            />
-            <Choices bind:isOpen={isOpenGrindOption}>
-                <Choice
-                    bind:value={valueGrindOption}
-                    choiceValue="Wholebean"
-                    subText="Best choice if you cherish the full sensory experience"
-                />
-                <Choice
-                    bind:value={valueGrindOption}
-                    choiceValue="Filter"
-                    subText="For drip or pour-over coffee methods such as V60 or Aeropress."
-                />
-                <Choice
-                    bind:value={valueGrindOption}
-                    choiceValue="Cafetiére"
-                    subText="Course ground beans specially suited for french press coffee"
-                />
-            </Choices>
-
-            <Questions
-                bind:isOpen={isOpenDeliveries}
-                buttonText="How often should we deliver?"
-            />
-            <Choices bind:isOpen={isOpenDeliveries}>
-                <Choice
-                    bind:value={valueDeliveries}
-                    choiceValue="Every week"
-                    subText="${priceEveryWeek} per shipment. Includes free first-class shipping."
-                />
-                <Choice
-                    bind:value={valueDeliveries}
-                    choiceValue="Every 2 weeks"
-                    subText="${priceEvery2Weeks} per shipment. Includes free priority shipping."
-                />
-                <Choice
-                    bind:value={valueDeliveries}
-                    choiceValue="Every month"
-                    subText="${priceEveryMonth} per shipment. Includes free priority shipping."
-                />
-            </Choices>
+                <Choices bind:isOpen={isOpenDeliveries}>
+                    <Choice
+                        bind:value={valueDeliveries}
+                        choiceValue="Every week"
+                        subText="${priceEveryWeek} per shipment. Includes free first-class shipping."
+                    />
+                    <Choice
+                        bind:value={valueDeliveries}
+                        choiceValue="Every 2 weeks"
+                        subText="${priceEvery2Weeks} per shipment. Includes free priority shipping."
+                    />
+                    <Choice
+                        bind:value={valueDeliveries}
+                        choiceValue="Every month"
+                        subText="${priceEveryMonth} per shipment. Includes free priority shipping."
+                    />
+                </Choices>
+            </div>
         </div>
     </div>
 
@@ -441,21 +453,33 @@
         margin-top: 9px;
     }
 
+    /* section-titles__accordion-menu */
+    .section-titles__accordion-menu {
+        height: 3218px;
+        width: 1110px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 169px;
+    }
     /* section-titles */
     .section-titles {
         width: 255px;
         height: 356px;
-        margin-left: 162px;
-        margin-top: 179px;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+    }
+    .section-titles-part {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .section-titles-content {
         display: flex;
         flex-direction: row;
+        align-items: center;
         height: 32px;
-
-        margin: 24.5px 0px;
     }
     .section-titles-number {
         font-family: "Fraunces", serif;
@@ -464,8 +488,6 @@
         font-size: 24px;
         line-height: 32px;
         color: #83888f;
-        height: 32px;
-        width: 30px;
         cursor: pointer;
     }
     .section-titles-number:hover {
@@ -478,11 +500,8 @@
         font-size: 24px;
         line-height: 32px;
         color: #83888f;
-        margin-left: 28.5px;
-        margin-top: 19px;
-        height: 32px;
-        width: 164px;
         cursor: pointer;
+        margin-left: 25px;
     }
     .section-titles-header:hover {
         color: #333d4b;
@@ -490,24 +509,17 @@
     .section-titles-line {
         width: 255px;
         height: 1px;
-        margin: 74px -228px;
-
         background: #83888f;
         mix-blend-mode: normal;
         opacity: 0.25;
+        margin-top: 23px;
     }
 
     /* section-accordion-menu */
     .section-accordion-menu {
-        width: 730px;
-        height: 2122px;
-        margin-left: 542px;
-        margin-top: -348px;
-
-        display: grid;
-        grid-gap: 88px 88px;
-        grid-template-rows: 48px 48px 48px 48px 48px;
+        margin-top: -19px;
     }
+
     /* section-order-summary */
     .section-order-summary {
         width: 730px;
