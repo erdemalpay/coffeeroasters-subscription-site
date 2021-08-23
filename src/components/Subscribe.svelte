@@ -310,7 +310,6 @@
 
 <style>
     main {
-        width: 1440px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -350,75 +349,70 @@
 
     /* section-how-it-works */
     .section-how-it-works {
-        width: 1045px;
-        height: 565px;
-        margin-left: 78px;
-        margin-top: 203px;
+        width: 1280px;
+        height: 653px;
+        margin-top: 362px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .srcBgSteps-photo {
         width: 1280px;
         height: 653px;
-        margin-left: 0px;
-        margin-top: -35px;
         border-radius: 10px;
         z-index: -1;
     }
     .how-it-works-content {
         width: 1045px;
         height: 453px;
+        display: flex;
+        flex-direction: column;
         margin-top: -540px;
-        margin-left: 85px;
+        margin-left: -65px;
+    }
+    .how-it-works-timeline {
+        width: 790px;
+        height: 31px;
+        margin-top: -29px;
+    }
+    .how-it-works-line {
+        height: 2px;
+        width: 760px;
+        background: #fdd6ba;
+        z-index: -1;
+        margin-left: 15.5px;
+        margin-top: -33px;
     }
     ul {
         display: flex;
-        float: left;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: -40px;
     }
     li {
         display: flex;
         flex-direction: column;
-        margin-left: 0px;
         height: 27px;
         width: 27px;
         border: 2px solid #0e8784;
         border-radius: 50%;
         z-index: 1;
     }
-    .how-it-works-timeline {
-        position: absolute;
-        margin-top: -84px;
-    }
-    .how-it-works-oval-1 {
-        margin-left: -40px;
-        margin-top: -30px;
-    }
-    .how-it-works-oval-2 {
-        margin-left: 349px;
-        margin-top: -30px;
-    }
-    .how-it-works-oval-3 {
-        margin-left: 349px;
-        margin-top: -30px;
-    }
-    .how-it-works-line {
-        height: 2px;
-        width: 760px;
-        margin-left: 15.5px;
-        background: #fdd6ba;
-    }
     .how-it-works-parts {
         display: grid;
         grid-template-columns: 285px 285px 285px;
         grid-gap: 95px 95px;
-        margin-top: 81px;
-    }
-    .how-it-works-part-1 {
         height: 355px;
+        margin-top: 83px;
     }
-    .how-it-works-part-2 {
-        height: 355px;
-    }
+    .how-it-works-part-1,
+    .how-it-works-part-2,
     .how-it-works-part-3 {
         height: 355px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
     }
     .part-1-number {
         font-family: "Fraunces", serif;
@@ -435,7 +429,7 @@
         font-size: 32px;
         line-height: 36px;
         color: #fefcf7;
-        margin-top: 39px;
+        margin-top: 40px;
     }
     .part-1-text {
         font-family: "Barlow", sans-serif;
@@ -444,7 +438,7 @@
         font-size: 16px;
         line-height: 26px;
         color: #fefcf7;
-        margin-top: 42px;
+        margin-top: 9px;
     }
 
     /* section-titles */
