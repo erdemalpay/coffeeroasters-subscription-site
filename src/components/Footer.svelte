@@ -65,8 +65,6 @@
         align-items: center;
     }
     .footer-left {
-        width: 622px;
-        height: 26px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -75,7 +73,7 @@
     }
     .srcLogo {
         width: 236px;
-        height: 26px;
+        height: 27px;
     }
     navbar {
         font-family: "Barlow", sans-serif;
@@ -86,6 +84,7 @@
         letter-spacing: 0.92px;
     }
     ul {
+        margin-left:30px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -93,7 +92,8 @@
     li {
         display: flex;
         flex-direction: column;
-        padding-left: 33px;
+        align-items: center;
+        padding-left: 32px;
     }
     a {
         color: #83888f;
