@@ -3,6 +3,8 @@
 
     import OrderSummaryContent from "../components/OrderSummaryContent.svelte";
 
+    let textGrey = true;
+
     export let valuePreferences;
     export let valueBeanType;
     export let valueQuantity;
@@ -27,6 +29,7 @@
         <div class="order-summary-chapter">
             <div class="order-summary-content">
                 <OrderSummaryContent
+                    {textGrey}
                     bind:valuePreferences
                     bind:valueBeanType
                     bind:valueQuantity
