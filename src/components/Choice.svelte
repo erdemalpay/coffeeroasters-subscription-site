@@ -3,13 +3,14 @@
     export let value;
     export let choiceValue;
     export let clickHandler = null;
+    export let setValue;
 </script>
 
 <div
     class="choice-box"
     class:selected={value == choiceValue}
     on:click={() => {
-        value = choiceValue;
+        setValue(choiceValue);
         if (clickHandler) {
             clickHandler();
         }

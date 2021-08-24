@@ -2,6 +2,7 @@
     export let isOpen = false;
     export let buttonText;
     export let openable = true;
+    export let toggleIsOpen;
 </script>
 
 {#if openable}
@@ -10,6 +11,7 @@
             class="accordion"
             on:click={() => {
                 isOpen = !isOpen;
+                toggleIsOpen();
             }}
         >
             {buttonText}

@@ -1,10 +1,11 @@
 <script>
-    export let valuePreferences;
-    export let valueBeanType;
-    export let valueQuantity;
-    export let valueGrindOption;
-    export let valueDeliveries;
-    export let valueDefault;
+    import choiceStore from "../Stores/choiceStore.js";
+    let valuePreferences;
+    let valueBeanType;
+    let valueQuantity;
+    let valueGrindOption;
+    let valueDeliveries;
+    let valueDefault;
 
     export let textGrey;
 
@@ -16,10 +17,7 @@
         }
     };
 
-    export const valueGrindOptionOrder = (
-        valueGrindOption,
-        valuePreferences
-    ) => {
+    export const valueGrindOptionOrder = (valueGrindOption, valuePreferences) => {
         if (valuePreferences == "Capsule") {
             return "";
         }
@@ -39,16 +37,19 @@
     };
 
     export const removeGrindPartOrder = (valuePreferences) => {
-        if (
-            valuePreferences == "Filter" ||
-            valuePreferences == "Espresso" ||
-            valuePreferences == ""
-        ) {
+        if (valuePreferences == "Filter" || valuePreferences == "Espresso" || valuePreferences == "") {
             return "ground ala";
         } else if (valuePreferences == "Capsule") {
             return "";
         }
     };
+    choiceStore.subscribe((data) => {
+        valuePreferences = data.valuePreferences;
+        valueBeanType = data.valueBeanType;
+        valueQuantity = data.valueQuantity;
+        valueGrindOption = data.valueGrindOption;
+        valueDeliveries = data.valueDeliveries;
+    });
 </script>
 
 <div class="text-white" class:text-grey={textGrey}>

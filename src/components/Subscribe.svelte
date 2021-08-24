@@ -1,34 +1,112 @@
 <script>
+    import choiceStore from "../Stores/choiceStore.js";
     import Button from "../components/Button.svelte";
-
     import OrderSummaryPopUp from "../components/OrderSummaryPopUp.svelte";
-
     import OrderSummaryContent from "../components/OrderSummaryContent.svelte";
-    let showOrderSummaryPopUp = false;
-
-    let srcHeroBlackCup = "./images/images-subscribe/image-hero-blackcup.jpg";
-
-    let srcBgSteps = "./images/images-subscribe/bg-steps.png";
-
-    let srcBgOrderSummary = "./images/images-subscribe/bg-order-summary.png";
-
     import Choices from "./Choices.svelte";
     import Choice from "./Choice.svelte";
     import Questions from "./Questions.svelte";
 
-    let isOpenPreferences = false;
-    let isOpenBeanType = false;
-    let isOpenQuantity = false;
-    let isOpenGrindOption = false;
-    let isOpenDeliveries = false;
-    let valuePreferences = "_____";
-    let valueBeanType = "_____";
-    let valueQuantity = "_____";
-    let valueGrindOption = "_____";
-    let valueDeliveries = "_____";
-    let priceEveryWeek = "";
-    let priceEvery2Weeks = "";
-    let priceEveryMonth = "";
+    let showOrderSummaryPopUp = false;
+    let srcHeroBlackCup = "./images/images-subscribe/image-hero-blackcup.jpg";
+    let srcBgSteps = "./images/images-subscribe/bg-steps.png";
+    let srcBgOrderSummary = "./images/images-subscribe/bg-order-summary.png";
+
+    $: isOpenBeanType = $choiceStore.isOpenBeanType;
+    $: isOpenDeliveries = $choiceStore.isOpenDeliveries;
+    $: isOpenGrindOption = $choiceStore.isOpenGrindOption;
+    $: isOpenPreferences = $choiceStore.isOpenPreferences;
+    $: isOpenQuantity = $choiceStore.isOpenQuantity;
+    $: valuePreferences = $choiceStore.valuePreferences;
+    $: valueBeanType = $choiceStore.valueBeanType;
+    $: valueQuantity = $choiceStore.valueQuantity;
+    $: valueGrindOption = $choiceStore.valueGrindOption;
+    $: valueDeliveries = $choiceStore.valueDeliveries;
+    $: priceEveryWeek = $choiceStore.priceEveryWeek;
+    $: priceEvery2Weeks = $choiceStore.priceEvery2Weeks;
+    $: priceEveryMonth = $choiceStore.priceEveryMonth;
+
+    const toggleIsOpenPreferences = () => {
+        choiceStore.update((currentObject) => {
+            return {
+                ...currentObject,
+                isOpenPreferences: !currentObject.isOpenPreferences,
+            };
+        });
+    };
+    const toggleIsOpenBeanType = () => {
+        choiceStore.update((currentObject) => {
+            return {
+                ...currentObject,
+                isOpenBeanType: !currentObject.isOpenBeanType,
+            };
+        });
+    };
+    const toggleIsOpenGrindOption = () => {
+        choiceStore.update((currentObject) => {
+            return {
+                ...currentObject,
+                isOpenGrindOption: !currentObject.isOpenGrindOption,
+            };
+        });
+    };
+    const toggleIsOpenDeliveries = () => {
+        choiceStore.update((currentObject) => {
+            return {
+                ...currentObject,
+                isOpenDeliveries: !currentObject.isOpenDeliveries,
+            };
+        });
+    };
+    const toggleIsOpenQuantity = () => {
+        choiceStore.update((currentObject) => {
+            return {
+                ...currentObject,
+                isOpenQuantity: !currentObject.isOpenQuantity,
+            };
+        });
+    };
+
+    const setValuePreferences = (newChoiceValue) => {
+        choiceStore.update((currentObject) => {
+            return {
+                ...currentObject,
+                valuePreferences: newChoiceValue,
+            };
+        });
+    };
+    const setValueQuantity = (newChoiceValue) => {
+        choiceStore.update((currentObject) => {
+            return {
+                ...currentObject,
+                valueQuantity: newChoiceValue,
+            };
+        });
+    };
+    const setValueBeanType = (newChoiceValue) => {
+        choiceStore.update((currentObject) => {
+            return {
+                ...currentObject,
+                valueBeanType: newChoiceValue,
+            };
+        });
+    };
+    const setValueGrindOption = (newChoiceValue) => {
+        choiceStore.update((currentObject) => {
+            return {
+                ...currentObject,
+                valueGrindOption: newChoiceValue,
+            };
+        });
+    };
+    const setValueDeliveries = (newChoiceValue) => {
+        choiceStore.update((currentObject) => {
+            return {
+                ...currentObject,
+                valueDeliveries: newChoiceValue,
+            };
+        });
+    };
 
     const PREFERENCES = {
         CAPSULE: "Capsule",
@@ -58,23 +136,11 @@
 </script>
 
 <main>
-    <OrderSummaryPopUp
-        {showOrderSummaryPopUp}
-        on:click={togglePopUp}
-        bind:valuePreferences
-        bind:valueBeanType
-        bind:valueQuantity
-        bind:valueGrindOption
-        bind:valueDeliveries
-    />
+    <OrderSummaryPopUp {showOrderSummaryPopUp} on:click={togglePopUp} />
 
     <!-- section-create-plan -->
     <div class="section-create-plan">
-        <img
-            src={srcHeroBlackCup}
-            class="srcHeroBlackCup-photo"
-            alt="Hero Black Cup"
-        />
+        <img src={srcHeroBlackCup} class="srcHeroBlackCup-photo" alt="Hero Black Cup" />
         <div class="create-plan-content">
             <h2 class="create-plan-title">Create plan</h2>
             <p class="create-plan-text">
@@ -102,31 +168,17 @@
                 <div class="how-it-works-part-1">
                     <h1 class="part-1-number">01</h1>
                     <h3 class="part-1-header">Pick your <br />coffee</h3>
-                    <p class="part-1-text">
-                        Select from our evolving range of artisan coffees. Our
-                        beans are ethically sourced and we pay fair prices for
-                        them. There are new coffees in all profiles every month
-                        for you to try out.
-                    </p>
+                    <p class="part-1-text">Select from our evolving range of artisan coffees. Our beans are ethically sourced and we pay fair prices for them. There are new coffees in all profiles every month for you to try out.</p>
                 </div>
                 <div class="how-it-works-part-2">
                     <h1 class="part-1-number">02</h1>
                     <h3 class="part-1-header">Choose the frequency</h3>
-                    <p class="part-1-text">
-                        Customize your order frequency, quantity, even your
-                        roast style and grind type. Pause, skip or cancel your
-                        subscription with no commitment through our online
-                        portal.
-                    </p>
+                    <p class="part-1-text">Customize your order frequency, quantity, even your roast style and grind type. Pause, skip or cancel your subscription with no commitment through our online portal.</p>
                 </div>
                 <div class="how-it-works-part-3">
                     <h1 class="part-1-number">03</h1>
                     <h3 class="part-1-header">Receive and enjoy!</h3>
-                    <p class="part-1-text">
-                        We ship your package within 48 hours, freshly roasted.
-                        Sit back and enjoy award-winning world-class coffees
-                        curated to provide a distinct tasting experience.
-                    </p>
+                    <p class="part-1-text">We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.</p>
                 </div>
             </div>
         </div>
@@ -175,148 +227,62 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- section-accordion-menu -->
-        <div class="section-accordion-menu">
-            <div class="accordion-menu">
-                <Questions
-                    bind:isOpen={isOpenPreferences}
-                    buttonText="How do you drink your coffee?"
+    <!-- section-accordion-menu -->
+    <div class="section-accordion-menu">
+        <div class="accordion-menu">
+            <Questions bind:isOpen={isOpenPreferences} toggleIsOpen={toggleIsOpenPreferences} buttonText="How do you drink your coffee?" />
+            <Choices bind:isOpen={isOpenPreferences}>
+                <Choice
+                    bind:value={valuePreferences}
+                    setValue={setValuePreferences}
+                    choiceValue="Capsule"
+                    subText="Compatible with Nespresso systems and similar brewers"
+                    clickHandler={() => {
+                        valueGrindOption = "";
+                        isOpenGrindOption = false;
+                    }}
                 />
-                <Choices bind:isOpen={isOpenPreferences}>
-                    <Choice
-                        bind:value={valuePreferences}
-                        choiceValue="Capsule"
-                        subText="Compatible with Nespresso systems and similar brewers"
-                        clickHandler={() => {
-                            valueGrindOption = "";
-                            isOpenGrindOption = false;
-                        }}
-                    />
-                    <Choice
-                        bind:value={valuePreferences}
-                        choiceValue="Filter"
-                        subText="For pour over or drip methods like Aeropress, Chemex, and V60"
-                    />
-                    <Choice
-                        bind:value={valuePreferences}
-                        choiceValue="Espresso"
-                        subText="Dense and finely ground beans for an intense, flavorful experience"
-                    />
-                </Choices>
-                <Questions
-                    bind:isOpen={isOpenBeanType}
-                    buttonText="What type of coffee?"
-                />
-                <Choices bind:isOpen={isOpenBeanType}>
-                    <Choice
-                        bind:value={valueBeanType}
-                        choiceValue="Single Origin"
-                        subText="Distinct, high quality coffee from a specific family-owned farm"
-                    />
-                    <Choice
-                        bind:value={valueBeanType}
-                        choiceValue="Decaf"
-                        subText="Just like regular coffee, except the caffeine has been removed"
-                    />
-                    <Choice
-                        bind:value={valueBeanType}
-                        choiceValue="Blended"
-                        subText="Combination of two or three dark roasted beans of organic coffees"
-                    />
-                </Choices>
+                <Choice bind:value={valuePreferences} setValue={setValuePreferences} choiceValue="Filter" subText="For pour over or drip methods like Aeropress, Chemex, and V60" />
+                <Choice bind:value={valuePreferences} setValue={setValuePreferences} choiceValue="Espresso" subText="Dense and finely ground beans for an intense, flavorful experience" />
+            </Choices>
+            <Questions bind:isOpen={isOpenBeanType} toggleIsOpen={toggleIsOpenBeanType} buttonText="What type of coffee?" />
+            <Choices bind:isOpen={isOpenBeanType}>
+                <Choice bind:value={valueBeanType} setValue={setValueBeanType} choiceValue="Single Origin" subText="Distinct, high quality coffee from a specific family-owned farm" />
+                <Choice bind:value={valueBeanType} setValue={setValueBeanType} choiceValue="Decaf" subText="Just like regular coffee, except the caffeine has been removed" />
+                <Choice bind:value={valueBeanType} setValue={setValueBeanType} choiceValue="Blended" subText="Combination of two or three dark roasted beans of organic coffees" />
+            </Choices>
 
-                <Questions
-                    bind:isOpen={isOpenQuantity}
-                    buttonText="How much would you like?"
-                />
-                <Choices bind:isOpen={isOpenQuantity}>
-                    <Choice
-                        bind:value={valueQuantity}
-                        choiceValue="250g"
-                        subText="Perfect for the solo drinker. Yields about 12 delicious cups."
-                    />
-                    <Choice
-                        bind:value={valueQuantity}
-                        choiceValue="500g"
-                        subText="Perfect option for a couple. Yields about 40 delectable cups."
-                    />
-                    <Choice
-                        bind:value={valueQuantity}
-                        choiceValue="1000g"
-                        subText="Perfect for offices and events. Yields about 90 delightful cups."
-                    />
-                </Choices>
+            <Questions bind:isOpen={isOpenQuantity} toggleIsOpen={toggleIsOpenQuantity} buttonText="How much would you like?" />
+            <Choices bind:isOpen={isOpenQuantity}>
+                <Choice bind:value={valueQuantity} setValue={setValueQuantity} choiceValue="250g" subText="Perfect for the solo drinker. Yields about 12 delicious cups." />
+                <Choice bind:value={valueQuantity} setValue={setValueQuantity} choiceValue="500g" subText="Perfect option for a couple. Yields about 40 delectable cups." />
+                <Choice bind:value={valueQuantity} setValue={setValueQuantity} choiceValue="1000g" subText="Perfect for offices and events. Yields about 90 delightful cups." />
+            </Choices>
 
-                <Questions
-                    bind:isOpen={isOpenGrindOption}
-                    buttonText="Want us to grind them?"
-                    openable={valuePreferences != PREFERENCES.CAPSULE}
-                />
-                <Choices bind:isOpen={isOpenGrindOption}>
-                    <Choice
-                        bind:value={valueGrindOption}
-                        choiceValue="Wholebean"
-                        subText="Best choice if you cherish the full sensory experience"
-                    />
-                    <Choice
-                        bind:value={valueGrindOption}
-                        choiceValue="Filter"
-                        subText="For drip or pour-over coffee methods such as V60 or Aeropress."
-                    />
-                    <Choice
-                        bind:value={valueGrindOption}
-                        choiceValue="Cafetiére"
-                        subText="Course ground beans specially suited for french press coffee"
-                    />
-                </Choices>
+            <Questions bind:isOpen={isOpenGrindOption} toggleIsOpen={toggleIsOpenGrindOption} buttonText="Want us to grind them?" openable={valuePreferences != PREFERENCES.CAPSULE} />
+            <Choices bind:isOpen={isOpenGrindOption}>
+                <Choice bind:value={valueGrindOption} setValue={setValueGrindOption} choiceValue="Wholebean" subText="Best choice if you cherish the full sensory experience" />
+                <Choice bind:value={valueGrindOption} setValue={setValueGrindOption} choiceValue="Filter" subText="For drip or pour-over coffee methods such as V60 or Aeropress." />
+                <Choice bind:value={valueGrindOption} setValue={setValueGrindOption} choiceValue="Cafetiére" subText="Course ground beans specially suited for french press coffee" />
+            </Choices>
 
-                <Questions
-                    bind:isOpen={isOpenDeliveries}
-                    buttonText="How often should we deliver?"
-                />
-                <Choices bind:isOpen={isOpenDeliveries}>
-                    <Choice
-                        bind:value={valueDeliveries}
-                        choiceValue="Every week"
-                        subText="${priceEveryWeek} per shipment. Includes free first-class shipping."
-                    />
-                    <Choice
-                        bind:value={valueDeliveries}
-                        choiceValue="Every 2 weeks"
-                        subText="${priceEvery2Weeks} per shipment. Includes free priority shipping."
-                    />
-                    <Choice
-                        bind:value={valueDeliveries}
-                        choiceValue="Every month"
-                        subText="${priceEveryMonth} per shipment. Includes free priority shipping."
-                    />
-                </Choices>
-            </div>
+            <Questions bind:isOpen={isOpenDeliveries} toggleIsOpen={toggleIsOpenDeliveries} buttonText="How often should we deliver?" />
+            <Choices bind:isOpen={isOpenDeliveries}>
+                <Choice bind:value={valueDeliveries} setValue={setValueDeliveries} choiceValue="Every week" subText="${priceEveryWeek} per shipment. Includes free first-class shipping." />
+                <Choice bind:value={valueDeliveries} setValue={setValueDeliveries} choiceValue="Every 2 weeks" subText="${priceEvery2Weeks} per shipment. Includes free priority shipping." />
+                <Choice bind:value={valueDeliveries} setValue={setValueDeliveries} choiceValue="Every month" subText="${priceEveryMonth} per shipment. Includes free priority shipping." />
+            </Choices>
+        </div>
+    </div>
 
-            <!-- section-order-summary -->
-            <div class="section-order-summary">
-                <img
-                    src={srcBgOrderSummary}
-                    class="srcBgOrderSummary-photo"
-                    alt="Bg Order Summary"
-                />
-                <div class="section-order-summary-content">
-                    <h3 class="section-order-summary-header">ORDER SUMMARY</h3>
-                    <OrderSummaryContent
-                        bind:valuePreferences
-                        bind:valueBeanType
-                        bind:valueQuantity
-                        bind:valueGrindOption
-                        bind:valueDeliveries
-                    />
-                </div>
-            </div>
-
-            <!-- section-order-summary-btn -->
-            <div class="order-summary-btn" on:click={togglePopUp}>
-                <Button buttonName="Create my plan!" />
-            </div>
+    <!-- section-order-summary -->
+    <div class="section-order-summary">
+        <img src={srcBgOrderSummary} class="srcBgOrderSummary-photo" alt="Bg Order Summary" />
+        <div class="section-order-summary-content">
+            <h3 class="section-order-summary-header">ORDER SUMMARY</h3>
+            <OrderSummaryContent />
         </div>
     </div>
 </main>
@@ -463,7 +429,7 @@
         justify-content: space-between;
         margin-top: 169px;
     }
-    
+
     /* section-titles */
     .section-titles {
         width: 255px;
