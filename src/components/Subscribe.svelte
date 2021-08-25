@@ -50,6 +50,14 @@
             };
         });
     };
+    const closeIsOpenGrindOption = () => {
+        choiceStore.update((currentObject) => {
+            return {
+                ...currentObject,
+                isOpenGrindOption: false,
+            };
+        });
+    };
     const toggleIsOpenDeliveries = () => {
         choiceStore.update((currentObject) => {
             return {
@@ -107,6 +115,16 @@
             };
         });
     };
+    const setPrice = (everyWeek, every2Weeks, everyMonth) => {
+        choiceStore.update((currentObject) => {
+            return {
+                ...currentObject,
+                priceEveryWeek: everyWeek,
+                priceEvery2Weeks: every2Weeks,
+                priceEveryMonth: everyMonth,
+            };
+        });
+    };
 
     const PREFERENCES = {
         CAPSULE: "Capsule",
@@ -116,17 +134,11 @@
 
     $: {
         if (valueQuantity == "250g") {
-            priceEveryWeek = "7.20";
-            priceEvery2Weeks = "9.60";
-            priceEveryMonth = "12.00";
+            setPrice("7.20", "9.60", "12.00");
         } else if (valueQuantity == "500g") {
-            priceEveryWeek = "13.00";
-            priceEvery2Weeks = "17.50";
-            priceEveryMonth = "22.00";
+            setPrice("13.00", "17.50", "22.00");
         } else if (valueQuantity == "1000g") {
-            priceEveryWeek = "22.00";
-            priceEvery2Weeks = "32.00";
-            priceEveryMonth = "42.00";
+            setPrice("22.00", "32.00", "42.00");
         }
     }
 
@@ -240,8 +252,8 @@
                     choiceValue="Capsule"
                     subText="Compatible with Nespresso systems and similar brewers"
                     clickHandler={() => {
-                        valueGrindOption = "";
-                        isOpenGrindOption = false;
+                        setValueGrindOption("");
+                        closeIsOpenGrindOption();
                     }}
                 />
                 <Choice bind:value={valuePreferences} setValue={setValuePreferences} choiceValue="Filter" subText="For pour over or drip methods like Aeropress, Chemex, and V60" />
