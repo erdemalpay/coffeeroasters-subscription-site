@@ -53,7 +53,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 343px;
     }
     .section-footer {
         width: 1280px;

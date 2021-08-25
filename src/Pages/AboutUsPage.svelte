@@ -13,12 +13,10 @@
 
 <main>
     <!-- section-about-us -->
-    <div class="section-about-us">
-        <img
-            src={srcHeroWhiteCup}
-            class="srcHeroWhiteCup-photo"
-            alt="Hero White Cup"
-        />
+    <div
+        class="section-about-us"
+        style={`background-image: url(${srcHeroWhiteCup});`}
+    >
         <div class="about-us-content">
             <h2 class="about-us-title">About Us</h2>
             <p class="about-us-text">
@@ -63,8 +61,10 @@
     </div>
 
     <!-- section-quality -->
-    <div class="section-quality">
-        <img src={srcBgQuality} class="srcBgQuality-photo" alt="Bg Quality" />
+    <div
+        class="section-quality"
+        style={`background-image: url(${srcBgQuality});`}
+    >
         <div class="quality-content">
             <div class="quality-content-left">
                 <h2 class="quality-title">Uncompromising quality</h2>
@@ -90,40 +90,37 @@
     <div class="section-headquarters">
         <h3 class="headquarters-header">Our headquarters</h3>
 
+        <div class="headquarters-photos">
+            <img src={srcUk} class="srcUk-photo" alt="Uk Map" />
+            <img src={srcCanada} class="srcCanada-photo" alt="Canada Map" />
+            <img
+                src={srcAustralia}
+                class="srcAustralia-photo"
+                alt="Australia Map"
+            />
+        </div>
+
         <div class="headquarters-content">
-            <div class="headquarters-parts">
-                <div>
-                    <img src={srcUk} class="srcUk-photo" alt="Uk Map" />
-                    <h3 class="part-1-header">United Kingdom</h3>
-                    <p class="part-1-text">
-                        68 Asfordby Rd <br /> Alcaston <br /> SY6 1YA <br /> +44
-                        1241 918425
-                    </p>
-                </div>
-                <div>
-                    <img
-                        src={srcCanada}
-                        class="srcCanada-photo"
-                        alt="Canada Map"
-                    />
-                    <h3 class="part-1-header">Canada</h3>
-                    <p class="part-1-text">
-                        1528 Eglinton Avenue <br /> Toronto <br /> Ontario M4P
-                        1A6 <br /> +1 416 485 2997
-                    </p>
-                </div>
-                <div>
-                    <img
-                        src={srcAustralia}
-                        class="srcAustralia-photo"
-                        alt="Australia Map"
-                    />
-                    <h3 class="part-3-header">Australia</h3>
-                    <p class="part-3-text">
-                        36 Swanston Street <br /> Kewell <br /> Victoria <br /> +61
-                        4 9928 3629
-                    </p>
-                </div>
+            <div>
+                <h3 class="part-header">United Kingdom</h3>
+                <p class="part-text">
+                    68 Asfordby Rd <br /> Alcaston <br /> SY6 1YA <br /> +44 1241
+                    918425
+                </p>
+            </div>
+            <div>
+                <h3 class="part-header">Canada</h3>
+                <p class="part-text">
+                    1528 Eglinton Avenue <br /> Toronto <br /> Ontario M4P 1A6
+                    <br /> +1 416 485 2997
+                </p>
+            </div>
+            <div>
+                <h3 class="part-header">Australia</h3>
+                <p class="part-text">
+                    36 Swanston Street <br /> Kewell <br /> Victoria <br /> +61 4
+                    9928 3629
+                </p>
             </div>
         </div>
     </div>
@@ -139,9 +136,9 @@
     /* section-about-us */
     .section-about-us {
         height: 450px;
-    }
-    .srcHeroWhiteCup-photo {
+        width: 1280px;
         border-radius: 10px;
+        display: flex;
     }
     .about-us-content {
         width: 445px;
@@ -150,22 +147,21 @@
         color: #fefcf7;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        margin-left: 80px;
-        margin-top: -350px;
+        margin: 85px;
     }
     .about-us-title {
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 40px;
         line-height: 48px;
+        margin-top: 52px;
+        margin-bottom: 8px;
     }
     .about-us-text {
         font-family: "Barlow", sans-serif;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        margin-top: -9px;
     }
 
     /* section-commitment */
@@ -187,9 +183,7 @@
         height: 340px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-around;
-        margin-top: -18px;
+        justify-content: center;
     }
     .commitment-title {
         font-family: "Fraunces", serif;
@@ -198,6 +192,8 @@
         font-size: 40px;
         line-height: 48px;
         color: #333d4b;
+        margin-top: 15px;
+        margin-bottom: 16px;
     }
     .commitment-text {
         font-family: "Barlow", sans-serif;
@@ -208,37 +204,31 @@
         color: #333d4b;
         mix-blend-mode: normal;
         opacity: 0.8;
-        margin-top: -1px;
     }
 
     /* section-quality */
     .section-quality {
-        width: 1280px;
         margin-top: 256px;
         display: flex;
         align-items: center;
         flex-direction: column;
-    }
-    .srcBgQuality-photo {
+        border-radius: 10px;
         width: 1280px;
         height: 474px;
-        border-radius: 10px;
     }
     .quality-content {
         width: 1110px;
         height: 210px;
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        margin-top: -419px;
+        margin-top: 55px;
     }
     .quality-content-left {
         width: 540px;
         height: 210px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
     }
     .quality-title {
         font-family: "Fraunces", serif;
@@ -247,6 +237,8 @@
         font-size: 40px;
         line-height: 48px;
         color: #fefcf7;
+        margin-top: 33px;
+        margin-bottom: 16px;
     }
     .quality-text {
         font-family: "Barlow", sans-serif;
@@ -255,7 +247,6 @@
         font-size: 16px;
         line-height: 26px;
         color: #fefcf7;
-        margin-top: -1px;
     }
     .srcQuality-photo {
         width: 445px;
@@ -267,11 +258,11 @@
     /* section-headquarters */
     .section-headquarters {
         width: 1045px;
+        height: 366px;
         display: flex;
         flex-direction: column;
-
-        margin-top: 354px;
-        margin-bottom: -175px;
+        margin-top: 145px;
+        margin-bottom: 191px;
         margin-left: -65px;
     }
     .headquarters-header {
@@ -282,65 +273,45 @@
         line-height: 32px;
         color: #83888f;
     }
-    .headquarters-content {
-        width: 1045px;
-        height: 262px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-top: 47px;
-    }
-    .headquarters-parts {
+    .headquarters-photos {
         display: grid;
         grid-template-columns: 285px 285px 285px;
         grid-gap: 95px 95px;
+        margin-top: 46px;
     }
     .srcUk-photo {
         height: 49.07px;
-        width: 40.8px;
+        width: 40.84px;
     }
     .srcCanada-photo {
-        height: 49.9px;
-        width: 51.5px;
+        height: 49.96px;
+        width: 51.56px;
     }
     .srcAustralia-photo {
         height: 43.9px;
-        width: 48.9px;
+        width: 48.97px;
     }
-    .part-1-header {
+    .headquarters-content {
+        display: grid;
+        grid-template-columns: 285px 285px 285px;
+        grid-gap: 95px 95px;
+        margin-top: 15px;
+    }
+    .part-header {
         font-family: "Fraunces", serif;
         font-style: normal;
         font-weight: 900;
         font-size: 32px;
         line-height: 36px;
         color: #333d4b;
-        margin-top: 43px;
-        margin-bottom: 23px;
+        margin-bottom: 22px;
     }
-    .part-1-text {
+    .part-text {
         font-family: "Barlow", sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
-        line-height: 26px;
-        color: #333d4b;
-    }
-    .part-3-header {
-        font-family: "Fraunces", serif;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 32px;
-        line-height: 36px;
-        color: #333d4b;
-        margin-top: 48px;
-        margin-bottom: 23px;
-    }
-    .part-3-text {
-        font-family: "Barlow", sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 26px;
+        line-height: 27px;
         color: #333d4b;
     }
 </style>
