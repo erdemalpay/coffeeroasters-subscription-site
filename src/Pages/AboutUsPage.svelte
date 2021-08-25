@@ -13,12 +13,10 @@
 
 <main>
     <!-- section-about-us -->
-    <div class="section-about-us">
-        <img
-            src={srcHeroWhiteCup}
-            class="srcHeroWhiteCup-photo"
-            alt="Hero White Cup"
-        />
+    <div
+        class="section-about-us"
+        style={`background-image: url(${srcHeroWhiteCup});`}
+    >
         <div class="about-us-content">
             <h2 class="about-us-title">About Us</h2>
             <p class="about-us-text">
@@ -63,24 +61,28 @@
     </div>
 
     <!-- section-quality -->
-    <div class="section-quality">
-        <img src={srcBgQuality} class="srcBgQuality-photo" alt="Bg Quality" />
+    <div
+        class="section-quality"
+        style={`background-image: url(${srcBgQuality});`}
+    >
         <div class="quality-content">
-            <h2 class="quality-title">Uncompromising quality</h2>
-            <p class="quality-text">
-                Although we work with growers who pay close attention to all
-                stages of <br /> harvest and processing, we employ, on our end,
-                a rigorous quality control <br /> program to avoid over-roasting
-                or baking the coffee dry. Every bag of coffee is <br /> tagged
-                with a roast date and batch number. Our goal is to roast
-                consistent, <br />
-                user-friendly coffee, so that brewing is easy and enjoyable.
-                <img
-                    src={srcQuality}
-                    class="srcQuality-photo"
-                    alt="Uncompromising Quality"
-                />
-            </p>
+            <div class="quality-content-left">
+                <h2 class="quality-title">Uncompromising quality</h2>
+                <p class="quality-text">
+                    Although we work with growers who pay close attention to all
+                    stages of <br /> harvest and processing, we employ, on our
+                    end, a rigorous quality control <br /> program to avoid
+                    over-roasting or baking the coffee dry. Every bag of coffee
+                    is <br /> tagged with a roast date and batch number. Our
+                    goal is to roast consistent, <br />
+                    user-friendly coffee, so that brewing is easy and enjoyable.
+                </p>
+            </div>
+            <img
+                src={srcQuality}
+                class="srcQuality-photo"
+                alt="Uncompromising Quality"
+            />
         </div>
     </div>
 
@@ -88,40 +90,37 @@
     <div class="section-headquarters">
         <h3 class="headquarters-header">Our headquarters</h3>
 
+        <div class="headquarters-photos">
+            <img src={srcUk} class="srcUk-photo" alt="Uk Map" />
+            <img src={srcCanada} class="srcCanada-photo" alt="Canada Map" />
+            <img
+                src={srcAustralia}
+                class="srcAustralia-photo"
+                alt="Australia Map"
+            />
+        </div>
+
         <div class="headquarters-content">
-            <div class="headquarters-parts">
-                <div>
-                    <img src={srcUk} class="srcUk-photo" alt="Uk Map" />
-                    <h3 class="part-1-header">United Kingdom</h3>
-                    <p class="part-1-text">
-                        68 Asfordby Rd <br /> Alcaston <br /> SY6 1YA <br /> +44
-                        1241 918425
-                    </p>
-                </div>
-                <div>
-                    <img
-                        src={srcCanada}
-                        class="srcCanada-photo"
-                        alt="Canada Map"
-                    />
-                    <h3 class="part-1-header">Canada</h3>
-                    <p class="part-1-text">
-                        1528 Eglinton Avenue <br /> Toronto <br /> Ontario M4P
-                        1A6 <br /> +1 416 485 2997
-                    </p>
-                </div>
-                <div>
-                    <img
-                        src={srcAustralia}
-                        class="srcAustralia-photo"
-                        alt="Australia Map"
-                    />
-                    <h3 class="part-3-header">Australia</h3>
-                    <p class="part-3-text">
-                        36 Swanston Street <br /> Kewell <br /> Victoria <br /> +61
-                        4 9928 3629
-                    </p>
-                </div>
+            <div>
+                <h3 class="part-header">United Kingdom</h3>
+                <p class="part-text">
+                    68 Asfordby Rd <br /> Alcaston <br /> SY6 1YA <br /> +44 1241
+                    918425
+                </p>
+            </div>
+            <div>
+                <h3 class="part-header">Canada</h3>
+                <p class="part-text">
+                    1528 Eglinton Avenue <br /> Toronto <br /> Ontario M4P 1A6
+                    <br /> +1 416 485 2997
+                </p>
+            </div>
+            <div>
+                <h3 class="part-header">Australia</h3>
+                <p class="part-text">
+                    36 Swanston Street <br /> Kewell <br /> Victoria <br /> +61 4
+                    9928 3629
+                </p>
             </div>
         </div>
     </div>
@@ -129,49 +128,50 @@
 
 <style>
     main {
-        width: 1440px;
-        height: 2891px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     /* section-about-us */
     .section-about-us {
-        width: 1280px;
         height: 450px;
-        margin-left: 78px;
-        margin-top: 39px;
-    }
-    .srcHeroWhiteCup-photo {
-        background: #a2a2a2;
+        width: 1280px;
         border-radius: 10px;
+        display: flex;
     }
     .about-us-content {
         width: 445px;
         height: 176px;
-        margin-left: 85px;
-        margin-top: -350px;
         font-style: normal;
         color: #fefcf7;
+        display: flex;
+        flex-direction: column;
+        margin: 85px;
     }
     .about-us-title {
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 40px;
         line-height: 48px;
+        margin-top: 52px;
+        margin-bottom: 8px;
     }
     .about-us-text {
         font-family: "Barlow", sans-serif;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        margin-top: -9px;
     }
 
     /* section-commitment */
     .section-commitment {
         width: 1110px;
-        height: 520px;
-        margin-left: 163px;
-        margin-top: 171px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 168px;
     }
     .srcCommitment-photo {
         width: 445px;
@@ -181,8 +181,9 @@
     .commitment-content {
         width: 540px;
         height: 340px;
-        margin-left: 570px;
-        margin-top: -469px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .commitment-title {
         font-family: "Fraunces", serif;
@@ -191,44 +192,43 @@
         font-size: 40px;
         line-height: 48px;
         color: #333d4b;
+        margin-top: 15px;
+        margin-bottom: 16px;
     }
     .commitment-text {
-        margin-top: -28px;
         font-family: "Barlow", sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
         color: #333d4b;
-        margin-top: -0px;
+        mix-blend-mode: normal;
+        opacity: 0.8;
     }
 
     /* section-quality */
     .section-quality {
-        width: 1280px;
-        height: 562px;
-        margin-left: -303px;
-        margin-top: 356px;
-    }
-    .srcBgQuality-photo {
-        width: 1280px;
-        height: 474px;
-        margin-left: 380px;
-        margin-top: -100px;
+        margin-top: 256px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         border-radius: 10px;
-    }
-    .srcQuality-photo {
-        width: 445px;
+        width: 1280px;
         height: 474px;
-        margin-left: 663px;
-        margin-top: -387px;
-        border-radius: 8px;
     }
     .quality-content {
+        width: 1110px;
+        height: 210px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 55px;
+    }
+    .quality-content-left {
         width: 540px;
         height: 210px;
-        margin-left: 465px;
-        margin-top: -423px;
+        display: flex;
+        flex-direction: column;
     }
     .quality-title {
         font-family: "Fraunces", serif;
@@ -237,24 +237,33 @@
         font-size: 40px;
         line-height: 48px;
         color: #fefcf7;
+        margin-top: 33px;
+        margin-bottom: 16px;
     }
     .quality-text {
-        margin-top: -28px;
         font-family: "Barlow", sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
         color: #fefcf7;
-        margin-top: 0px;
+    }
+    .srcQuality-photo {
+        width: 445px;
+        height: 474px;
+        border-radius: 8px;
+        margin-top: -22px;
     }
 
     /* section-headquarters */
     .section-headquarters {
         width: 1045px;
         height: 366px;
-        margin-left: 165px;
-        margin-top: -43px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 145px;
+        margin-bottom: 191px;
+        margin-left: -65px;
     }
     .headquarters-header {
         font-family: "Fraunces", serif;
@@ -264,69 +273,45 @@
         line-height: 32px;
         color: #83888f;
     }
-    .headquarters-content {
-        width: 1045px;
-        height: 262px;
-        margin-left: 0px;
-    }
-    .headquarters-parts {
+    .headquarters-photos {
         display: grid;
         grid-template-columns: 285px 285px 285px;
         grid-gap: 95px 95px;
-        margin-top: 81px;
+        margin-top: 46px;
     }
     .srcUk-photo {
         height: 49.07px;
-        width: 40.8px;
-        margin-top: -6px;
-        margin-left: 2px;
+        width: 40.84px;
     }
     .srcCanada-photo {
-        height: 49.9px;
-        width: 51.5px;
-        margin-top: -6px;
-        margin-left: 2px;
+        height: 49.96px;
+        width: 51.56px;
     }
     .srcAustralia-photo {
         height: 43.9px;
-        width: 48.9px;
-        margin-top: -6px;
-        margin-left: 2px;
+        width: 48.97px;
     }
-    .part-1-header {
+    .headquarters-content {
+        display: grid;
+        grid-template-columns: 285px 285px 285px;
+        grid-gap: 95px 95px;
+        margin-top: 15px;
+    }
+    .part-header {
         font-family: "Fraunces", serif;
         font-style: normal;
         font-weight: 900;
         font-size: 32px;
         line-height: 36px;
         color: #333d4b;
-        margin-top: 39px;
+        margin-bottom: 22px;
     }
-    .part-1-text {
+    .part-text {
         font-family: "Barlow", sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
-        line-height: 26px;
+        line-height: 27px;
         color: #333d4b;
-        margin-top: -9px;
-    }
-    .part-3-header {
-        font-family: "Fraunces", serif;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 32px;
-        line-height: 36px;
-        color: #333d4b;
-        margin-top: 45px;
-    }
-    .part-3-text {
-        font-family: "Barlow", sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 26px;
-        color: #333d4b;
-        margin-top: -9px;
     }
 </style>

@@ -47,20 +47,32 @@
 </main>
 
 <style>
+    main {
+        width: 1440px;
+        height: 208px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .section-footer {
         width: 1280px;
         height: 120px;
-        margin-left: 78px;
-        margin-top: 318px;
         background: #2c343e;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
     .footer-left {
-        width: 622px;
-        height: 26px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 85px;
     }
     .srcLogo {
-        margin-left: 85px;
-        margin-top: 47px;
+        width: 236px;
+        height: 27px;
     }
     navbar {
         font-family: "Barlow", sans-serif;
@@ -71,15 +83,16 @@
         letter-spacing: 0.92px;
     }
     ul {
+        margin-left:30px;
         display: flex;
-        float: right;
-        margin-top: 54px;
-        margin-right: -85px;
+        flex-direction: row;
+        align-items: center;
     }
     li {
         display: flex;
         flex-direction: column;
-        padding-left: 33px;
+        align-items: center;
+        padding-left: 32px;
     }
     a {
         color: #83888f;
@@ -91,19 +104,14 @@
     .footer-icons {
         width: 120px;
         height: 24px;
-        margin-left: 1074px;
-        margin-top: 21px;
         display: grid;
         grid-template-columns: 24px 24px 24px;
         grid-gap: 24px 24px;
         cursor: pointer;
+        padding-right: 85px;
     }
-    .srcFacebook:hover {
-        filter: invert(0.35) sepia(0.8) brightness(110%) hue-rotate(340deg);
-    }
-    .srcTwitter:hover {
-        filter: invert(0.35) sepia(0.8) brightness(110%) hue-rotate(340deg);
-    }
+    .srcFacebook:hover,
+    .srcTwitter:hover,
     .srcInstagram:hover {
         filter: invert(0.35) sepia(0.8) brightness(110%) hue-rotate(340deg);
     }

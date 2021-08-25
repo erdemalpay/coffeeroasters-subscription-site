@@ -20,9 +20,18 @@
 </main>
 
 <style>
+    main {
+        width: 1440px;
+        height: 113px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
     .srcLogo {
+        width: 236px;
+        height: 27px;
         margin-left: 80.1px;
-        margin-top: 43.56px;
     }
     navbar {
         font-family: "Barlow", sans-serif;
@@ -31,16 +40,17 @@
         font-size: 12px;
         line-height: 15px;
         letter-spacing: 0.92px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        margin-right: 80px;
     }
     ul {
         display: flex;
-        float: right;
-        margin-top: 50px;
-        margin-right: 81px;
+        justify-content: space-between;
     }
     li {
-        display: flex;
-        flex-direction: column;
+        margin-top: 2px;
         padding-left: 33px;
     }
     a {

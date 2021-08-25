@@ -1,6 +1,6 @@
 <script>
     import Button from "../components/Button.svelte";
-    
+
     let srcHeroCoffeepress = "./images/images-home/image-hero-coffeepress.jpg";
     let srcGranEspresso = "./images/images-home/image-gran-espresso.png";
     let srcPlanalto = "./images/images-home/image-planalto.png";
@@ -25,11 +25,13 @@
             <p class="coffeepresso-text">
                 Start your mornings with the world’s best coffees. Try our <br
                 />
-                expertly curated artisan coffees from our best roasters <br /> delivered
-                directly to your door, at your schedule.
+                expertly curated artisan coffees from our best roasters
+                <br /> delivered directly to your door, at your schedule.
             </p>
+            <div class="coffeepresso-btn">
+                <Button buttonName="Create your plan" />
+            </div>
         </div>
-        <Button buttonName="Create your plan" />
     </div>
 
     <!-- section-our-collection -->
@@ -87,9 +89,9 @@
             <h4 class="content-top-title">Why choose us?</h4>
             <p class="content-top-text">
                 A large part of our role is choosing which particular coffees
-                will be featured in our range. This means working closely with
-                the best coffee growers to give you a more impactful experience
-                on every level.
+                will be featured<br /> in our range. This means working closely
+                with the best coffee growers to give <br />you a more impactful
+                experience on every level.
             </p>
         </div>
 
@@ -122,7 +124,7 @@
                 <img src={srcTruck} class="truck" alt="Truck" />
                 <div class="box-content">
                     <h3 class="box-content-title-3">Free shipping</h3>
-                    <p class="box-content-text-3">
+                    <p class="box-content-text">
                         We cover the cost and coffee is delivered fast. Peak
                         freshness: guaranteed.
                     </p>
@@ -146,9 +148,9 @@
             </div>
             <div class="how-it-works-parts">
                 <div class="how-it-works-part-1">
-                    <h1 class="part-1-number">01</h1>
-                    <h3 class="part-1-header">Pick your <br />coffee</h3>
-                    <p class="part-1-text">
+                    <h1 class="part-number">01</h1>
+                    <h3 class="part-header">Pick your <br />coffee</h3>
+                    <p class="part-text">
                         Select from our evolving range of artisan coffees. Our
                         beans are ethically sourced and we pay fair prices for
                         them. There are new coffees in all profiles every month
@@ -156,9 +158,9 @@
                     </p>
                 </div>
                 <div class="how-it-works-part-2">
-                    <h1 class="part-1-number">02</h1>
-                    <h3 class="part-1-header">Choose the frequency</h3>
-                    <p class="part-1-text">
+                    <h1 class="part-number">02</h1>
+                    <h3 class="part-header">Choose the frequency</h3>
+                    <p class="part-text">
                         Customize your order frequency, quantity, even your
                         roast style and grind type. Pause, skip or cancel your
                         subscription with no commitment through our online
@@ -166,9 +168,9 @@
                     </p>
                 </div>
                 <div class="how-it-works-part-3">
-                    <h1 class="part-1-number">03</h1>
-                    <h3 class="part-1-header">Receive and enjoy!</h3>
-                    <p class="part-1-text">
+                    <h1 class="part-number">03</h1>
+                    <h3 class="part-header">Receive and enjoy!</h3>
+                    <p class="part-text">
                         We ship your package within 48 hours, freshly roasted.
                         Sit back and enjoy award-winning world-class coffees
                         curated to provide a distinct tasting experience.
@@ -185,27 +187,27 @@
 
 <style>
     main {
-        width: 1440px;
-        height: 3595px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     /* section-coffeepresso */
     .section-coffeepresso {
-        width: 1280px;
         height: 600px;
-        margin-left: 78px;
-        margin-top: 39px;
     }
     .srcHeroCoffeepress-photo {
-        background: #a2a2a2;
         border-radius: 10px;
-        z-index: -1;
     }
     .coffeepresso-content {
         width: 493px;
-        height: 255px;
+        height: 367px;
         margin-left: 85px;
         margin-top: -546px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: space-between;
     }
     .coffeepresso-title {
         font-family: "Fraunces", serif;
@@ -226,13 +228,17 @@
         mix-blend-mode: normal;
         opacity: 0.8;
     }
+    .coffeepresso-btn {
+        margin-top: 40px;
+    }
 
     /* section-our-collection */
     .section-our-collection {
-        width: 1111px;
         height: 525px;
-        margin-left: 165px;
         margin-top: 222px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .our-collection-title-gradient {
         position: absolute;
@@ -263,64 +269,69 @@
         font-style: normal;
         text-align: center;
         color: #333d4b;
-        margin-top: 220px;
+        width: 1110px;
+        margin-top: 212px;
+    }
+    .coffee-1,
+    .coffee-2,
+    .coffee-3,
+    .coffee-4 {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
     }
     .coffee-title {
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 24px;
         line-height: 32px;
-        margin-top: 14px;
-        margin-left: -2px;
     }
     .coffee-text {
         font-family: "Barlow", sans-serif;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        margin-top: -1px;
-        margin-left: -3px;
+        margin-top: -2px;
     }
     .coffee-photos {
         position: absolute;
-        display: flex;
-        flex-direction: row;
-        margin-top: -17px;
+        margin-top: 55px;
+        margin-left: 13px;
         z-index: 1;
-        height: 180px;
-        width: 255px;
+
+        display: grid;
+        grid-template-columns: 255px 256px 256px 235px;
+        grid-gap: 30px 30px;
     }
-    .gran-espresso-photo {
-        margin-left: 20px;
-    }
-    .planalto-photo {
-        margin-left: 58px;
-    }
+    .gran-espresso-photo,
+    .planalto-photo,
     .piccollo-photo {
-        margin-left: 55px;
+        height: 178px;
     }
     .danche-photo {
-        margin-left: 55px;
+        height: 177px;
     }
 
     /* section-why-choose-us */
     .section-why-choose-us {
-        width: 1280px;
         height: 728px;
-        margin-left: 80px;
-        margin-top: 113px;
+        margin-top: 116px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .why-choose-us-background {
         background: #2c343e;
         border-radius: 10px;
         width: 1280px;
         height: 577px;
-        z-index: -1;
     }
     .content-top {
         width: 540px;
         height: 160px;
-        margin-left: 370px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         margin-top: -530px;
     }
     .content-top-title {
@@ -341,15 +352,14 @@
         text-align: center;
         color: #fefcf7;
         mix-blend-mode: normal;
-        opacity: 0.8;
-        margin-top: -20px;
+        margin-top: -22px;
     }
     /* boxes */
     .why-choose-us-boxes {
         display: grid;
         grid-template-columns: 350px 350px 350px;
         grid-gap: 30px 30px;
-        margin-left: 85px;
+        margin-top: 139px;
     }
     .box-1,
     .box-2,
@@ -357,7 +367,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 87px;
         background: #0e8784;
         border-radius: 8px;
         width: 350px;
@@ -366,24 +375,19 @@
     .box-content {
         width: 255px;
         height: 134px;
-        margin-top: 33px;
         font-style: normal;
         text-align: center;
         color: #fefcf7;
+        margin-top: 33px;
     }
-    .box-content-title {
-        font-family: "Fraunces", serif;
-        font-weight: 900;
-        font-size: 24px;
-        line-height: 32px;
-        margin-left: -5px;
-    }
+    .box-content-title,
     .box-content-title-3 {
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 24px;
-        line-height: 32px;
-        margin-left: -5px;
+        line-height: 31px;
+    }
+    .box-content-title-3 {
         margin-top: 36px;
     }
     .box-content-text {
@@ -391,40 +395,23 @@
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        margin-left: -5px;
     }
-    .box-content-text-3 {
-        font-family: "Barlow", sans-serif;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 26px;
-        margin-left: -5px;
-        margin-top: 15px;
-    }
-    .coffee-bean {
-        width: 72px;
-        height: 72px;
-        margin-top: 72px;
-    }
+    .coffee-bean,
     .gift {
-        width: 72px;
-        height: 72px;
         margin-top: 72px;
-        margin-left: -10px;
     }
     .truck {
-        width: 72px;
-        height: 50px;
         margin-top: 82px;
-        margin-left: -10px;
     }
 
     /* section-how-it-works */
     .section-how-it-works {
-        width: 1045px;
         height: 565px;
-        margin-left: 164px;
-        margin-top: 203px;
+        margin-top: 177px;
+        margin-left: -65px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .how-it-works-header {
         font-family: "Fraunces", serif;
@@ -435,43 +422,35 @@
         color: #83888f;
     }
     .how-it-works-content {
-        width: 1045px;
         height: 453px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        margin-top: -36px;
+    }
+    .how-it-works-timeline {
+        margin-top: 167px;
+        width: 790px;
     }
     ul {
         display: flex;
-        float: left;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-left: -40px;
     }
     li {
         display: flex;
         flex-direction: column;
-        margin-left: 0px;
         height: 27px;
         width: 27px;
         border: 2px solid #0e8784;
         border-radius: 50%;
         background: #fefcf7;
     }
-    .how-it-works-timeline {
-        margin-top: 203px;
-    }
-    .how-it-works-oval-1 {
-        margin-left: -40px;
-        margin-top: -30px;
-    }
-    .how-it-works-oval-2 {
-        margin-left: 349px;
-        margin-top: -30px;
-    }
-    .how-it-works-oval-3 {
-        margin-left: 349px;
-        margin-top: -30px;
-    }
     .how-it-works-line {
         height: 2px;
-        width: 760px;
-        margin-left: 15.5px;
-        margin-top: -110px;
+        margin-top: -33px;
         border: 0px solid #fdd6ba;
         background: #fdd6ba;
         z-index: -1;
@@ -482,16 +461,16 @@
         grid-gap: 95px 95px;
         margin-top: 81px;
     }
-    .how-it-works-part-1 {
-        height: 355px;
-    }
-    .how-it-works-part-2 {
-        height: 355px;
-    }
+    .how-it-works-part-1,
+    .how-it-works-part-2,
     .how-it-works-part-3 {
         height: 355px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
     }
-    .part-1-number {
+    .part-number {
         font-family: "Fraunces", serif;
         font-style: normal;
         font-weight: 900;
@@ -499,26 +478,25 @@
         line-height: 72px;
         color: #fdd6ba;
     }
-    .part-1-header {
+    .part-header {
         font-family: "Fraunces", serif;
         font-style: normal;
         font-weight: 900;
         font-size: 32px;
-        line-height: 36px;
+        line-height: 37px;
         color: #333d4b;
-        margin-top: 39px;
+        margin-top: 38px;
     }
-    .part-1-text {
+    .part-text {
         font-family: "Barlow", sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
         color: #333d4b;
-        margin-top: 42px;
+        margin-top: 9px;
     }
     .how-it-works-btn {
-        margin-left: -85px;
-        margin-top: -6px;
+        margin-top: 155px;
     }
 </style>

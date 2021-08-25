@@ -49,6 +49,7 @@
         line-height: 48px;
         color: #83888f;
         background-color: white;
+        margin-left: -18px;
     }
     .nocursor {
         cursor: default;

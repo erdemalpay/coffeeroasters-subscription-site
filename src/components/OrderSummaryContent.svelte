@@ -6,6 +6,8 @@
     export let valueDeliveries;
     export let valueDefault;
 
+    export let textGrey;
+
     export const valueOrder = (value) => {
         if (!value) {
             return valueDefault;
@@ -49,7 +51,7 @@
     };
 </script>
 
-<div class="section-order-summary-text">
+<div class="text-white" class:text-grey={textGrey}>
     “I drink my coffee {wordChangeOrder(valuePreferences)}
     <div class="order-summary-green-text">
         {valueOrder(valuePreferences)}
@@ -74,14 +76,16 @@
 </div>
 
 <style>
-    .section-order-summary-text {
+    .text-white {
         font-family: "Fraunces", serif;
         font-style: normal;
         font-weight: 900;
         font-size: 24px;
         line-height: 40px;
-        color: #ffffff;
-        margin-top: -7px;
+        color: #ffffff; 
+    }
+    .text-grey {
+        color: #83888F;
     }
     .order-summary-green-text {
         display: inline;

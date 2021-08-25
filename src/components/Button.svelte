@@ -12,8 +12,6 @@
         border-radius: 6px;
         width: 217px;
         height: 56px;
-        margin-left: 85px;
-        margin-top: 55px;
 
         font-family: "Fraunces", serif;
         font-style: normal;
