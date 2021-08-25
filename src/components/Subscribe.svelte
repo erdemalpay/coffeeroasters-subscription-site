@@ -343,13 +343,12 @@
     /* section-how-it-works */
     .section-how-it-works {
         width: 1280px;
-        height: 653px;
+        height: 763px;
         margin-top: 168px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-radius: 10px;
-        z-index: -1;
+        border-radius: 10px
     }
     .how-it-works-content {
         width: 1045px;
@@ -357,7 +356,7 @@
         display: flex;
         flex-direction: column;
         margin-top: 84px;
-        margin-left: -65px;
+        margin-left: -63px;
     }
     .how-it-works-timeline {
         width: 790px;
@@ -394,7 +393,6 @@
     .how-it-works-part-1,
     .how-it-works-part-2,
     .how-it-works-part-3 {
-        height: 355px;
         display: flex;
         flex-direction: column;
     }

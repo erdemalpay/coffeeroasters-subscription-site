@@ -44,7 +44,7 @@
         mix-blend-mode: normal;
         opacity: 0.5;
         z-index: 2;
-        height: 4136px;
+        height: 4457px;
         width: 1440px;
         margin: -113px;
     }
@@ -55,7 +55,6 @@
         position: fixed;
         z-index: 3;
         margin: -113px;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -92,7 +91,6 @@
         color: #83888f;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
     }
     .order-summary-remind {
         font-family: "Barlow", sans-serif;
@@ -107,13 +105,11 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: flex-start;
         margin-top: 6px;
     }
     .order-summary-payment {
         width: 428px;
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         margin-top: 31px;
