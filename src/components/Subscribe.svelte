@@ -151,8 +151,10 @@
     <OrderSummaryPopUp {showOrderSummaryPopUp} on:click={togglePopUp} />
 
     <!-- section-create-plan -->
-    <div class="section-create-plan">
-        <img src={srcHeroBlackCup} class="srcHeroBlackCup-photo" alt="Hero Black Cup" />
+    <div
+        class="section-create-plan"
+        style={`background-image: url(${srcHeroBlackCup});`}
+    >
         <div class="create-plan-content">
             <h2 class="create-plan-title">Create plan</h2>
             <p class="create-plan-text">
@@ -165,8 +167,10 @@
     </div>
 
     <!-- section-how-it-works -->
-    <div class="section-how-it-works">
-        <img src={srcBgSteps} class="srcBgSteps-photo" alt="Bg Steps" />
+    <div
+        class="section-how-it-works"
+        style={`background-image: url(${srcBgSteps});`}
+    >
         <div class="how-it-works-content">
             <div class="how-it-works-timeline">
                 <ul>
@@ -304,52 +308,46 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-height: 4136px;
     }
 
     /* section-create-plan */
     .section-create-plan {
         width: 1280px;
-    }
-    .srcHeroBlackCup-photo {
+        height: 450px;
         border-radius: 10px;
     }
     .create-plan-content {
         width: 445px;
-        height: 182px;
         font-style: normal;
         color: #fefcf7;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        margin-left: 80px;
-        margin-top: -380px;
+        margin-left: 85px;
+        margin-top: 74px;
     }
     .create-plan-title {
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 72px;
-        line-height: 72px;
+        line-height: 73px;
+        margin-bottom: 15px;
     }
     .create-plan-text {
         font-family: "Barlow", sans-serif;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        margin-top: -28px;
     }
 
     /* section-how-it-works */
     .section-how-it-works {
         width: 1280px;
         height: 653px;
-        margin-top: 362px;
+        margin-top: 168px;
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    .srcBgSteps-photo {
-        width: 1280px;
-        height: 653px;
         border-radius: 10px;
         z-index: -1;
     }
@@ -358,13 +356,11 @@
         height: 453px;
         display: flex;
         flex-direction: column;
-        margin-top: -540px;
+        margin-top: 84px;
         margin-left: -65px;
     }
     .how-it-works-timeline {
         width: 790px;
-        height: 31px;
-        margin-top: -29px;
     }
     .how-it-works-line {
         height: 2px;
@@ -378,7 +374,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-left: -40px;
+        margin-left: -41px;
     }
     li {
         display: flex;
@@ -393,8 +389,7 @@
         display: grid;
         grid-template-columns: 285px 285px 285px;
         grid-gap: 95px 95px;
-        height: 355px;
-        margin-top: 83px;
+        margin-top: 82px;
     }
     .how-it-works-part-1,
     .how-it-works-part-2,
@@ -402,8 +397,6 @@
         height: 355px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
     }
     .part-1-number {
         font-family: "Fraunces", serif;
@@ -437,14 +430,12 @@
         height: 3218px;
         width: 1110px;
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         margin-top: 169px;
     }
 
     /* section-titles */
     .section-titles {
-        width: 255px;
         height: 356px;
         display: flex;
         flex-direction: column;
@@ -453,11 +444,9 @@
     .section-titles-part {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
     }
     .section-titles-content {
         display: flex;
-        flex-direction: row;
         align-items: center;
         height: 32px;
     }
@@ -497,25 +486,29 @@
 
     /* section-accordion-menu */
     .section-accordion-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
         margin-top: -19px;
     }
 
     /* section-order-summary */
     .section-order-summary {
+        height: 208px;
         width: 730px;
+        border-radius: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    .srcBgOrderSummary-photo {
         border-radius: 10px;
+        margin-top: -18px;
     }
     .section-order-summary-content {
         width: 602px;
         height: 154px;
         display: flex;
         flex-direction: column;
-        margin-top: -181px;
+        justify-content: center;
     }
     .section-order-summary-header {
         font-family: "Barlow", sans-serif;
@@ -526,5 +519,12 @@
         color: #ffffff;
         mix-blend-mode: normal;
         opacity: 0.5;
+        margin-top: 47px;
+        margin-bottom: 9px;
+    }
+
+    /* section-order-summary-btn */
+    .order-summary-btn {
+        margin-top: 40px;
     }
 </style>
