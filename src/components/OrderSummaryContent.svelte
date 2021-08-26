@@ -37,11 +37,12 @@
     };
 
     export const removeGrindPartOrder = (valuePreferences) => {
-        if (valuePreferences == "Filter" || valuePreferences == "Espresso" || valuePreferences == "") {
-            return "ground ala";
-        } else if (valuePreferences == "Capsule") {
+        if (valuePreferences == "Capsule") {
             return "";
+        } else {
+            return "ground ala";
         }
+        
     };
     choiceStore.subscribe((data) => {
         valuePreferences = data.valuePreferences;
@@ -83,10 +84,10 @@
         font-weight: 900;
         font-size: 24px;
         line-height: 40px;
-        color: #ffffff; 
+        color: #ffffff;
     }
     .text-grey {
-        color: #83888F;
+        color: #83888f;
     }
     .order-summary-green-text {
         display: inline;
