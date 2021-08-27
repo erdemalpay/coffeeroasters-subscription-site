@@ -451,7 +451,7 @@
     /* section-how-it-works */
     .section-how-it-works {
         width: 1280px;
-        height: 763px;
+        height: 653px;
         margin-top: 168px;
         display: flex;
         flex-direction: column;

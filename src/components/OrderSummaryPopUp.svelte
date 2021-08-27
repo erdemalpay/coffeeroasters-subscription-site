@@ -7,6 +7,36 @@
 
     export let showOrderSummaryPopUp;
     export let closeOrderSummaryPopUp;
+
+    $: totalPrice = total(valueQuantity, valueDeliveries);
+
+    const total = (valueQuantity, valueDeliveries) => {
+        if (valueQuantity == "250g") {
+            if (valueDeliveries == "Every week") {
+                return priceEveryWeek;
+            } else if (valueDeliveries == "Every 2 weeks") {
+                return priceEvery2Weeks;
+            } else if (valueDeliveries == "Every month") {
+                return priceEveryMonth;
+            }
+        } else if (valueQuantity == "500g") {
+            if (valueDeliveries == "Every week") {
+                return priceEveryWeek;
+            } else if (valueDeliveries == "Every 2 weeks") {
+                return priceEvery2Weeks;
+            } else if (valueDeliveries == "Every month") {
+                return priceEveryMonth;
+            }
+        } else if (valueQuantity == "1000g") {
+            if (valueDeliveries == "Every week") {
+                return priceEveryWeek;
+            } else if (valueDeliveries == "Every 2 weeks") {
+                return priceEvery2Weeks;
+            } else if (valueDeliveries == "Every month") {
+                return priceEveryMonth;
+            }
+        }
+    };
 </script>
 
 {#if showOrderSummaryPopUp}
@@ -28,7 +58,12 @@
             </p>
 
             <div class="order-summary-payment">
-                <div class="order-summary-total">$14.00/ mo</div>
+                <div class="order-summary-total">
+                    <div>
+                        ${totalPrice} /
+                    </div>
+                    <div>{valueDeliveries}</div>
+                </div>
                 <div class="order-summary-btn">
                     <Button buttonName="Checkout" />
                 </div>
@@ -44,7 +79,7 @@
         mix-blend-mode: normal;
         opacity: 0.5;
         z-index: 2;
-        height: 4457px;
+        height: 4696px;
         width: 1440px;
         margin: -113px;
     }
@@ -121,5 +156,8 @@
         font-size: 32px;
         line-height: 36px;
         color: #333d4b;
+        display: flex;
+        flex-direction: column;
+        width: 198px;
     }
 </style>
