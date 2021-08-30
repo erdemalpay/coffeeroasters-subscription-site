@@ -84,10 +84,30 @@
         });
     };
     const setValueQuantity = (newChoiceValue) => {
+        let newPriceEveryWeek;
+        let newPriceEvery2Weeks;
+        let newPriceEveryMonth;
+        if (newChoiceValue == "250g") {
+            newPriceEveryWeek = "7.20";
+            newPriceEvery2Weeks = "9.60";
+            newPriceEveryMonth = "12.00";
+        } else if (newChoiceValue == "500g") {
+            newPriceEveryWeek = "13.000";
+            newPriceEvery2Weeks = "17.50";
+            newPriceEveryMonth = "22.00";
+        } else if (newChoiceValue == "1000g") {
+            newPriceEveryWeek = "22.00";
+            newPriceEvery2Weeks = "32.00";
+            newPriceEveryMonth = "42.00";
+        }
+
         choiceStore.update((currentObject) => {
             return {
                 ...currentObject,
                 valueQuantity: newChoiceValue,
+                priceEveryWeek: newPriceEveryWeek,
+                priceEvery2Weeks: newPriceEvery2Weeks,
+                priceEveryMonth: newPriceEveryMonth,
             };
         });
     };
@@ -115,32 +135,12 @@
             };
         });
     };
-    const setPrice = (everyWeek, every2Weeks, everyMonth) => {
-        choiceStore.update((currentObject) => {
-            return {
-                ...currentObject,
-                priceEveryWeek: everyWeek,
-                priceEvery2Weeks: every2Weeks,
-                priceEveryMonth: everyMonth,
-            };
-        });
-    };
 
     const PREFERENCES = {
         CAPSULE: "Capsule",
         FILTER: "Filter",
         ESPRESSO: "Espresso",
     };
-
-    $: {
-        if (valueQuantity == "250g") {
-            setPrice("7.20", "9.60", "12.00");
-        } else if (valueQuantity == "500g") {
-            setPrice("13.00", "17.50", "22.00");
-        } else if (valueQuantity == "1000g") {
-            setPrice("22.00", "32.00", "42.00");
-        }
-    }
 
     export const togglePopUp = () => {
         showOrderSummaryPopUp = !showOrderSummaryPopUp;
@@ -526,13 +526,5 @@
         color: #ffffff;
         mix-blend-mode: normal;
         opacity: 0.5;
-    }
-
-    /* section-order-summary-btn */
-    .order-summary-btn {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        margin-top: 67px;
     }
 </style>
