@@ -221,9 +221,7 @@
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        color: #fefcf7;
-        mix-blend-mode: normal;
-        opacity: 0.8;
+        color: rgba(254, 252, 247, 0.8);
     }
     .coffeepresso-btn {
         margin-top: 40px;
@@ -232,12 +230,13 @@
     /* section-our-collection */
     .section-our-collection {
         height: 525px;
-        margin-top: 222px;
+        margin-top: 151px;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
     .our-collection-title-gradient {
-        position: absolute;
+        position: relative;
         background: linear-gradient(
             180deg,
             rgba(254, 252, 247, 0.0001) 0%,
@@ -245,17 +244,19 @@
         );
         height: 196px;
         width: 1111px;
-        margin-top: -90px;
-        z-index: 0;
+        z-index: 1;
+        top: 110px;
     }
     .our-collection-title {
+        position: relative;
+        top: 18px;
         font-family: "Fraunces", serif;
         font-style: normal;
         font-weight: 900;
         font-size: 150px;
         line-height: 72px;
         text-align: center;
-        color: #83888f;
+        color: rgba(131, 136, 143, 0.3);
     }
     .coffees-content {
         display: grid;
@@ -264,7 +265,7 @@
         font-style: normal;
         text-align: center;
         color: #333d4b;
-        margin-top: 48px;
+        margin-top: 49px;
     }
     .coffee-1,
     .coffee-2,
@@ -278,7 +279,7 @@
         font-weight: 900;
         font-size: 24px;
         line-height: 32px;
-        margin-bottom: 8px;
+        margin-bottom: 7px;
     }
     .coffee-text {
         font-family: "Barlow", sans-serif;
@@ -287,9 +288,8 @@
         line-height: 26px;
     }
     .coffee-photos {
-        margin-top: -17px;
         margin-left: 30px;
-        z-index: 1;
+        z-index: 2;
         display: grid;
         grid-template-columns: 255px 256px 256px 235px;
         grid-gap: 30px 30px;
@@ -306,7 +306,7 @@
         width: 1280px;
         height: 577px;
         border-radius: 10px;
-        margin-top: 114px;
+        margin-top: 185px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -334,8 +334,7 @@
         font-size: 16px;
         line-height: 27px;
         text-align: center;
-        color: #fefcf7;
-        mix-blend-mode: normal;
+        color: rgba(254, 252, 247, 0.8);
     }
     /* boxes */
     .why-choose-us-boxes {
@@ -386,9 +385,8 @@
 
     /* section-how-it-works */
     .section-how-it-works {
-        margin-top: 328px;
-        margin-left: -65px;
-        margin-bottom: 200px;
+        width: 1280px;
+        margin: 328px auto 200px 165px;
         display: flex;
         flex-direction: column;
     }
@@ -411,7 +409,8 @@
     ul {
         display: flex;
         justify-content: space-between;
-        margin-left: -41px;
+        position: relative;
+        top: 16px;
     }
     li {
         display: flex;
@@ -423,7 +422,6 @@
     }
     .how-it-works-line {
         height: 2px;
-        margin-top: -33px;
         border: 0px solid #fdd6ba;
         background: #fdd6ba;
         z-index: -1;
@@ -432,7 +430,7 @@
         display: grid;
         grid-template-columns: 285px 285px 285px;
         grid-gap: 95px 95px;
-        margin-top: 82px;
+        margin-top: 81px;
     }
     .how-it-works-part-1,
     .how-it-works-part-2,

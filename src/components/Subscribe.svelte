@@ -182,9 +182,9 @@
             </div>
             <div class="how-it-works-parts">
                 <div class="how-it-works-part-1">
-                    <h1 class="part-1-number">01</h1>
-                    <h3 class="part-1-header">Pick your <br />coffee</h3>
-                    <p class="part-1-text">
+                    <h1 class="part-number">01</h1>
+                    <h3 class="part-header">Pick your <br />coffee</h3>
+                    <p class="part-text">
                         Select from our evolving range of artisan coffees. Our
                         beans are ethically sourced and we pay fair prices for
                         them. There are new coffees in all profiles every month
@@ -192,9 +192,9 @@
                     </p>
                 </div>
                 <div class="how-it-works-part-2">
-                    <h1 class="part-1-number">02</h1>
-                    <h3 class="part-1-header">Choose the frequency</h3>
-                    <p class="part-1-text">
+                    <h1 class="part-number">02</h1>
+                    <h3 class="part-header">Choose the frequency</h3>
+                    <p class="part-text">
                         Customize your order frequency, quantity, even your
                         roast style and grind type. Pause, skip or cancel your
                         subscription with no commitment through our online
@@ -202,9 +202,9 @@
                     </p>
                 </div>
                 <div class="how-it-works-part-3">
-                    <h1 class="part-1-number">03</h1>
-                    <h3 class="part-1-header">Receive and enjoy!</h3>
-                    <p class="part-1-text">
+                    <h1 class="part-number">03</h1>
+                    <h3 class="part-header">Receive and enjoy!</h3>
+                    <p class="part-text">
                         We ship your package within 48 hours, freshly roasted.
                         Sit back and enjoy award-winning world-class coffees
                         curated to provide a distinct tasting experience.
@@ -455,7 +455,7 @@
         margin-top: 168px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         border-radius: 10px;
     }
     .how-it-works-content {
@@ -464,7 +464,7 @@
         display: flex;
         flex-direction: column;
         margin-top: 84px;
-        margin-left: -63px;
+        margin-left: 85px;
     }
     .how-it-works-timeline {
         width: 790px;
@@ -475,28 +475,25 @@
         background: #fdd6ba;
         z-index: -1;
         margin-left: 15.5px;
-        margin-top: -33px;
     }
     ul {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        margin-left: -41px;
+        position: relative;
+        top: 16px;
     }
     li {
         display: flex;
-        flex-direction: column;
         height: 27px;
         width: 27px;
         border: 2px solid #0e8784;
         border-radius: 50%;
-        z-index: 1;
     }
     .how-it-works-parts {
         display: grid;
         grid-template-columns: 285px 285px 285px;
         grid-gap: 95px 95px;
-        margin-top: 82px;
+        margin-top: 81px;
     }
     .how-it-works-part-1,
     .how-it-works-part-2,
@@ -504,7 +501,7 @@
         display: flex;
         flex-direction: column;
     }
-    .part-1-number {
+    .part-number {
         font-family: "Fraunces", serif;
         font-style: normal;
         font-weight: 900;
@@ -512,7 +509,7 @@
         line-height: 72px;
         color: #fdd6ba;
     }
-    .part-1-header {
+    .part-header {
         font-family: "Fraunces", serif;
         font-style: normal;
         font-weight: 900;
@@ -521,7 +518,7 @@
         color: #fefcf7;
         margin-top: 40px;
     }
-    .part-1-text {
+    .part-text {
         font-family: "Barlow", sans-serif;
         font-style: normal;
         font-weight: normal;
@@ -536,7 +533,7 @@
         width: 1110px;
         display: flex;
         justify-content: space-between;
-        margin-top: 169px;
+        margin-top: 150px;
         margin-bottom: 168px;
     }
 
@@ -544,6 +541,7 @@
     .section-titles {
         height: 356px;
         display: flex;
+        margin-top: 19px;
         flex-direction: column;
         justify-content: space-between;
     }
@@ -584,9 +582,7 @@
     .section-titles-line {
         width: 255px;
         height: 1px;
-        background: #83888f;
-        mix-blend-mode: normal;
-        opacity: 0.25;
+        background: rgba(131, 136, 143, 0.25);
         margin-top: 23px;
     }
 
@@ -595,7 +591,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        margin-top: -19px;
     }
 
     /* section-order-summary */
@@ -607,7 +602,8 @@
         flex-direction: column;
         align-items: center;
         border-radius: 10px;
-        margin-top: -18px;
+        position: relative;
+        bottom: 18px;
     }
     .section-order-summary-content {
         width: 602px;
@@ -622,15 +618,13 @@
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        color: #ffffff;
-        mix-blend-mode: normal;
-        opacity: 0.5;
+        color: rgba(255, 255, 255, 0.5);
         margin-top: 47px;
         margin-bottom: 9px;
     }
 
     /* section-order-summary-btn */
     .order-summary-btn {
-        margin-top: 40px;
+        margin-top: 22px;
     }
 </style>

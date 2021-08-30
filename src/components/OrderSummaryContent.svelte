@@ -17,7 +17,10 @@
         }
     };
 
-    export const valueGrindOptionOrder = (valueGrindOption, valuePreferences) => {
+    export const valueGrindOptionOrder = (
+        valueGrindOption,
+        valuePreferences
+    ) => {
         if (valuePreferences == "Capsule") {
             return "";
         }
@@ -42,7 +45,6 @@
         } else {
             return "ground ala";
         }
-        
     };
     choiceStore.subscribe((data) => {
         valuePreferences = data.valuePreferences;
