@@ -1,9 +1,16 @@
 <script>
     import Button from "./Button.svelte";
+    import choiceStore from "../Stores/choiceStore.js";
 
     import OrderSummaryContent from "../components/OrderSummaryContent.svelte";
 
     let textGrey = true;
+
+    $: valueQuantity = $choiceStore.valueQuantity;
+    $: valueDeliveries = $choiceStore.valueDeliveries;
+    $: priceEveryWeek = $choiceStore.priceEveryWeek;
+    $: priceEvery2Weeks = $choiceStore.priceEvery2Weeks;
+    $: priceEveryMonth = $choiceStore.priceEveryMonth;
 
     export let showOrderSummaryPopUp;
     export let closeOrderSummaryPopUp;
@@ -50,15 +57,7 @@
             <div class="order-summary-chapter">
                 <div class="order-summary-content">
                     <!-- Bind variables with OrderSummaryContent -->
-                    <OrderSummaryContent
-                        {textGrey}
-                        bind:valuePreferences
-                        bind:valueBeanType
-                        bind:valueQuantity
-                        bind:valueGrindOption
-                        bind:valueDeliveries
-                        bind:valueDefault
-                    />
+                    <OrderSummaryContent {textGrey} />
                     <!-- Bind variables with OrderSummaryContent -->
                 </div>
 

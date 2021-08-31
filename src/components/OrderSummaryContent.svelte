@@ -1,21 +1,13 @@
 <script>
     import choiceStore from "../Stores/choiceStore.js";
-    let valuePreferences;
-    let valueBeanType;
-    let valueQuantity;
-    let valueGrindOption;
-    let valueDeliveries;
-    let valueDefault;
+
+    $: valuePreferences = $choiceStore.valuePreferences;
+    $: valueBeanType = $choiceStore.valueBeanType;
+    $: valueQuantity = $choiceStore.valueQuantity;
+    $: valueGrindOption = $choiceStore.valueGrindOption;
+    $: valueDeliveries = $choiceStore.valueDeliveries;
 
     export let textGrey;
-
-    export const valueOrder = (value) => {
-        if (!value) {
-            return valueDefault;
-        } else {
-            return value;
-        }
-    };
 
     export const valueGrindOptionOrder = (
         valueGrindOption,
@@ -24,11 +16,7 @@
         if (valuePreferences == "Capsule") {
             return "";
         }
-        if (!valueGrindOption) {
-            return valueDefault;
-        } else {
-            return valueGrindOption;
-        }
+        return valueGrindOption;
     };
 
     export const wordChangeOrder = (valuePreferences) => {
@@ -46,27 +34,20 @@
             return "ground ala";
         }
     };
-    choiceStore.subscribe((data) => {
-        valuePreferences = data.valuePreferences;
-        valueBeanType = data.valueBeanType;
-        valueQuantity = data.valueQuantity;
-        valueGrindOption = data.valueGrindOption;
-        valueDeliveries = data.valueDeliveries;
-    });
 </script>
 
 <div class="text-white" class:text-grey={textGrey}>
     “I drink my coffee {wordChangeOrder(valuePreferences)}
     <div class="order-summary-green-text">
-        {valueOrder(valuePreferences)}
+        {valuePreferences}
     </div>
     , with a
     <div class="order-summary-green-text">
-        {valueOrder(valueBeanType)}
+        {valueBeanType}
     </div>
     type of bean.
     <div class="order-summary-green-text">
-        {valueOrder(valueQuantity)}
+        {valueQuantity}
     </div>
     {removeGrindPartOrder(valuePreferences)}
     <div class="order-summary-green-text">
@@ -74,7 +55,7 @@
     </div>
     , sent to me
     <div class="order-summary-green-text">
-        {valueOrder(valueDeliveries)}
+        {valueDeliveries}
     </div>
     .”
 </div>

@@ -622,9 +622,4 @@
         margin-top: 47px;
         margin-bottom: 9px;
     }
-
-    /* section-order-summary-btn */
-    .order-summary-btn {
-        margin-top: 22px;
-    }
 </style>
