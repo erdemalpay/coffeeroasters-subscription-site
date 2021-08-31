@@ -245,7 +245,7 @@
         height: 196px;
         width: 1111px;
         z-index: 1;
-        top: 110px;
+        top: 111px;
     }
     .our-collection-title {
         position: relative;
