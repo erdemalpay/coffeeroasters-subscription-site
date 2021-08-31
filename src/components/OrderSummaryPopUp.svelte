@@ -56,9 +56,7 @@
 
             <div class="order-summary-chapter">
                 <div class="order-summary-content">
-                    <!-- Bind variables with OrderSummaryContent -->
                     <OrderSummaryContent {textGrey} />
-                    <!-- Bind variables with OrderSummaryContent -->
                 </div>
 
                 <p class="order-summary-remind">
