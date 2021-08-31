@@ -5,22 +5,12 @@
 
     let textGrey = true;
 
-    export let valuePreferences;
-    export let valueBeanType;
-    export let valueQuantity;
-    export let valueGrindOption;
-    export let valueDeliveries;
-
     export let showOrderSummaryPopUp;
     export let closeOrderSummaryPopUp;
 </script>
 
 {#if showOrderSummaryPopUp}
-    <div
-        class="order-summary-background"
-        class:closeOrderSummaryPopUp
-        on:click|self
-    />
+    <div class="order-summary-background" class:closeOrderSummaryPopUp on:click|self />
     <main>
         <div class="order-summary-header">
             <h2 class="order-summary-title">Order Summary</h2>
@@ -28,14 +18,7 @@
 
         <div class="order-summary-chapter">
             <div class="order-summary-content">
-                <OrderSummaryContent
-                    {textGrey}
-                    bind:valuePreferences
-                    bind:valueBeanType
-                    bind:valueQuantity
-                    bind:valueGrindOption
-                    bind:valueDeliveries
-                />
+                <OrderSummaryContent {textGrey} />
             </div>
 
             <p class="order-summary-remind">
