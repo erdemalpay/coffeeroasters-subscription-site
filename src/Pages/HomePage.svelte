@@ -7,6 +7,8 @@
     let srcPiccollo = "./images/images-home/image-piccollo.png";
     let srcDanche = "./images/images-home/image-danche.png";
 
+    let srcBgSteps = "./images/images-home/bg-steps.png";
+
     let srcCoffeeBean = "./images/images-home/icon-coffee-bean.svg";
     let srcGift = "./images/images-home/icon-gift.svg";
     let srcTruck = "./images/images-home/icon-truck.svg";
@@ -14,12 +16,10 @@
 
 <main>
     <!-- section-coffeepresso -->
-    <div class="section-coffeepresso">
-        <img
-            src={srcHeroCoffeepress}
-            class="srcHeroCoffeepress-photo"
-            alt="Hero Coffeepresso"
-        />
+    <div
+        class="section-coffeepresso"
+        style={`background-image: url(${srcHeroCoffeepress});`}
+    >
         <div class="coffeepresso-content">
             <h2 class="coffeepresso-title">Great coffee made simple.</h2>
             <p class="coffeepresso-text">
@@ -82,9 +82,10 @@
     </div>
 
     <!-- section-why-choose-us -->
-    <div class="section-why-choose-us">
-        <div class="why-choose-us-background" />
-
+    <div
+        class="section-why-choose-us"
+        style={`background-image: url(${srcBgSteps});`}
+    >
         <div class="content-top">
             <h4 class="content-top-title">Why choose us?</h4>
             <p class="content-top-text">
@@ -123,7 +124,7 @@
             <div class="box-3">
                 <img src={srcTruck} class="truck" alt="Truck" />
                 <div class="box-content">
-                    <h3 class="box-content-title-3">Free shipping</h3>
+                    <h3 class="box-content-title">Free shipping</h3>
                     <p class="box-content-text">
                         We cover the cost and coffee is delivered fast. Peak
                         freshness: guaranteed.
@@ -195,38 +196,32 @@
     /* section-coffeepresso */
     .section-coffeepresso {
         height: 600px;
-    }
-    .srcHeroCoffeepress-photo {
+        width: 1280px;
         border-radius: 10px;
     }
     .coffeepresso-content {
         width: 493px;
-        height: 367px;
         margin-left: 85px;
-        margin-top: -546px;
+        margin-top: 57px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        align-content: space-between;
     }
     .coffeepresso-title {
         font-family: "Fraunces", serif;
         font-style: normal;
         font-weight: 900;
         font-size: 72px;
-        line-height: 72px;
+        line-height: 73px;
         color: #fefcf7;
+        margin-bottom: 15px;
     }
     .coffeepresso-text {
-        margin-top: -28px;
         font-family: "Barlow", sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        color: #fefcf7;
-        mix-blend-mode: normal;
-        opacity: 0.8;
+        color: rgba(254, 252, 247, 0.8);
     }
     .coffeepresso-btn {
         margin-top: 40px;
@@ -235,13 +230,13 @@
     /* section-our-collection */
     .section-our-collection {
         height: 525px;
-        margin-top: 222px;
+        margin-top: 151px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     .our-collection-title-gradient {
-        position: absolute;
+        position: relative;
         background: linear-gradient(
             180deg,
             rgba(254, 252, 247, 0.0001) 0%,
@@ -249,28 +244,28 @@
         );
         height: 196px;
         width: 1111px;
-        margin-top: -90px;
-        z-index: 0;
+        z-index: 1;
+        top: 111px;
     }
     .our-collection-title {
+        position: relative;
+        top: 18px;
         font-family: "Fraunces", serif;
         font-style: normal;
         font-weight: 900;
         font-size: 150px;
         line-height: 72px;
         text-align: center;
-        color: #83888f;
+        color: rgba(131, 136, 143, 0.3);
     }
     .coffees-content {
         display: grid;
         grid-template-columns: 255px 255px 255px 255px;
         grid-gap: 30px 30px;
-
         font-style: normal;
         text-align: center;
         color: #333d4b;
-        width: 1110px;
-        margin-top: 212px;
+        margin-top: 49px;
     }
     .coffee-1,
     .coffee-2,
@@ -278,61 +273,49 @@
     .coffee-4 {
         display: flex;
         flex-direction: column;
-        align-content: space-between;
     }
     .coffee-title {
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 24px;
         line-height: 32px;
+        margin-bottom: 7px;
     }
     .coffee-text {
         font-family: "Barlow", sans-serif;
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        margin-top: -2px;
     }
     .coffee-photos {
-        position: absolute;
-        margin-top: 55px;
-        margin-left: 13px;
-        z-index: 1;
-
+        margin-left: 30px;
+        z-index: 2;
         display: grid;
         grid-template-columns: 255px 256px 256px 235px;
         grid-gap: 30px 30px;
     }
     .gran-espresso-photo,
     .planalto-photo,
-    .piccollo-photo {
-        height: 178px;
-    }
+    .piccollo-photo,
     .danche-photo {
-        height: 177px;
+        height: 178px;
     }
 
     /* section-why-choose-us */
     .section-why-choose-us {
-        height: 728px;
-        margin-top: 116px;
+        width: 1280px;
+        height: 577px;
+        border-radius: 10px;
+        margin-top: 185px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .why-choose-us-background {
-        background: #2c343e;
-        border-radius: 10px;
-        width: 1280px;
-        height: 577px;
-    }
     .content-top {
-        width: 540px;
         height: 160px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        margin-top: -530px;
+        margin-top: 47px;
     }
     .content-top-title {
         font-family: "Fraunces", serif;
@@ -342,17 +325,16 @@
         line-height: 48px;
         text-align: center;
         color: #fefcf7;
+        margin-bottom: 15px;
     }
     .content-top-text {
         font-family: "Barlow", sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
-        line-height: 26px;
+        line-height: 27px;
         text-align: center;
-        color: #fefcf7;
-        mix-blend-mode: normal;
-        margin-top: -22px;
+        color: rgba(254, 252, 247, 0.8);
     }
     /* boxes */
     .why-choose-us-boxes {
@@ -369,7 +351,6 @@
         align-items: center;
         background: #0e8784;
         border-radius: 8px;
-        width: 350px;
         height: 382px;
     }
     .box-content {
@@ -380,15 +361,11 @@
         color: #fefcf7;
         margin-top: 33px;
     }
-    .box-content-title,
-    .box-content-title-3 {
+    .box-content-title {
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 24px;
         line-height: 31px;
-    }
-    .box-content-title-3 {
-        margin-top: 36px;
     }
     .box-content-text {
         font-family: "Barlow", sans-serif;
@@ -399,19 +376,19 @@
     .coffee-bean,
     .gift {
         margin-top: 72px;
+        margin-right: 10px;
     }
     .truck {
-        margin-top: 82px;
+        margin-top: 83px;
+        margin-bottom: 11px;
     }
 
     /* section-how-it-works */
     .section-how-it-works {
-        height: 565px;
-        margin-top: 177px;
-        margin-left: -65px;
+        width: 1280px;
+        margin: 328px auto 200px 165px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
     }
     .how-it-works-header {
         font-family: "Fraunces", serif;
@@ -422,26 +399,21 @@
         color: #83888f;
     }
     .how-it-works-content {
-        height: 453px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-around;
-        margin-top: -36px;
+        margin-top: 39px;
     }
     .how-it-works-timeline {
-        margin-top: 167px;
         width: 790px;
     }
     ul {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        margin-left: -40px;
+        position: relative;
+        top: 16px;
     }
     li {
         display: flex;
-        flex-direction: column;
         height: 27px;
         width: 27px;
         border: 2px solid #0e8784;
@@ -450,7 +422,6 @@
     }
     .how-it-works-line {
         height: 2px;
-        margin-top: -33px;
         border: 0px solid #fdd6ba;
         background: #fdd6ba;
         z-index: -1;
@@ -467,8 +438,6 @@
         height: 355px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
     }
     .part-number {
         font-family: "Fraunces", serif;
@@ -497,6 +466,6 @@
         margin-top: 9px;
     }
     .how-it-works-btn {
-        margin-top: 155px;
+        margin-top: 64px;
     }
 </style>

@@ -201,9 +201,7 @@
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        color: #333d4b;
-        mix-blend-mode: normal;
-        opacity: 0.8;
+        color: rgba(51, 61, 75, 0.68);
     }
 
     /* section-quality */
@@ -252,18 +250,18 @@
         width: 445px;
         height: 474px;
         border-radius: 8px;
-        margin-top: -22px;
+        position: relative;
+        bottom: 11px;
     }
 
     /* section-headquarters */
     .section-headquarters {
-        width: 1045px;
+        width: 1280px;
         height: 366px;
         display: flex;
         flex-direction: column;
-        margin-top: 145px;
-        margin-bottom: 191px;
-        margin-left: -65px;
+        align-items: flex-start;
+        margin: 145px auto 191px 165px;
     }
     .headquarters-header {
         font-family: "Fraunces", serif;
